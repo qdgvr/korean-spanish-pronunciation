@@ -9,6 +9,8 @@
 @media(max-width:700px){.page{padding:24px 16px 18px}header{margin-bottom:20px}.toolbar{align-items:flex-start;flex-direction:column;gap:12px}nav{gap:2px;width:100%}nav button{padding:10px 11px;font-size:13px;min-height:40px}.model-label{align-self:flex-end}table,.context-table{min-width:0}thead tr,tbody tr{display:grid;grid-template-columns:1fr 1fr}thead th:first-child{display:none}thead th,td,tbody th{padding:11px}tbody th{grid-column:1/-1;display:flex;gap:8px;align-items:baseline;font-size:12px;padding:7px 11px}tbody th small{font-size:10px}td{border-top:0}td:last-child{border-left:1px solid var(--line)}.letter{font-size:22px;min-height:40px;min-width:40px}.ipa{min-height:36px;min-width:40px}.entries{gap:10px 8px}.entry{min-width:54px}.sequence-table thead tr,.sequence-table tbody tr{grid-template-columns:1fr}.sequence-table td:last-child{border-left:0}.context-table thead tr,.context-table tbody tr{grid-template-columns:repeat(3,minmax(0,1fr))}.context-table td+td{border-left:1px solid var(--line)}footer{align-items:flex-start}footer div{flex-direction:column;gap:7px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 .primary-tabs{gap:8px;margin-bottom:18px}.primary-tabs button{font-size:15px;font-weight:650;padding:11px 18px}.section-tabs{gap:4px}.section-tabs button{font-size:13px;padding:9px 12px}.section-tabs button[aria-pressed="true"]{background:#eaf0e7;color:var(--green)}#pronunciation-controls[hidden]{display:none}
+.primary-tabs button[data-tab="practica"][aria-pressed="true"]{background:#8a5c3a;color:#fffaf3}
+.is-practicing footer{justify-content:flex-end}
 @media(max-width:700px){.primary-tabs{margin-bottom:14px}.primary-tabs button{font-size:14px;padding:10px 15px}.section-tabs{gap:2px}.section-tabs button{font-size:12px;padding:9px 10px}.toolbar{gap:10px}}
 .entries{align-items:flex-start}td{vertical-align:top}.series{height:14px;line-height:14px;white-space:nowrap}.letters,.symbols{align-items:baseline;flex-wrap:nowrap}.letters{min-height:35px}.symbols{min-height:30px}.empty-letter{display:flex;align-items:center;justify-content:center;font-size:23px;line-height:1.2;min-width:35px;min-height:35px;padding:3px 6px}
 @media(max-width:700px){.letters{min-height:40px}.symbols{min-height:36px}.empty-letter{font-size:22px;min-height:40px;min-width:40px}}
@@ -39,8 +41,8 @@ body.is-practicing{background:#f5f4f0;color:#24322b;min-height:100dvh}
 .vocabulary-study{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:25px;min-height:480px;min-height:clamp(410px,calc(100svh - 270px),570px);padding:30px 0 24px}.vocabulary-flashcard{display:block;width:min(100%,460px);perspective:1400px;background:none;border:0;border-radius:23px;padding:0;color:#24322b;text-align:center}.vocabulary-flip-inner{display:grid;transform-style:preserve-3d;transition:transform .45s cubic-bezier(.2,.7,.2,1)}.vocabulary-flashcard.is-flipped .vocabulary-flip-inner{transform:rotateY(180deg)}.vocabulary-face{grid-area:1/1;display:grid;grid-template-rows:auto 1fr auto;align-items:center;gap:23px;min-height:310px;min-width:0;padding:28px 32px;border:1px solid #d6ccbe;border-radius:23px;background:#fffdf9;box-shadow:0 5px 0 #e5ddd0,0 14px 35px #4c392010;backface-visibility:hidden;-webkit-backface-visibility:hidden}.vocabulary-back{transform:rotateY(180deg);background:#f0e6d9;border-color:#cbb397}.vocabulary-face-label{font-size:10px;font-weight:650;text-transform:uppercase;letter-spacing:.16em;color:#8a5c3a}.vocabulary-word{font-size:clamp(30px,5vw,46px);font-weight:650;line-height:1.5;word-break:keep-all;overflow-wrap:anywhere;min-width:0}.vocabulary-meaning{font-size:clamp(24px,4vw,32px);font-weight:600;line-height:1.45;overflow-wrap:anywhere;min-width:0}.vocabulary-face-hint{font-size:11px;color:#727a73;line-height:1.4}.vocabulary-actions{width:min(100%,460px);display:flex;justify-content:center}.vocabulary-actions .practice-primary{min-width:200px}.vocabulary-finished{display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center;padding:70px 0 55px}.vocabulary-finished-mark{display:grid;place-items:center;width:70px;height:70px;border-radius:50%;background:#eaf0e7;color:#286247;font-size:32px}.vocabulary-finished h3{font-size:26px;margin:4px 0}.vocabulary-finished .practice-note{margin:0 0 7px}
 @media(max-width:700px){.practice-mode-card.vocabulary{grid-template-columns:32px minmax(0,1fr) auto;gap:5px 9px}.practice-mode-card.vocabulary .practice-mode-count{font-size:10px}.vocabulary-books{gap:12px;margin-top:21px}.vocabulary-book{padding:19px 16px;gap:12px;border-radius:14px}.vocabulary-book-level{width:49px;height:57px;font-size:21px}.vocabulary-book-title{font-size:19px}.vocabulary-book-count{font-size:11px}.vocabulary-units{grid-template-columns:1fr;gap:10px;margin-top:20px}.vocabulary-unit{padding:16px}.vocabulary-session h2{font-size:20px}.vocabulary-topic{font-size:13px}.vocabulary-study{gap:24px;min-height:clamp(380px,calc(100svh - 250px),530px);padding:25px 0 20px}.vocabulary-face{min-height:285px;padding:25px 23px;gap:22px;border-radius:20px}.vocabulary-word{font-size:34px}.vocabulary-meaning{font-size:26px}.vocabulary-actions .practice-primary{width:100%}.vocabulary-finished{padding:55px 0 45px}}
 @media(prefers-reduced-motion:reduce){.vocabulary-flip-inner{transition:none}}
-.vocabulary-access{margin:24px 0 0;border:1px solid #d6ccbe;background:#f4ede3;border-radius:13px;padding:17px 19px}.vocabulary-access-line{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.vocabulary-access-summary{font-size:13px;font-weight:650;color:#754a2c}.vocabulary-code-toggle{border:0;background:transparent;color:#754a2c;padding:4px 0;font-size:12px;text-decoration:underline;text-underline-offset:3px}.vocabulary-code-form{margin-top:16px;max-width:540px}.vocabulary-code-form[hidden]{display:none}.vocabulary-code-form label{display:block;font-size:12px;font-weight:600;margin-bottom:8px}.vocabulary-code-input{display:block;width:100%;resize:vertical;min-height:80px;border:1px solid #b4bdb2;border-radius:9px;background:#fffdf9;color:#24322b;font:13px/1.65 ui-monospace,monospace;padding:12px;box-sizing:border-box}.vocabulary-code-input:focus{outline:2px solid #8a5c3a;outline-offset:2px}.vocabulary-code-help{font-size:11px;color:#727a73;line-height:1.6;margin:10px 0 14px}.vocabulary-code-form .practice-primary{font-size:13px;padding:10px 22px}.vocabulary-code-feedback{font-size:12px;color:#727a73;line-height:1.6;margin:11px 0 0}.vocabulary-code-feedback:empty{display:none}.vocabulary-code-feedback.error-message{color:#983b22}.vocabulary-access-notice{font-size:12px;color:#286247;line-height:1.65;margin:12px 0 0}.vocabulary-access-badge{display:inline-block;border-radius:20px;padding:4px 9px;background:#eaf0e7;color:#286247;font-size:10px;line-height:1.5}.vocabulary-book.is-locked,.vocabulary-unit.is-locked{cursor:default;background:#f1f0ec;border-color:#dddcd6;color:#727a73}.vocabulary-book.is-locked .vocabulary-book-level{background:#e8e6e0;border-color:#999b92;color:#727a73}.is-locked .vocabulary-access-badge{background:#e5e4de;color:#727a73}.vocabulary-unit.is-locked .vocabulary-unit-count{color:#727a73}.vocabulary-book:disabled,.vocabulary-unit:disabled{opacity:1}
-@media(max-width:700px){.vocabulary-access{padding:16px}.vocabulary-access-summary{font-size:12px}.vocabulary-access-badge{font-size:9px}.vocabulary-code-form .practice-primary{width:100%}}
+.vocabulary-access{margin:24px 0 0;border:1px solid #d6ccbe;background:#f4ede3;border-radius:13px;padding:17px 19px}.vocabulary-access-line{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.vocabulary-access-summary{font-size:13px;font-weight:650;color:#754a2c}.vocabulary-code-toggle{border:0;background:transparent;color:#754a2c;padding:4px 0;font-size:12px;text-decoration:underline;text-underline-offset:3px}.vocabulary-code-form{margin-top:16px;max-width:540px}.vocabulary-code-form[hidden]{display:none}.vocabulary-code-form label{display:block;font-size:12px;font-weight:600;margin-bottom:8px}.vocabulary-code-entry{display:flex;align-items:center;flex-wrap:wrap;gap:10px}.vocabulary-code-input{display:block;width:132px;max-width:100%;height:46px;border:1px solid #b4bdb2;border-radius:9px;background:#fffdf9;color:#24322b;font:18px/1.4 ui-monospace,monospace;letter-spacing:.1em;text-align:center;padding:10px 12px;box-sizing:border-box}.vocabulary-code-input:focus{outline:2px solid #8a5c3a;outline-offset:2px}.vocabulary-code-help{font-size:11px;color:#727a73;line-height:1.6;margin:10px 0 14px}.vocabulary-code-form .practice-primary{font-size:13px;padding:10px 17px;min-height:46px;width:auto}.vocabulary-code-feedback{font-size:12px;color:#727a73;line-height:1.6;margin:11px 0 0}.vocabulary-code-feedback:empty{display:none}.vocabulary-code-feedback.error-message{color:#983b22}.vocabulary-access-notice{font-size:12px;color:#286247;line-height:1.65;margin:12px 0 0}.vocabulary-access-badge{display:inline-block;border-radius:20px;padding:4px 9px;background:#eaf0e7;color:#286247;font-size:10px;line-height:1.5}.vocabulary-book.is-locked,.vocabulary-unit.is-locked{cursor:default;background:#f1f0ec;border-color:#dddcd6;color:#727a73}.vocabulary-book.is-locked .vocabulary-book-level{background:#e8e6e0;border-color:#999b92;color:#727a73}.is-locked .vocabulary-access-badge{background:#e5e4de;color:#727a73}.vocabulary-unit.is-locked .vocabulary-unit-count{color:#727a73}.vocabulary-book:disabled,.vocabulary-unit:disabled{opacity:1}
+@media(max-width:700px){.vocabulary-access{padding:16px}.vocabulary-access-summary{font-size:12px}.vocabulary-access-badge{font-size:9px}.vocabulary-code-form .practice-primary{width:auto}}
 </style>
 </head><body>
 <div class="page">
@@ -235,7 +237,10 @@ SOFTWARE.
 window.VocabularyAccessCore = (() => {
   const prefix = 'BBL1';
   const encoder = new TextEncoder();
-  const normalize = code => String(code || '').replace(/\s/g, '');
+  const normalize = code => {
+    const clean = String(code || '').replace(/\s/g, '');
+    return clean.length <= 6 ? clean.toUpperCase() : clean;
+  };
   const encode = bytes => btoa(String.fromCharCode(...bytes)).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
   function decode(text) {
     if (!/^[A-Za-z0-9_-]+$/.test(text)) throw new Error('invalid');
@@ -248,9 +253,26 @@ window.VocabularyAccessCore = (() => {
     let cutoff = -1, master = false, receipt = null, persistent = true;
     let verificationKey;
     const keys = new Map(config.scopes.map((scope, i) => [scope.book + ':' + scope.unit, i]));
+    const short = config.shortCodes, shortGrants = new Map();
+    short?.hashes.forEach((week, w) => week.forEach((hash, target) => shortGrants.set(hash, {
+      cutoff: target, master: false, starts: short.epoch + w * short.periodSeconds,
+      expires: short.epoch + (w + 1) * short.periodSeconds
+    })));
     async function verify(raw, allowExpired = false) {
       try {
-        const code = normalize(raw), parts = code.split('.');
+        const code = normalize(raw);
+        if (/^[A-Z0-9]{6}$/.test(code) && short) {
+          if (!crypto?.subtle) throw new Error('unsupported');
+          const hash = encode(new Uint8Array(await crypto.subtle.digest('SHA-256', encoder.encode(config.id + ':short:' + code))));
+          if (hash === short.masterHash) return {code, master: true, cutoff: config.scopes.length - 1, expires: 0};
+          const grant = shortGrants.get(hash);
+          if (!grant || grant.cutoff >= config.scopes.length) throw new Error('invalid');
+          if (now() < grant.starts * 1000) throw new Error('not-yet-valid');
+          if (!allowExpired && now() >= grant.expires * 1000) throw new Error('expired');
+          return {...grant, code};
+        }
+        // Keep previously saved signed receipts valid when upgrading to six-character codes.
+        const parts = code.split('.');
         if (parts.length !== 3 || parts[0] !== prefix || code.length > 256) throw new Error('invalid');
         const body = decode(parts[1]), signature = decode(parts[2]);
         if (body.length !== 18 || signature.length !== 64 || body[0] !== 1) throw new Error('invalid');
@@ -265,7 +287,7 @@ window.VocabularyAccessCore = (() => {
         if (!allowExpired && !isMaster && now() >= expires * 1000) throw new Error('expired');
         return {code, master: isMaster, cutoff: isMaster ? config.scopes.length - 1 : target, expires};
       } catch (error) {
-        if (['invalid', 'expired', 'unsupported'].includes(error.message)) throw error;
+        if (['invalid', 'expired', 'unsupported', 'not-yet-valid'].includes(error.message)) throw error;
         throw new Error('invalid');
       }
     }
@@ -283,7 +305,7 @@ window.VocabularyAccessCore = (() => {
         }
       } catch (error) {
         // A broken or unavailable browser store never opens extra units.
-        if (!['invalid', 'expired', 'unsupported'].includes(error.message)) persistent = false;
+        if (!['invalid', 'expired', 'unsupported', 'not-yet-valid'].includes(error.message)) persistent = false;
       }
       return status();
     }
@@ -360,7 +382,7 @@ window.createVocabularyFlashcards = function ({data, accessConfig, node, onBack}
     const panel = node('div', undefined, 'vocabulary-access');
     const line = node('div', undefined, 'vocabulary-access-line');
     const summary = current.master ? 'Acceso máster · todos los libros' : current.scope ?
-      'Abierto hasta ' + current.scope.bookLabel + ' · ' + current.scope.unitLabel : 'Abre tu vocabulario';
+      'Abierto hasta ' + current.scope.book + ' · ' + current.scope.unitLabel : 'Abre tu vocabulario';
     line.append(node('span', summary, 'vocabulary-access-summary'));
     const form = node('form', undefined, 'vocabulary-code-form');
     form.hidden = current.cutoff >= 0;
@@ -375,17 +397,23 @@ window.createVocabularyFlashcards = function ({data, accessConfig, node, onBack}
     if (current.cutoff >= 0) line.append(toggle);
     panel.append(line);
     const label = node('label', 'Código de tu profesor');label.htmlFor = 'vocabulary-code';
-    const input = node('textarea', undefined, 'vocabulary-code-input');
-    input.id = 'vocabulary-code';input.name = 'code';input.rows = 3;input.maxLength = 256;input.required = true;
+    const input = node('input', undefined, 'vocabulary-code-input');
+    input.type = 'text';input.id = 'vocabulary-code';input.name = 'code';input.size = 6;input.maxLength = 6;input.required = true;
+    input.pattern = '[A-Za-z0-9]{6}';input.title = '6 letras y números';
     input.autocomplete = 'off';input.spellcheck = false;input.setAttribute('autocapitalize', 'none');
-    input.placeholder = 'Pega aquí tu código';
+    input.placeholder = 'Código';
+    input.addEventListener('input', () => {
+      const upper = input.value.toUpperCase();
+      if (upper !== input.value) {const start = input.selectionStart, end = input.selectionEnd;input.value = upper;input.setSelectionRange(start, end);}
+    });
     input.setAttribute('aria-describedby', 'vocabulary-code-help vocabulary-code-feedback');
-    const help = node('p', 'El código abre tu unidad y todas las anteriores. Tu acceso queda guardado en este navegador.', 'vocabulary-code-help');
+    const help = node('p', '6 letras y números. Abre tu unidad y las anteriores; el acceso queda guardado en este navegador.', 'vocabulary-code-help');
     help.id = 'vocabulary-code-help';
     const feedback = node('p', undefined, 'vocabulary-code-feedback');
     feedback.id = 'vocabulary-code-feedback';feedback.setAttribute('role', 'status');feedback.setAttribute('aria-live', 'polite');
     const submit = button('Desbloquear', 'practice-primary', () => {});submit.type = 'submit';
-    form.append(label, input, help, submit, feedback);
+    const entry = node('div', undefined, 'vocabulary-code-entry');entry.append(input, submit);
+    form.append(label, entry, help, feedback);
     form.addEventListener('submit', async event => {
       event.preventDefault();
       const turn = generation;
@@ -395,13 +423,14 @@ window.createVocabularyFlashcards = function ({data, accessConfig, node, onBack}
         if (!host || turn !== generation) return;
         const target = result.scope;
         state.notice = result.master ? '¡Listo! Todos los libros están abiertos.' :
-          '¡Listo! Puedes repasar hasta ' + target.bookLabel + ' · ' + target.unitLabel + '.';
+          '¡Listo! Puedes repasar hasta ' + target.book + ' · ' + target.unitLabel + '.';
         if (!result.persistent) state.notice += ' Este navegador no permite guardar el acceso. Tendrás que introducir el código de nuevo al cerrar la página.';
         if (state.book) showUnits(); else showBooks();
       } catch (error) {
         if (!host || turn !== generation) return;
         feedback.classList.add('error-message');
         feedback.textContent = error.message === 'expired' ? 'Este código ha caducado. Pide a tu profesor uno nuevo para tu unidad actual.' :
+          error.message === 'not-yet-valid' ? 'Este código todavía no está activo. Comprueba la fecha con tu profesor.' :
           error.message === 'unsupported' ? 'Abre la página con HTTPS en una versión actual de Chrome o Safari para introducir el código.' :
           'Código no válido. Comprueba que lo has copiado completo.';
         input.readOnly = false;submit.disabled = false;input.focus();
@@ -425,7 +454,7 @@ window.createVocabularyFlashcards = function ({data, accessConfig, node, onBack}
       card.disabled = opened === 0;
       card.classList.toggle('is-locked', !opened);
       card.dataset.book = book.id;
-      card.append(node('span', book.id, 'vocabulary-book-level'), node('span', book.label, 'vocabulary-book-title'),
+      card.append(node('span', book.id, 'vocabulary-book-level'), node('span', book.id, 'vocabulary-book-title'),
         node('span', book.units.length + ' secciones · ' + book.cardCount.toLocaleString('es-ES') + ' tarjetas', 'vocabulary-book-count'),
         node('span', opened === 0 ? 'Bloqueado' : opened === book.units.length ? 'Libro abierto' : opened + ' de ' + book.units.length + ' secciones abiertas', 'vocabulary-access-badge'));
       grid.append(card);
@@ -436,7 +465,7 @@ window.createVocabularyFlashcards = function ({data, accessConfig, node, onBack}
   function showUnits() {
     state.unit = state.deck = null;
     const root = shell('Libros', showBooks);
-    heading(root, state.book.label, 'Elige una unidad.');
+    heading(root, state.book.id, 'Elige una unidad.');
     accessPanel(root);
     const list = node('div', undefined, 'vocabulary-units');
     for (const unit of state.book.units) {
@@ -465,7 +494,7 @@ window.createVocabularyFlashcards = function ({data, accessConfig, node, onBack}
     if (!access.has(state.book.id, state.unit.id)) {showUnits();return;}
     const root = shell('Unidades', showUnits);
     root.classList.add('vocabulary-session');
-    heading(root, state.book.label + ' · ' + state.unit.label);
+    heading(root, state.book.id + ' · ' + state.unit.label);
     const topic = node('p', state.unit.topic, 'vocabulary-topic');
     topic.lang = 'ko';
     root.append(topic);
@@ -961,7 +990,8 @@ window.createHangulPractice = function ({data, vocabularyData, vocabularyAccess,
     }
     const context=state.section==='contextos', exercising=state.tab==='practica';
     document.body.classList.toggle('is-practicing',exercising);
-    $('audio-legend').textContent=exercising?'Audio: botón marrón':'Verde: audio';
+    $('audio-legend').textContent='Verde: audio';
+    $('audio-legend').hidden=exercising;
     $('pronunciation-controls').hidden=exercising;
     $('model').closest('label').hidden=context || exercising;
     document.querySelector('header .hint').textContent=exercising?'Escucha, sigue los trazos y forma sílabas.':'Pulsa una letra coreana en verde para escuchar.';
