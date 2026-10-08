@@ -593,7 +593,7 @@ window.createHangulPractice = function ({data, vocabularyData, vocabularyAccess,
   function start(mode=state.mode,deck) {
     stop();state.mode=mode;state.deck=deck || core.round(data.entries,mode,Math.random,data.syllables);state.index=0;state.results=[];clearAnswer();paint();host.querySelector('h2')?.focus({preventScroll:true});
   }
-  function showModes() {stop();vocabulary.unmount();state.deck=null;clearAnswer();paint();host.querySelector('h2')?.focus({preventScroll:true});}
+  function showModes() {stop();vocabulary.unmount();state.deck=null;clearAnswer();paint();host.querySelector('.practice-mode-card')?.focus({preventScroll:true});}
   function openVocabulary() {stop();state.deck=null;clearAnswer();vocabulary.mount(host);}
   function modeIcon(mode) {
     const visual=node('span',undefined,'practice-mode-icon');visual.setAttribute('aria-hidden','true');
@@ -609,8 +609,6 @@ window.createHangulPractice = function ({data, vocabularyData, vocabularyAccess,
     return visual;
   }
   function modeMenu(root) {
-    const title=node('h2','¿Qué quieres practicar?');title.tabIndex=-1;
-    root.append(title,node('p','Elige una actividad para empezar.','practice-note'));
     const grid=node('div',undefined,'practice-mode-grid');
     const pronunciation=button('','practice-mode-card pronunciation',onPronunciation);pronunciation.dataset.mode='pronunciation';
     pronunciation.setAttribute('aria-label','Pronunciación');
@@ -1020,7 +1018,7 @@ window.createHangulPractice = function ({data, vocabularyData, vocabularyAccess,
     data: JSON.parse($('practice-data').textContent), vocabularyData: JSON.parse($('vocabulary-data').textContent), vocabularyAccess: JSON.parse($('vocabulary-access-data').textContent), node, sound, stop,
     onPronunciation() {state.view='pronunciacion';render();$('home-button').focus({preventScroll:true});}
   });
-  $('home-button').addEventListener('click',()=>{state.view='home';render();$('main').querySelector('h2')?.focus({preventScroll:true});});
+  $('home-button').addEventListener('click',()=>{state.view='home';render();$('main').querySelector('.practice-mode-card')?.focus({preventScroll:true});});
   $('model').addEventListener('change',render);
   audio.addEventListener('ended',clearPlaying);audio.addEventListener('error',clearPlaying);
   document.addEventListener('keydown',event=>{if(event.key==='Escape')stop();});
