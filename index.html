@@ -334,7 +334,7 @@ window.createHangulPractice = function ({data, node, sound, stop}) {
     const glyph=data.glyphs[q.target.letter];
     board.replaceChildren();
     const defs=svgNode('defs'),reveal=svgNode('mask',{id:'trace-reveal',maskUnits:'userSpaceOnUse',x:0,y:0,width:100,height:100,style:'mask-type:luminance'});
-    // Paths live only inside this reveal mask. The visible white letter is the
+    // Paths live only inside this reveal mask. The visible traced letter is the
     // very same PDF image as the gray guide, preserving its exact stroke width.
     for(let i=0;i<active;i++)reveal.append(svgNode('path',{d:pathData(glyph.revealRails[i]),class:'trace-reveal-path',stroke:'#fff','stroke-width':glyph.inkWidth}));
     if(active===paths.length)reveal.append(svgNode('rect',{x:0,y:0,width:100,height:100,fill:'#fff'}));
@@ -344,9 +344,11 @@ window.createHangulPractice = function ({data, node, sound, stop}) {
     }
     defs.append(reveal);
     const white=svgNode('filter',{id:'trace-white','color-interpolation-filters':'sRGB'});
-    white.append(svgNode('feColorMatrix',{type:'matrix',values:'0 0 0 0 .15686275 0 0 0 0 .38431373 0 0 0 0 .27843137 0 0 0 1 0'}));defs.append(white);board.append(defs);
+    white.append(svgNode('feColorMatrix',{type:'matrix',values:'0 0 0 0 .06666667 0 0 0 0 .06666667 0 0 0 0 .06666667 0 0 0 1 0'}));defs.append(white);
+    const gray=svgNode('filter',{id:'trace-gray','color-interpolation-filters':'sRGB'});
+    gray.append(svgNode('feColorMatrix',{type:'matrix',values:'0 0 0 0 .83137255 0 0 0 0 .83137255 0 0 0 0 .83137255 0 0 0 1 0'}));defs.append(gray);board.append(defs);
     board.append(svgNode('path',{d:'M50 6V94 M6 50H94',class:'trace-grid'}));
-    board.append(svgNode('image',{href:glyph.image,x:0,y:0,width:100,height:100,class:'trace-source-image','data-source-glyph':glyph.sourceGlyphId}));
+    board.append(svgNode('image',{href:glyph.image,x:0,y:0,width:100,height:100,filter:'url(#trace-gray)',class:'trace-source-image','data-source-glyph':glyph.sourceGlyphId}));
     board.append(svgNode('image',{href:glyph.image,x:0,y:0,width:100,height:100,filter:'url(#trace-white)',mask:'url(#trace-reveal)',class:'trace-recolored-image'}));
     if(active<paths.length && !state.checked) {
       const path=paths[active];
