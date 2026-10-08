@@ -1,1 +1,5 @@
 .DS_Store
+private/
+*signing-key*
+*master-code*
+Códigos_BBlingua.html
