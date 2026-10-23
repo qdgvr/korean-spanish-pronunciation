@@ -843,15 +843,9 @@ window.createVocabularyTest = function ({cards, illustrations, node, onBack, isA
   canContinue = async () => true, onAccessError, title = ''}) {
   const core = window.VocabularyTestCore;
   let source = cards.slice(), host = null, root = null, generation = 0, busy = false;
-  let mode = 'mixed', round = [], answers = [], index = 0, selected = null, checked = false;
+  let round = [], answers = [], index = 0, selected = null, checked = false;
   const imageItems = new Map((illustrations?.items || []).map(item => [item.id, item]));
   const imageIds = [...imageItems.keys()];
-  const modes = [
-    {id: 'mixed', name: 'Mezcla', icon: '↔', note: 'Combina los tipos de preguntas disponibles.'},
-    {id: 'es-ko', name: 'Español → coreano', icon: 'ES → 가', note: 'Lee el significado y elige la palabra en coreano.'},
-    {id: 'ko-es', name: 'Coreano → español', icon: '가 → ES', note: 'Lee la palabra y elige su significado en español.'},
-    {id: 'image-ko', name: 'Ilustración → coreano', icon: '▧ → 가', note: 'Mira una ilustración y elige la palabra en coreano.'}
-  ];
   const button = (text, className, action) => {
     const result = node('button', text, className);
     result.type = 'button';result.addEventListener('click', action);return result;
@@ -919,39 +913,14 @@ window.createVocabularyTest = function ({cards, illustrations, node, onBack, isA
       }
     }
   }
-  function showSetup() {
+  function startRound() {
     if (!active()) return;
-    round = [];answers = [];index = 0;selected = null;checked = false;
-    const counts = core.availableCounts(source, {imageIds});
-    if (!counts[mode]) mode = modes.find(item => counts[item.id])?.id || 'mixed';
+    round = core.makeRound(source, {mode: 'mixed', limit: 12, imageIds});
+    answers = [];index = 0;selected = null;checked = false;
+    if (round.length) {showQuestion();return;}
     const section = shell('Unidades', leave);
-    heading(section, 'Pon a prueba tu vocabulario', 'Elige un tipo de test. Cada ronda contiene hasta 12 preguntas en orden aleatorio.');
-    const choices = node('div', undefined, 'vocabulary-test-modes');
-    choices.setAttribute('role', 'group');choices.setAttribute('aria-label', 'Tipo de test');
-    const start = button('', 'practice-primary vocabulary-test-start', () => permitted(() => {
-      round = core.makeRound(source, {mode, limit: 12, imageIds});
-      answers = [];index = 0;selected = null;checked = false;
-      if (round.length) showQuestion();
-    }));
-    const items = new Map();
-    function updateMode() {
-      for (const [id, item] of items) {
-        const chosen = id === mode;item.classList.toggle('is-selected', chosen);item.setAttribute('aria-pressed', String(chosen));
-      }
-      const total = Math.min(12, counts[mode] || 0);
-      start.textContent = total ? 'Empezar · ' + total + (total === 1 ? ' pregunta' : ' preguntas') : 'No hay preguntas disponibles';
-      start.disabled = !total;
-    }
-    for (const entry of modes) {
-      const item = button('', 'vocabulary-test-mode', () => {if (!busy) {mode = entry.id;updateMode();}});
-      item.disabled = !counts[entry.id];
-      const icon = node('span', entry.icon, 'vocabulary-test-mode-icon');icon.setAttribute('aria-hidden', 'true');
-      item.append(icon, node('span', entry.name, 'vocabulary-test-mode-name'), node('span', entry.note, 'vocabulary-test-mode-note'));
-      item.append(node('span', counts[entry.id] ? counts[entry.id] + (counts[entry.id] === 1 ? ' pregunta disponible' : ' preguntas disponibles') :
-        entry.id === 'image-ko' ? 'Esta unidad no tiene ilustraciones disponibles.' : 'Faltan opciones distintas para este tipo de test.', 'vocabulary-test-mode-count'));
-      items.set(entry.id, item);choices.append(item);
-    }
-    updateMode();section.append(choices, start);present(section);
+    heading(section, 'No hay preguntas disponibles', 'Esta unidad necesita al menos dos palabras distintas para crear un test.');
+    section.append(button('Volver a las unidades', 'practice-primary', leave));present(section);
   }
   function illustration(question) {
     const item = imageItems.get(question.imageId);
@@ -983,12 +952,12 @@ window.createVocabularyTest = function ({cards, illustrations, node, onBack, isA
     if (!active()) return;
     const question = round[index];
     if (!question) {showResults();return;}
-    const section = shell('Tipos de test', () => {if (busy) leave();else showSetup();});
+    const section = shell('Unidades', leave);
     const labels = {'es-ko': 'Elige la palabra en coreano', 'ko-es': 'Elige el significado en español', 'image-ko': '¿Qué ves en la ilustración?'};
     heading(section, labels[question.type] || 'Elige la respuesta correcta');
     const status = node('div', undefined, 'vocabulary-test-status');
     status.append(node('span', 'Pregunta ' + (index + 1) + ' de ' + round.length),
-      node('span', modes.find(item => item.id === mode)?.name || 'Test'));
+      node('span', 'Mezcla'));
     const progress = node('progress', undefined, 'practice-progress');progress.max = round.length;progress.value = index;
     progress.setAttribute('aria-label', 'Preguntas terminadas');
     const prompt = node('div', undefined, 'vocabulary-test-prompt');
@@ -1057,12 +1026,12 @@ window.createVocabularyTest = function ({cards, illustrations, node, onBack, isA
     if (missed.length) actions.append(button('Repetir fallos · ' + missed.length, 'practice-primary', () => permitted(() => {
       round = core.reshuffleQuestions(missed);answers = [];index = 0;selected = null;checked = false;showQuestion();
     })));
-    actions.append(button('Nuevo test', missed.length ? 'practice-secondary' : 'practice-primary', () => permitted(showSetup)),
+    actions.append(button('Nuevo test', missed.length ? 'practice-secondary' : 'practice-primary', () => permitted(startRound)),
       button('Volver a las unidades', 'practice-text-button', leave));
     result.append(actions);section.append(result);present(section);
   }
   return {
-    mount(container) {host = container;generation++;showSetup();},
+    mount(container) {host = container;generation++;startRound();},
     unmount() {
       generation++;
       if (host && root?.parentNode === host) host.replaceChildren();
