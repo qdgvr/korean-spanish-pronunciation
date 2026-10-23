@@ -52,6 +52,9 @@ body.is-practicing{background:var(--paper);color:var(--ink);min-height:100dvh}
 
 .practice-mode-card.vocabulary,.practice-mode-card.activities{grid-column:1/-1}
 
+.practice-mode-grid.practice-home-grid{grid-template-columns:minmax(0,1fr);grid-auto-rows:1fr}.practice-home-grid .practice-mode-card.letters{--home-card-color:#F69F29}.practice-home-grid .practice-mode-card.vocabulary{--home-card-color:#00A8EC}.practice-home-grid .practice-mode-card.activities{--home-card-color:#D10053}.practice-mode-grid.practice-home-grid>.practice-mode-card{grid-column:1/-1;grid-template-columns:42px minmax(0,1fr) auto;gap:5px 16px;min-height:106px;background:var(--home-card-color);border-color:var(--home-card-color);color:#FFFFFF}.practice-mode-grid.practice-home-grid>.practice-mode-card:hover{background:var(--home-card-color);border-color:var(--home-card-color);box-shadow:inset 0 0 0 2px #FFFFFF44}.practice-home-grid>.practice-mode-card .practice-mode-icon{grid-row:1/3;align-self:center;width:42px;height:42px;background:#FFFFFF24;color:#FFFFFF}.practice-home-grid>.practice-mode-card .practice-mode-title,.practice-home-grid>.practice-mode-card .practice-mode-description{grid-column:2;color:#FFFFFF}.practice-home-grid>.practice-mode-card .practice-mode-count{grid-column:3;grid-row:1/3;align-self:center;white-space:nowrap;background:#FFFFFF24;color:#FFFFFF;border-radius:20px;padding:7px 10px}
+@media(max-width:700px){.practice-mode-grid.practice-home-grid>.practice-mode-card{grid-template-columns:36px minmax(0,1fr) auto;gap:5px 10px;min-height:100px}.practice-home-grid>.practice-mode-card .practice-mode-icon{width:36px;height:36px}.practice-home-grid>.practice-mode-card .practice-mode-count{padding:6px 8px}}
+
 .practice-mode-card.vocabulary{grid-column:1/-1;grid-template-columns:38px minmax(0,1fr) auto;gap:5px 12px;border-color:var(--line);background:var(--paper)}.practice-mode-card.vocabulary:hover{border-color:var(--action);background:var(--panel-soft)}.practice-mode-card.vocabulary .practice-mode-icon{grid-row:1/3}.practice-mode-card.vocabulary .practice-mode-title,.practice-mode-card.vocabulary .practice-mode-description{grid-column:2}.practice-mode-card.vocabulary .practice-mode-count{grid-column:3;grid-row:1/3;align-self:center;white-space:nowrap}
 .vocabulary-books{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:26px}.vocabulary-book{display:flex;flex-direction:column;align-items:flex-start;gap:14px;border:1px solid var(--line);border-radius:17px;background:var(--paper);color:var(--ink);text-align:left;padding:26px}.vocabulary-book:hover{border-color:var(--action);background:var(--panel-warm)}.vocabulary-book-level{display:grid;place-items:center;width:58px;height:66px;border-radius:6px 13px 13px 6px;background:var(--panel-warm-selected);color:var(--ink);border-left:4px solid var(--progress);font-size:23px;font-weight:700}.vocabulary-book-title{font-size:21px;font-weight:650}.vocabulary-book-count{font-size:12px;color:var(--muted);line-height:1.5}
 .vocabulary-units{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:24px}.vocabulary-unit{display:grid;grid-template-columns:1fr auto;gap:9px 12px;border:1px solid var(--line);border-radius:13px;background:var(--paper);color:var(--ink);padding:18px;text-align:left;min-width:0}.vocabulary-unit:hover{border-color:var(--action);background:var(--panel-warm)}.vocabulary-unit-label{font-size:15px;font-weight:650}.vocabulary-unit-count{font-size:11px;color:var(--muted);align-self:center;white-space:nowrap}.vocabulary-unit-topic{grid-column:1/-1;font-size:13px;color:var(--muted);line-height:1.65;overflow-wrap:anywhere}.vocabulary-session h2{font-size:22px;margin-bottom:7px}.vocabulary-topic{font-size:14px;color:var(--muted);line-height:1.6;margin:0 0 19px;overflow-wrap:anywhere}.vocabulary-counter{font-size:11px;color:var(--muted);margin:0 0 8px}.vocabulary-session .practice-progress{height:5px;margin-bottom:0}
@@ -107,7 +110,7 @@ body.is-practicing{background:var(--paper);color:var(--ink);min-height:100dvh}
 <path d="M0 0 C1.99 -0.01 3.98 -0.04 5.96 -0.07 C7.23 -0.08 8.49 -0.08 9.75 -0.09 C10.32 -0.09 10.32 -0.09 13.23 -0.12 C16 0.24 16 0.24 17.15 1.52 C18.14 3.54 18.25 4.88 18.25 7.12 C18.26 7.51 18.26 7.51 18.28 9.49 C18.27 9.92 18.27 9.92 18.27 12.09 C18.27 12.99 18.28 13.89 18.28 14.83 C18.29 16.79 18.3 18.76 18.3 20.72 C18.3 23.82 18.32 26.93 18.34 30.03 C18.4 38.86 18.43 47.69 18.45 56.52 C18.47 61.92 18.5 67.32 18.54 72.71 C18.55 74.78 18.55 76.84 18.55 78.9 C18.56 81.77 18.57 84.65 18.6 87.52 C18.59 88.38 18.59 89.24 18.58 90.12 C18.59 90.9 18.6 91.68 18.61 92.49 C18.61 93.17 18.61 93.85 18.62 94.55 C19 96.24 19 96.24 20.39 97.46 C22.54 98.5 24.23 98.5 26.62 98.51 C27.55 98.52 28.49 98.53 29.45 98.54 C30.46 98.54 31.46 98.55 32.5 98.55 C34.62 98.57 36.75 98.6 38.87 98.62 C42.22 98.65 45.58 98.68 48.93 98.7 C52.16 98.72 55.39 98.76 58.62 98.8 C59.63 98.8 60.64 98.8 61.68 98.8 C62.61 98.81 63.54 98.83 64.5 98.84 C65.32 98.84 66.15 98.85 66.99 98.85 C69 99.24 69 99.24 70.26 100.6 C72 104.47 71.33 109.24 71.31 113.41 C71.31 115.23 71.33 117.06 71.36 118.88 C71.36 120.03 71.36 121.18 71.36 122.37 C71.36 123.42 71.37 124.47 71.37 125.56 C71 128.24 71 128.24 69.95 129.88 C66.95 131.96 63.87 131.65 60.34 131.61 C59.57 131.62 58.79 131.62 57.99 131.62 C55.42 131.63 52.84 131.62 50.27 131.6 C48.49 131.6 46.7 131.6 44.92 131.61 C41.18 131.6 37.44 131.59 33.7 131.58 C28.9 131.55 24.1 131.55 19.3 131.56 C15.61 131.56 11.93 131.56 8.24 131.55 C6.47 131.54 4.7 131.54 2.93 131.54 C0.46 131.54 -2.01 131.53 -4.48 131.51 C-5.22 131.52 -5.95 131.52 -6.71 131.52 C-11.78 131.47 -11.78 131.47 -14 129.24 C-14.25 127 -14.25 127 -14.24 124.14 C-14.25 123.06 -14.25 121.98 -14.25 120.87 C-14.25 119.67 -14.24 118.46 -14.23 117.26 C-14.23 116 -14.23 114.74 -14.23 113.48 C-14.23 110.05 -14.22 106.62 -14.21 103.19 C-14.19 99.61 -14.19 96.03 -14.19 92.44 C-14.18 85.66 -14.17 78.87 -14.15 72.09 C-14.13 64.36 -14.11 56.64 -14.1 48.91 C-14.08 33.02 -14.05 17.13 -14 1.24 C-9.89 -0.82 -4.56 0.01 0 0 Z " fill="#C1C1C1" transform="translate(1492.00390625,934.759765625)" />
 </svg><div id="account-header"></div></div><p class="hint">Pulsa una letra coreana para escuchar.</p></header>
 <div id="pronunciation-controls" hidden>
-<button id="home-button" class="practice-back pronunciation-back" type="button"><span aria-hidden="true">←</span><span>Inicio</span></button>
+<button id="home-button" class="practice-back pronunciation-back" type="button"><span aria-hidden="true">←</span><span>Letra</span></button>
 <div class="toolbar"><nav id="sections" class="section-tabs" aria-label="Pronunciación"></nav>
 <label class="model-label"><span class="sr-only">Modelo de pronunciación</span><select id="model"><option value="Seul_actual">Seúl actual</option><option value="Hoja1">Tradicional</option></select></label></div>
 </div>
@@ -1930,7 +1933,7 @@ window.createVocabularyFlashcards = function ({data, accessConfig, accountConfig
 window.BBlinguaStudyNavigation = {
   remember(view) {
     if (view === null) {try {window.sessionStorage.removeItem('bblingua-study-return');} catch (_) {}return;}
-    if (!['vocabulary', 'activities', 'home', 'pronunciation'].includes(view)) return;
+    if (!['vocabulary', 'activities', 'home', 'letters', 'pronunciation'].includes(view)) return;
     try {window.sessionStorage.setItem('bblingua-study-return', JSON.stringify({view, at: Date.now()}));} catch (_) {}
   },
   initial(enabled, href) {
@@ -1938,13 +1941,13 @@ window.BBlinguaStudyNavigation = {
     let url;
     try {url = new URL(href);} catch (_) {return null;}
     const requested = url.searchParams.get('view');
-    if (!['vocabulary', 'activities'].includes(requested)) return null;
+    if (!['vocabulary', 'activities', 'letters'].includes(requested)) return null;
     if (requested === 'vocabulary' && url.searchParams.has('code')) {
       try {
         const saved = JSON.parse(window.sessionStorage.getItem('bblingua-study-return'));
         window.sessionStorage.removeItem('bblingua-study-return');
         const age = Date.now() - saved?.at;
-        if (['vocabulary', 'activities', 'home', 'pronunciation'].includes(saved?.view) && Number.isFinite(age) && age >= 0 && age < 30 * 60 * 1000) return saved.view;
+        if (['vocabulary', 'activities', 'home', 'letters', 'pronunciation'].includes(saved?.view) && Number.isFinite(age) && age >= 0 && age < 30 * 60 * 1000) return saved.view;
       } catch (_) {}
     }
     return requested;
@@ -1954,9 +1957,9 @@ window.createHangulPractice = function ({data, vocabularyData, vocabularyAccess,
   const core=window.HangulPracticeCore;
   core.setGlyphs(data.glyphs);
   const modes=[['mixed','Mezcla'],['sound','Sonidos'],['trace','Trazos'],['assemble','Sílabas'],['listen','Escucha'],['vocabulary','Vocabulario'],['activities','Actividades']];
-  const descriptions={mixed:'Los cuatro tipos en una ronda.',sound:'Relaciona cada letra con su sonido.',trace:'Sigue los trazos para escribir hangul.',assemble:'Escucha y forma una sílaba.',listen:'Reconoce la sílaba que oyes.',vocabulary:'Tarjetas por libro y unidad.',activities:'Tests de vocabulario por libro y unidad.'};
+  const descriptions={letters:'Pronunciación y práctica de hangul.',mixed:'Los cuatro tipos en una ronda.',sound:'Relaciona cada letra con su sonido.',trace:'Sigue los trazos para escribir hangul.',assemble:'Escucha y forma una sílaba.',listen:'Reconoce la sílaba que oyes.',vocabulary:'Tarjetas por libro y unidad.',activities:'Tests de vocabulario por libro y unidad.'};
   const names={sound:'Letra → sonido',trace:'Traza la letra',assemble:'Forma la sílaba',listen:'Sonido → letra'};
-  const state={mode:'mixed',deck:null,index:0,results:[],answer:null,checked:false,ink:[],traceProgress:0,traceMistakes:0,slots:['',''],activeSlot:0};
+  const state={menu:'home',mode:'mixed',deck:null,index:0,results:[],answer:null,checked:false,ink:[],traceProgress:0,traceMistakes:0,slots:['',''],activeSlot:0};
   let host, feedback, check, board, pointerId=null, dragStart=0, studyRequest=0;
   const vocabulary=window.createVocabularyFlashcards({data:vocabularyData,accessConfig:vocabularyAccess,accountConfig,illustrations:vocabularyIllustrations,node,onBack:showModes,activityRecorder,onRequireSignIn});
   const icon=() => {
@@ -1979,12 +1982,14 @@ window.createHangulPractice = function ({data, vocabularyData, vocabularyAccess,
   }
   function start(mode=state.mode,deck) {
     state.attempt=activityRecorder?.start({activity:'hangul-'+mode});
-    stop();state.mode=mode;state.deck=deck || core.round(data.entries,mode,Math.random,data.syllables);state.index=0;state.results=[];clearAnswer();paint();host.querySelector('h2')?.focus({preventScroll:true});
+    stop();state.menu='letters';state.mode=mode;state.deck=deck || core.round(data.entries,mode,Math.random,data.syllables);state.index=0;state.results=[];clearAnswer();paint();host.querySelector('h2')?.focus({preventScroll:true});
   }
-  function showModes() {studyRequest++;stop();vocabulary.unmount();state.deck=null;clearAnswer();window.BBlinguaStudyNavigation.remember(null);onStudyOpen?.(null);paint();host.querySelector('.practice-mode-card')?.focus({preventScroll:true});}
+  function showMenu(menu) {studyRequest++;stop();vocabulary.unmount();state.menu=menu;state.deck=null;clearAnswer();window.BBlinguaStudyNavigation.remember(menu==='letters'?'letters':null);onStudyOpen?.(menu==='letters'?'letters':null);paint();host.querySelector('.practice-mode-card')?.focus({preventScroll:true});}
+  function showModes() {showMenu('home');}
+  function showLetters() {showMenu('letters');}
   async function openStudy(view, manageStudents=false) {
     const turn=++studyRequest;
-    stop();vocabulary.unmount();state.deck=null;clearAnswer();
+    stop();vocabulary.unmount();state.menu='home';state.deck=null;clearAnswer();
     window.BBlinguaStudyNavigation.remember(view);
     await vocabulary.mount(host,{activity:view==='activities'?'test':'cards'});
     if(host && turn===studyRequest){onStudyOpen?.(view);if(manageStudents)vocabulary.openStudents();}
@@ -1994,7 +1999,7 @@ window.createHangulPractice = function ({data, vocabularyData, vocabularyAccess,
   function openStudentManager() {return openStudy('vocabulary',true);}
   function modeIcon(mode) {
     const visual=node('span',undefined,'practice-mode-icon');visual.setAttribute('aria-hidden','true');
-    if(mode==='sound')visual.append(node('span','ㄱ'));
+    if(mode==='sound'||mode==='letters')visual.append(node('span','ㄱ'));
     else if(mode==='assemble')visual.append(node('span','가'));
     else if(mode==='listen'||mode==='pronunciation')visual.append(icon());
     else {
@@ -2006,22 +2011,30 @@ window.createHangulPractice = function ({data, vocabularyData, vocabularyAccess,
     return visual;
   }
   function modeMenu(root) {
-    const grid=node('div',undefined,'practice-mode-grid');
+    const letters=state.menu==='letters';
+    const grid=node('div',undefined,'practice-mode-grid '+(letters?'practice-letter-grid':'practice-home-grid'));
+    if(letters) {
+      const row=node('div',undefined,'practice-modes');
+      const back=button('','practice-back',showModes);const arrow=node('span','←');arrow.setAttribute('aria-hidden','true');back.append(arrow,node('span','Inicio'));
+      row.append(back,node('span','Letra','practice-eyebrow'));root.append(row);
     const pronunciation=button('','practice-mode-card pronunciation',onPronunciation);pronunciation.dataset.mode='pronunciation';
     pronunciation.setAttribute('aria-label','Pronunciación');
     const pronunciationDescription=node('span','Consonantes, vocales, combinaciones y ejemplos en contexto.','practice-mode-description');pronunciationDescription.id='pronunciation-description';
     pronunciation.setAttribute('aria-describedby',pronunciationDescription.id);
     pronunciation.append(modeIcon('pronunciation'),node('span','Pronunciación','practice-mode-title'),pronunciationDescription);grid.append(pronunciation);
-    for(const [mode,label] of modes) {
+    }
+    const visibleModes=letters?modes.filter(([mode])=>mode!=='vocabulary'&&mode!=='activities'):[['letters','Letra'],...modes.filter(([mode])=>mode==='vocabulary'||mode==='activities')];
+    for(const [mode,label] of visibleModes) {
       const study=mode==='vocabulary'||mode==='activities';
-      const count=study?vocabularyData.books.length+' libros':(mode==='mixed'?16:12)+' retos';
-      const card=button('','practice-mode-card'+(mode==='mixed'?' mixed':study?' '+mode:''),()=>study?openStudy(mode):start(mode));card.dataset.mode=mode;
+      const count=study?vocabularyData.books.length+' libros':mode==='letters'?'6 actividades':(mode==='mixed'?16:12)+' retos';
+      const card=button('','practice-mode-card'+(mode==='mixed'?' mixed':study||mode==='letters'?' '+mode:''),()=>mode==='letters'?showLetters():study?openStudy(mode):start(mode));card.dataset.mode=mode;
       card.setAttribute('aria-label',label+' · '+count);
       const description=node('span',descriptions[mode],'practice-mode-description');description.id='practice-mode-description-'+mode;
       card.setAttribute('aria-describedby',description.id);
       card.append(modeIcon(mode),node('span',label,'practice-mode-title'),description,node('span',count,'practice-mode-count'));grid.append(card);
     }
-    root.append(grid,node('p','Para escribir, usa el dedo, un lápiz táctil o el ratón.','practice-device-note'));
+    root.append(grid);
+    if(letters)root.append(node('p','Para escribir, usa el dedo, un lápiz táctil o el ratón.','practice-device-note'));
   }
   function current() {return state.deck?.[state.index];}
   function setFeedback(message,kind='') {feedback.textContent=message;feedback.className='practice-feedback '+kind;}
@@ -2202,7 +2215,7 @@ window.createHangulPractice = function ({data, vocabularyData, vocabularyAccess,
       modeMenu(root);host.replaceChildren(root);return;
     }
     const modeRow=node('div',undefined,'practice-modes');
-    const back=button('','practice-back',showModes);const arrow=node('span','←');arrow.setAttribute('aria-hidden','true');back.append(arrow,node('span','Tipos de práctica'));
+    const back=button('','practice-back',showLetters);const arrow=node('span','←');arrow.setAttribute('aria-hidden','true');back.append(arrow,node('span','Tipos de práctica'));
     modeRow.append(back,node('span',modes.find(item=>item[0]===state.mode)[1],'practice-eyebrow'));root.append(modeRow);
     if(state.index>=state.deck.length) {const done=node('div',undefined,'practice-intro');summary(done);root.append(done);host.replaceChildren(root);return;}
     const q=current();
@@ -2224,7 +2237,7 @@ window.createHangulPractice = function ({data, vocabularyData, vocabularyAccess,
       else if(q.type==='listen')feedback.append(audioButton(q.target.audioId,'Escuchar de nuevo',true));
     }
   }
-  return {mount(container){studyRequest++;host=container;state.deck=null;clearAnswer();paint();},openVocabulary,openActivities,openStudentManager,unmount(){studyRequest++;vocabulary.unmount();pointerId=null;host=null;}};
+  return {mount(container){studyRequest++;host=container;state.menu='home';state.deck=null;clearAnswer();paint();},openLetters:showLetters,openVocabulary,openActivities,openStudentManager,unmount(){studyRequest++;vocabulary.unmount();pointerId=null;host=null;}};
 };
 </script>
 <script>'use strict';
@@ -2412,7 +2425,7 @@ window.createHangulPractice = function ({data, vocabularyData, vocabularyAccess,
     $('pronunciation-controls').hidden=exercising;
     $('model').closest('label').hidden=context || exercising;
     document.querySelector('header .hint').textContent=exercising?'Escucha, sigue los trazos y forma sílabas.':'Pulsa una letra coreana para escuchar.';
-    if(exercising) {practice.mount($('main'));if(resumeStudy){const view=resumeStudy;resumeStudy=null;if(view==='activities')practice.openActivities();else practice.openVocabulary();}return;}
+    if(exercising) {practice.mount($('main'));if(resumeStudy){const view=resumeStudy;resumeStudy=null;if(view==='letters')practice.openLetters();else if(view==='activities')practice.openActivities();else practice.openVocabulary();}return;}
     const rows=context?contexts():state.section==='vocales'?vowels():state.section==='secuencias'?sequences():consonants();
     const scroll=node('div',undefined,'table-scroll');scroll.tabIndex=0;
     scroll.setAttribute('aria-label','Tabla de pronunciación; desplaza horizontalmente si es necesario');
@@ -2435,7 +2448,7 @@ window.createHangulPractice = function ({data, vocabularyData, vocabularyAccess,
     onStudyOpen: setStudyView,
     onPronunciation() {setStudyView(null);state.view='pronunciacion';render();$('home-button').focus({preventScroll:true});}
   });
-  $('home-button').addEventListener('click',()=>{setStudyView(null);state.view='home';render();$('main').querySelector('.practice-mode-card')?.focus({preventScroll:true});});
+  $('home-button').addEventListener('click',()=>{state.view='home';render();practice.openLetters();});
   $('model').addEventListener('change',render);
   audio.addEventListener('ended',clearPlaying);audio.addEventListener('error',clearPlaying);
   document.addEventListener('keydown',event=>{if(event.key==='Escape')stop();});
@@ -2444,7 +2457,7 @@ window.createHangulPractice = function ({data, vocabularyData, vocabularyAccess,
     accountHeader = window.createAccountHeader({access:profileAccess,node,vocabularyData,
       onBeforeSignIn() {
         const study = new URL(location.href).searchParams.get('view');
-        window.BBlinguaStudyNavigation.remember(study==='activities'?'activities':study==='vocabulary'?'vocabulary':state.view==='pronunciacion'?'pronunciation':'home');
+        window.BBlinguaStudyNavigation.remember(study==='activities'?'activities':study==='vocabulary'?'vocabulary':study==='letters'?'letters':state.view==='pronunciacion'?'pronunciation':'home');
       },
       onManageStudents() {state.view='home';render();practice.openStudentManager();}
     });
