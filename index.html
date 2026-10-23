@@ -678,6 +678,8 @@ window.createAccountVocabularyAccess = function (config, scopes, {createClient =
 <script>'use strict';
 (() => {
   const TYPES = ['es-ko', 'ko-es', 'image-ko'];
+  // Inspected non-image alternatives; only matching cards in the loaded unit are eligible.
+  const VERIFIED_PICTURE_DISTRACTOR_IDS = ["1A:150", "1A:151", "1A:152", "1A:597", "1A:598", "1A:599", "1A:940", "1A:941", "1A:942", "1B:23", "1B:29", "1B:30", "1B:462", "1B:464", "1B:478", "1B:1236", "1B:1237", "1B:1242", "2A:31", "2A:32", "2A:33", "2A:267", "2A:250", "2A:269", "2A:1539", "2A:1556", "2A:1536", "2B:34", "2B:36", "2B:27", "2B:348", "2B:349", "2B:351", "2B:1188", "2B:1189", "2B:1195", "2B:1353", "2B:1354", "2B:1365", "2B:1898", "2B:1900", "2B:1907"];
 
   function normalize(value) {
     return String(value ?? '').normalize('NFKC').toLocaleLowerCase('es')
@@ -702,8 +704,9 @@ window.createAccountVocabularyAccess = function (config, scopes, {createClient =
     return result;
   }
 
-  function prepare(cards, imageIds) {
+  function prepare(cards, imageIds, imageDistractorIds = VERIFIED_PICTURE_DISTRACTOR_IDS) {
     const knownImages = new Set(typeof imageIds === 'string' ? [] : Array.from(imageIds || []));
+    const approvedDistractors = new Set(typeof imageDistractorIds === 'string' ? [] : Array.from(imageDistractorIds || []));
     const records = (Array.isArray(cards) ? cards : []).flatMap((source, index) => {
       if (!source || typeof source.korean !== 'string' || typeof source.spanish !== 'string') return [];
       const korean = source.korean.trim(), spanish = source.spanish.trim();
@@ -740,24 +743,26 @@ window.createAccountVocabularyAccess = function (config, scopes, {createClient =
     }
     const groups = new Set(records.map(record => record.group));
     const verifiedImages = records.filter(record => knownImages.has(record.card.imageId) && imageGroups.get(record.card.imageId)?.size === 1);
-    const imageConcepts = new Set(verifiedImages.map(record => record.group));
+    for (const record of verifiedImages) record.verifiedImage = true;
+    const imageChoices = [...verifiedImages, ...records.filter(record => !record.card.imageId && approvedDistractors.has(record.card.id))];
+    const imageConcepts = new Set(imageChoices.map(record => record.group));
     const pools = Object.fromEntries(TYPES.map(type => [type, []]));
-    if (groups.size < 2) return {records, pools};
+    if (groups.size < 4) return {records, pools, imageChoices};
     for (const type of TYPES) {
       const prompts = new Set();
       for (const record of records) {
         const imageId = record.card.imageId;
-        if (type === 'image-ko' && (imageConcepts.size < 2 || !knownImages.has(imageId) || imageGroups.get(imageId)?.size !== 1)) continue;
+        if (type === 'image-ko' && (imageConcepts.size < 4 || !record.verifiedImage)) continue;
         const promptKey = type === 'image-ko' ? imageId : normalize(type === 'es-ko' ? record.card.spanish : record.card.korean);
         if (prompts.has(promptKey)) continue;
         prompts.add(promptKey);pools[type].push(record);
       }
     }
-    return {records, pools};
+    return {records, pools, imageChoices};
   }
 
-  function availableCounts(cards, {imageIds} = {}) {
-    const {pools} = prepare(cards, imageIds);
+  function availableCounts(cards, {imageIds, imageDistractorIds} = {}) {
+    const {pools} = prepare(cards, imageIds, imageDistractorIds);
     const counts = Object.fromEntries(TYPES.map(type => [type, pools[type].length]));
     counts.mixed = TYPES.reduce((sum, type) => sum + counts[type], 0);
     return counts;
@@ -767,12 +772,17 @@ window.createAccountVocabularyAccess = function (config, scopes, {createClient =
     const id = 'q-' + type + '-' + record.index;
     const targetField = type === 'ko-es' ? 'spanish' : 'korean';
     const alternatives = [], usedGroups = new Set([record.group]);
-    for (const alternative of shuffle(records, random)) {
+    const candidates = type === 'image-ko' ? [
+      ...shuffle(records.filter(item => item.verifiedImage), random),
+      ...shuffle(records.filter(item => !item.verifiedImage), random)
+    ] : shuffle(records, random);
+    for (const alternative of candidates) {
       if (usedGroups.has(alternative.group)) continue;
       if (type === 'image-ko' && alternative.card.imageId === record.card.imageId) continue;
       usedGroups.add(alternative.group);alternatives.push(alternative);
       if (alternatives.length === 3) break;
     }
+    if (alternatives.length !== 3) return null;
     const choices = shuffle([record, ...alternatives], random);
     const options = choices.map((choice, index) => ({id: id + ':a-' + index, text: choice.card[targetField]}));
     const question = {
@@ -787,13 +797,12 @@ window.createAccountVocabularyAccess = function (config, scopes, {createClient =
     return question;
   }
 
-  function makeRound(cards, {mode = 'mixed', limit = 12, random = Math.random, imageIds} = {}) {
+  function makeRound(cards, {mode = 'mixed', limit = 12, random = Math.random, imageIds, imageDistractorIds} = {}) {
     if (![...TYPES, 'mixed'].includes(mode)) throw new Error('Unknown vocabulary test mode');
     const maximum = Number.isFinite(Number(limit)) ? Math.max(0, Math.floor(Number(limit))) : 12;
     if (!maximum) return [];
     if (typeof random !== 'function') throw new TypeError('random must be a function');
-    const {records, pools} = prepare(cards, imageIds);
-    const imageChoices = pools['image-ko'].slice();
+    const {records, pools, imageChoices} = prepare(cards, imageIds, imageDistractorIds);
     const chosen = [];
     if (mode === 'mixed') {
       const types = shuffle(TYPES.filter(type => pools[type].length), random);
@@ -812,7 +821,7 @@ window.createAccountVocabularyAccess = function (config, scopes, {createClient =
     } else {
       chosen.push(...shuffle(pools[mode], random).slice(0, maximum).map(record => ({type: mode, record})));
     }
-    return shuffle(chosen.map(({record, type}) => makeQuestion(record, type, type === 'image-ko' ? imageChoices : records, random)), random);
+    return shuffle(chosen.map(({record, type}) => makeQuestion(record, type, type === 'image-ko' ? imageChoices : records, random)).filter(Boolean), random);
   }
 
   function evaluate(question, choiceId) {
@@ -919,7 +928,7 @@ window.createVocabularyTest = function ({cards, illustrations, node, onBack, isA
     answers = [];index = 0;selected = null;checked = false;
     if (round.length) {showQuestion();return;}
     const section = shell('Unidades', leave);
-    heading(section, 'No hay preguntas disponibles', 'Esta unidad necesita al menos dos palabras distintas para crear un test.');
+    heading(section, 'No hay preguntas disponibles', 'Esta unidad necesita al menos cuatro opciones distintas para crear un test.');
     section.append(button('Volver a las unidades', 'practice-primary', leave));present(section);
   }
   function illustration(question) {
