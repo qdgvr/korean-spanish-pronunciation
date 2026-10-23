@@ -464,6 +464,10 @@ window.createAccountVocabularyAccess = function (config, scopes, {createClient =
   let current = empty();
   const configured = typeof createClient === 'function' && /^https:\/\/[a-z0-9-]+\.supabase\.co\/?$/.test(config.url || '') && /^sb_publishable_[A-Za-z0-9_-]+$/.test(config.publishableKey || '');
   const fail = name => new Error(name);
+  function sessionDenied(error, status) {
+    if (error?.code === '42501') return String(error.message || '').trim() === 'session-expired';
+    return status === 401 || status === 403 || error?.status === 401 || error?.status === 403;
+  }
   function connection() {
     if (!configured || !createClient) throw fail('configuration');
     client ||= createClient(config.url, config.publishableKey, {auth: {
@@ -486,9 +490,14 @@ window.createAccountVocabularyAccess = function (config, scopes, {createClient =
     return status();
   }
   async function getUser() {
-    const {data, error} = await connection().auth.getUser();
+    const auth = connection().auth;
+    let result;
+    try {result = await auth.getUser();} catch (error) {throw fail(sessionDenied(error) ? 'session-expired' : 'network');}
+    if (!result || typeof result !== 'object') throw fail('response');
+    const {data, error} = result;
     if (error) {
-      if (error.name === 'AuthSessionMissingError' || error.status === 401 || error.status === 403) return null;
+      if (error.name === 'AuthSessionMissingError') return null;
+      if (sessionDenied(error, result.status)) throw fail('session-expired');
       throw fail('network');
     }
     return data?.user || null;
@@ -501,10 +510,12 @@ window.createAccountVocabularyAccess = function (config, scopes, {createClient =
       if (turn !== revision) throw fail('stale');
       if (!user) {current = empty();return status();}
       let result;
-      try {result = await connection().rpc('bblingua_vocabulary_access');} catch (_) {throw fail('network');}
+      try {result = await connection().rpc('bblingua_vocabulary_access');} catch (error) {
+        throw fail(sessionDenied(error) ? 'session-expired' : error?.code === '42501' ? 'google-required' : 'network');
+      }
       if (turn !== revision) throw fail('stale');
       if (!result || typeof result !== 'object') throw fail('response');
-      if (result.error) throw fail(result.error.code === '42501' ? 'google-required' : 'network');
+      if (result.error) throw fail(sessionDenied(result.error, result.status) ? 'session-expired' : result.error.code === '42501' ? 'google-required' : 'network');
       return accept(result.data, user, turn);
     } catch (error) {
       if (turn !== revision) throw fail('stale');
@@ -538,13 +549,19 @@ window.createAccountVocabularyAccess = function (config, scopes, {createClient =
     if (!current.master) throw fail('forbidden');
     const turn = revision, userId = current.userId;
     let result;
-    try {result = await connection().rpc(name, parameters);} catch (_) {
+    try {result = await connection().rpc(name, parameters);} catch (error) {
       if (turn !== revision || userId !== current.userId) throw fail('stale');
+      if (sessionDenied(error)) {reset();throw fail('session-expired');}
+      if (error?.code === '42501') {reset();throw fail('forbidden');}
       throw fail('network');
     }
     if (turn !== revision || userId !== current.userId || !current.signedIn || !current.master) throw fail('stale');
     if (!result || typeof result !== 'object') throw fail('response');
-    if (result.error) throw adminError(result.error);
+    if (result.error) {
+      if (sessionDenied(result.error, result.status)) {reset();throw fail('session-expired');}
+      if (result.error.code === '42501') reset();
+      throw adminError(result.error);
+    }
     return result.data;
   }
   async function listStudents() {
@@ -596,11 +613,22 @@ window.createAccountVocabularyAccess = function (config, scopes, {createClient =
     await refresh();
     if (previousUser !== current.userId || !has(book, unit)) throw fail('locked');
     const turn = revision, user = current.userId;
-    const {data, error} = await connection().from('bblingua_vocabulary_units').select('cards')
-      .eq('book_id', book).eq('unit_id', unit).maybeSingle();
+    let result;
+    try {
+      result = await connection().from('bblingua_vocabulary_units').select('cards')
+        .eq('book_id', book).eq('unit_id', unit).maybeSingle();
+    } catch (error) {
+      if (turn !== revision || current.userId !== user) throw fail('stale');
+      if (sessionDenied(error)) {reset();throw fail('session-expired');}
+      if (error?.code === '42501') {reset();throw fail('google-required');}
+      throw fail('network');
+    }
     if (turn !== revision || current.userId !== user) throw fail('stale');
+    if (!result || typeof result !== 'object') throw fail('response');
+    const {data, error} = result;
     if (error) {
-      if (error.code === '42501' || error.status === 401 || error.status === 403) {reset();throw fail('locked');}
+      if (sessionDenied(error, result.status)) {reset();throw fail('session-expired');}
+      if (error.code === '42501') {reset();throw fail('google-required');}
       throw fail('network');
     }
     if (!data || !Array.isArray(data.cards)) {reset();throw fail('locked');}
@@ -615,8 +643,11 @@ window.createAccountVocabularyAccess = function (config, scopes, {createClient =
   }
   async function signOut() {
     reset();
-    const {error} = await connection().auth.signOut({scope: 'local'});
-    if (error) throw fail('sign-out');
+    try {
+      // The SDK's local scope revokes this server session, preserving other devices.
+      const result = await connection().auth.signOut({scope: 'local'});
+      if (!result || result.error) throw fail('sign-out');
+    } catch (_) {throw fail('sign-out');}
   }
   function subscribe(callback) {
     if (!configured) return () => {};
@@ -661,6 +692,12 @@ window.createVocabularyFlashcards = function ({data, accessConfig, accountConfig
     item.addEventListener('click', action);
     return item;
   };
+  const needsSignIn = error => ['session-expired', 'sign-in-required', 'google-required', 'forbidden'].includes(error?.message);
+  function showSignIn() {
+    clearStudentManager();
+    state.notice = 'Tu sesión ha terminado. Vuelve a entrar con Google; tu progreso guardado se conserva.';
+    showBooks();
+  }
   function present(root) {
     if (!host) return;
     host.replaceChildren(root);
@@ -703,7 +740,11 @@ window.createVocabularyFlashcards = function ({data, accessConfig, accountConfig
         login.disabled = !current.configured;
         const accountMessage = node('p', current.configured ? '' : 'La conexión con Google se está preparando. Pronunciación y las prácticas de letras siguen abiertas.', 'vocabulary-account-feedback');
         accountMessage.setAttribute('role', 'status');
-        account.append(login, accountMessage);root.append(account);return;
+        account.append(login, accountMessage);
+        if (state.notice) {
+          const notice = node('p', state.notice, 'vocabulary-access-notice');notice.setAttribute('role', 'status');account.append(notice);
+        }
+        root.append(account);return;
       }
       account.append(node('span', current.email, 'vocabulary-account-email'));
       account.append(button('Cerrar sesión', 'vocabulary-access-link', async () => {
@@ -922,6 +963,7 @@ window.createVocabularyFlashcards = function ({data, accessConfig, accountConfig
         studentManager.students = students;
         studentManager.uncertain.clear();studentManager.messages.clear();studentManager.denied = false;
       } catch (error) {
+        if (host && turn === generation && needsSignIn(error)) {showSignIn();return;}
         if (!active()) return;
         if (error.message === 'forbidden') studentManager.denied = true;
         message.classList.add('error-message');
@@ -949,6 +991,7 @@ window.createVocabularyFlashcards = function ({data, accessConfig, accountConfig
         message.textContent = result.suspended ? 'Acceso suspendido para ' + (result.name || result.email) + '. Se conserva su progreso.' :
           'Acceso actualizado para ' + (result.name || result.email) + ': ' + scopeText(result.cutoff) + '.';
       } catch (error) {
+        if (host && turn === generation && needsSignIn(error)) {showSignIn();return;}
         if (!active()) return;
         studentManager.uncertain.add(student.userId);
         if (error.message === 'forbidden') studentManager.denied = true;
@@ -1021,6 +1064,7 @@ window.createVocabularyFlashcards = function ({data, accessConfig, accountConfig
       try {cards = await access.loadUnit(state.book.id, unit.id);}
       catch (error) {
         if (!host || turn !== generation) return;
+        if (needsSignIn(error)) {showSignIn();return;}
         if (access.status().suspended || error.message === 'locked' || error.message === 'suspended') {showBooks();return;}
         const failed = shell('Unidades', showUnits);heading(failed, unit.label, 'No se pudieron abrir las tarjetas. Comprueba la conexión e inténtalo de nuevo.');
         failed.append(button('Reintentar', 'practice-primary', () => startUnit(unit)));present(failed);return;
@@ -1101,6 +1145,7 @@ window.createVocabularyFlashcards = function ({data, accessConfig, accountConfig
         await access.restore();if (host && turn === generation) {state.notice = '';showBooks();}
       } catch (error) {
         if (!host || turn !== generation) return;
+        if (needsSignIn(error)) {showSignIn();return;}
         if (error.message === 'configuration') {showBooks();return;}
         const failed = shell('Tipos de práctica', onBack);heading(failed, 'Vocabulario', 'No se pudo cargar tu cuenta. Comprueba la conexión e inténtalo de nuevo.');
         failed.append(button('Reintentar', 'practice-primary', refreshAccess));present(failed);
@@ -1117,7 +1162,7 @@ window.createVocabularyFlashcards = function ({data, accessConfig, accountConfig
   async function syncPermissions() {
     const before = access.status();
     const page = window.document;
-    if (!host || permissionSync || !access.account || !before.signedIn || before.master ||
+    if (!host || permissionSync || !access.account || !before.signedIn ||
       page?.hidden || page?.visibilityState === 'hidden' || view === 'loading-unit' || view === 'loading-access' || typeof access.refresh !== 'function') return;
     const turn = generation, operation = {};
     permissionSync = operation;
@@ -1132,8 +1177,11 @@ window.createVocabularyFlashcards = function ({data, accessConfig, accountConfig
         if (view === 'units' && state.book) showUnits();
         else if (view !== 'card') showBooks();
       }
-    } catch (_) {
-      if (host && turn === generation) showAccessError();
+    } catch (error) {
+      if (host && turn === generation) {
+        if (needsSignIn(error)) showSignIn();
+        else showAccessError();
+      }
     } finally {
       if (permissionSync === operation) permissionSync = null;
     }
