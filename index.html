@@ -54,10 +54,10 @@ body.is-practicing{background:var(--paper);color:var(--ink);min-height:100dvh}
 .vocabulary-study{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:25px;min-height:480px;min-height:clamp(410px,calc(100svh - 270px),570px);padding:30px 0 24px}.vocabulary-flashcard{display:block;width:min(100%,460px);perspective:1400px;background:none;border:0;border-radius:23px;padding:0;color:var(--ink);text-align:center}.vocabulary-flip-inner{display:grid;transform-style:preserve-3d;transition:transform .45s cubic-bezier(.2,.7,.2,1)}.vocabulary-flashcard.is-flipped .vocabulary-flip-inner{transform:rotateY(180deg)}.vocabulary-face{grid-area:1/1;display:grid;grid-template-rows:auto 1fr auto;align-items:center;gap:23px;min-height:310px;min-width:0;padding:28px 32px;border:1px solid var(--line);border-radius:23px;background:var(--paper);box-shadow:0 5px 0 var(--line),0 14px 35px #00000010;backface-visibility:hidden;-webkit-backface-visibility:hidden}.vocabulary-back{transform:rotateY(180deg);background:var(--panel-blue);border-color:var(--accent)}.vocabulary-face-label{font-size:10px;font-weight:650;text-transform:uppercase;letter-spacing:.16em;color:var(--muted)}.vocabulary-word{font-size:clamp(30px,5vw,46px);font-weight:650;line-height:1.5;word-break:keep-all;overflow-wrap:anywhere;min-width:0}.vocabulary-meaning{font-size:clamp(24px,4vw,32px);font-weight:600;line-height:1.45;overflow-wrap:anywhere;min-width:0}.vocabulary-face-hint{font-size:11px;color:var(--muted);line-height:1.4}.vocabulary-actions{width:min(100%,460px);display:flex;justify-content:center}.vocabulary-actions .practice-primary{min-width:200px}.vocabulary-finished{display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center;padding:70px 0 55px}.vocabulary-finished-mark{display:grid;place-items:center;width:70px;height:70px;border-radius:50%;background:var(--panel-soft);color:var(--accent-ink);font-size:32px}.vocabulary-finished h3{font-size:26px;margin:4px 0}.vocabulary-finished .practice-note{margin:0 0 7px}
 @media(max-width:700px){.practice-mode-card.vocabulary{grid-template-columns:32px minmax(0,1fr) auto;gap:5px 9px}.practice-mode-card.vocabulary .practice-mode-count{font-size:10px}.vocabulary-books{gap:12px;margin-top:21px}.vocabulary-book{padding:19px 16px;gap:12px;border-radius:14px}.vocabulary-book-level{width:49px;height:57px;font-size:21px}.vocabulary-book-title{font-size:19px}.vocabulary-book-count{font-size:11px}.vocabulary-units{grid-template-columns:1fr;gap:10px;margin-top:20px}.vocabulary-unit{padding:16px}.vocabulary-session h2{font-size:20px}.vocabulary-topic{font-size:13px}.vocabulary-study{gap:24px;min-height:clamp(380px,calc(100svh - 250px),530px);padding:25px 0 20px}.vocabulary-face{min-height:285px;padding:25px 23px;gap:22px;border-radius:20px}.vocabulary-word{font-size:34px}.vocabulary-meaning{font-size:26px}.vocabulary-actions .practice-primary{width:100%}.vocabulary-finished{padding:55px 0 45px}}
 @media(prefers-reduced-motion:reduce){.vocabulary-flip-inner{transition:none}}
-.vocabulary-access{margin:24px 0 0;border:1px solid var(--line);background:var(--panel-soft);border-radius:13px;padding:17px 19px}.vocabulary-access-line{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.vocabulary-access-summary{font-size:13px;font-weight:650;color:var(--ink)}.vocabulary-code-toggle{border:0;background:transparent;color:var(--ink);padding:4px 0;font-size:12px;text-decoration:underline;text-underline-offset:3px}.vocabulary-code-form{margin-top:16px;max-width:540px}.vocabulary-code-form[hidden]{display:none}.vocabulary-code-form label{display:block;font-size:12px;font-weight:600;margin-bottom:8px}.vocabulary-code-entry{display:flex;align-items:center;flex-wrap:wrap;gap:10px}.vocabulary-code-input{display:block;width:132px;max-width:100%;height:46px;border:1px solid var(--line);border-radius:9px;background:var(--paper);color:var(--ink);font:18px/1.4 ui-monospace,monospace;letter-spacing:.1em;text-align:center;padding:10px 12px;box-sizing:border-box}.vocabulary-code-input:focus{outline:2px solid var(--focus);outline-offset:2px}.vocabulary-code-help{font-size:11px;color:var(--muted);line-height:1.6;margin:10px 0 14px}.vocabulary-code-form .practice-primary{font-size:13px;padding:10px 17px;min-height:46px;width:auto}.vocabulary-code-feedback{font-size:12px;color:var(--muted);line-height:1.6;margin:11px 0 0}.vocabulary-code-feedback:empty{display:none}.vocabulary-code-feedback.error-message{color:var(--error-ink)}.vocabulary-access-notice{font-size:12px;color:var(--accent-ink);line-height:1.65;margin:12px 0 0}.vocabulary-access-badge{display:inline-block;border-radius:20px;padding:4px 9px;background:var(--panel-soft);color:var(--accent-ink);font-size:10px;line-height:1.5}.vocabulary-book.is-locked,.vocabulary-unit.is-locked{cursor:default;background:var(--neutral-soft);border-color:var(--line);color:var(--muted)}.vocabulary-book.is-locked .vocabulary-book-level{background:var(--neutral-strong);border-color:var(--line);color:var(--muted)}.is-locked .vocabulary-access-badge{background:var(--neutral-strong);color:var(--muted)}.vocabulary-unit.is-locked .vocabulary-unit-count{color:var(--muted)}.vocabulary-book:disabled,.vocabulary-unit:disabled{opacity:1}
-@media(max-width:700px){.vocabulary-access{padding:16px}.vocabulary-access-summary{font-size:12px}.vocabulary-access-badge{font-size:9px}.vocabulary-code-form .practice-primary{width:auto}}
-.vocabulary-account{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:24px;padding:17px 19px;border:1px solid var(--line);background:var(--panel-soft);border-radius:13px}.vocabulary-account-title{width:100%;font-size:15px;font-weight:650;margin:0;color:var(--ink)}.vocabulary-account .vocabulary-code-help{width:100%;margin:0;max-width:500px}.vocabulary-account .vocabulary-code-feedback{width:100%;margin:0}.vocabulary-account-email{font-size:12px;color:var(--muted);overflow-wrap:anywhere;min-width:0}.vocabulary-google{min-height:46px;font-size:14px}.vocabulary-account+.vocabulary-access{margin-top:12px}
-@media(max-width:700px){.vocabulary-account{padding:16px}.vocabulary-google{max-width:100%;font-size:13px}}
+.vocabulary-access{margin:24px 0 0;border:1px solid var(--line);background:var(--panel-soft);border-radius:13px;padding:17px 19px}.vocabulary-access-line{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.vocabulary-access-summary{font-size:13px;font-weight:650;color:var(--ink)}.vocabulary-access-link{border:0;background:transparent;color:var(--ink);padding:5px 0;font-size:12px;text-decoration:underline;text-underline-offset:3px;min-height:30px}.vocabulary-account-help{font-size:12px;color:var(--muted);line-height:1.65;margin:10px 0 0}.vocabulary-account-feedback{font-size:12px;color:var(--muted);line-height:1.6;margin:11px 0 0}.vocabulary-account-feedback:empty{display:none}.vocabulary-account-feedback.error-message{color:var(--error-ink)}.vocabulary-access-notice{font-size:12px;color:var(--accent-ink);line-height:1.65;margin:12px 0 0}.vocabulary-access-badge{display:inline-block;border-radius:20px;padding:4px 9px;background:var(--panel-soft);color:var(--accent-ink);font-size:10px;line-height:1.5}.vocabulary-book.is-locked,.vocabulary-unit.is-locked{cursor:default;background:var(--neutral-soft);border-color:var(--line);color:var(--muted)}.vocabulary-book.is-locked .vocabulary-book-level{background:var(--neutral-strong);border-color:var(--line);color:var(--muted)}.is-locked .vocabulary-access-badge{background:var(--neutral-strong);color:var(--muted)}.vocabulary-unit.is-locked .vocabulary-unit-count{color:var(--muted)}.vocabulary-book:disabled,.vocabulary-unit:disabled{opacity:1}
+.vocabulary-account{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:24px;padding:17px 19px;border:1px solid var(--line);background:var(--panel-soft);border-radius:13px}.vocabulary-account-title{width:100%;font-size:15px;font-weight:650;margin:0;color:var(--ink)}.vocabulary-account .vocabulary-account-help{width:100%;margin:0;max-width:500px}.vocabulary-account .vocabulary-account-feedback{width:100%;margin:0}.vocabulary-account-email{font-size:12px;color:var(--muted);overflow-wrap:anywhere;min-width:0}.vocabulary-google{min-height:46px;font-size:14px}.vocabulary-account+.vocabulary-access{margin-top:12px}
+.vocabulary-manager .practice-note{max-width:580px}.vocabulary-manager-toolbar{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-top:26px}.vocabulary-manager-search{display:flex;flex-direction:column;gap:8px;flex:1;max-width:380px;font-size:12px;font-weight:600;color:var(--ink)}.vocabulary-manager-search input,.vocabulary-student-target select{width:100%;min-height:44px;box-sizing:border-box;border:1px solid var(--line);border-radius:9px;background:var(--paper);color:var(--ink);font:inherit;padding:10px 12px}.vocabulary-manager-search input{font-size:14px;font-weight:400}.vocabulary-manager-search input:focus,.vocabulary-student-target select:focus{outline:2px solid var(--focus);outline-offset:2px}.vocabulary-manager-reload{font-size:12px;min-height:44px;white-space:nowrap}.vocabulary-manager-filters{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.vocabulary-manager-filter{border:1px solid var(--line);border-radius:20px;padding:9px 13px;background:var(--paper);color:var(--ink);font-size:12px;min-height:38px}.vocabulary-manager-filter.is-active{border-color:var(--action);background:var(--action);color:var(--paper)}.vocabulary-manager-feedback,.vocabulary-student-feedback{font-size:12px;line-height:1.6;color:var(--accent-ink);margin:14px 0 0;overflow-wrap:anywhere}.vocabulary-manager-feedback:empty,.vocabulary-student-feedback:empty{display:none}.vocabulary-manager-feedback.error-message,.vocabulary-student-feedback.error-message{color:var(--error-ink)}.vocabulary-students{display:grid;gap:16px;margin-top:20px}.vocabulary-manager-empty{font-size:13px;line-height:1.7;color:var(--muted);padding:25px 20px;margin:0;border:1px dashed var(--line);border-radius:13px;background:var(--neutral-soft)}.vocabulary-student{border:1px solid var(--line);border-radius:15px;background:var(--paper);padding:22px;min-width:0}.vocabulary-student-identity{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:5px 12px;align-items:start}.vocabulary-student-identity h3{font-size:16px;line-height:1.4;margin:0;overflow-wrap:anywhere}.vocabulary-student-email{grid-column:1;font-size:12px;line-height:1.5;color:var(--muted);margin:0;overflow-wrap:anywhere}.vocabulary-student-identity .vocabulary-access-badge{grid-column:2;grid-row:1/3;align-self:center}.vocabulary-student-current{font-size:12px;line-height:1.6;margin:15px 0;color:var(--ink)}.vocabulary-student-controls{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:end}.vocabulary-student-target{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:12px}.vocabulary-student-target label{display:flex;flex-direction:column;gap:7px;min-width:0;font-size:11px;color:var(--muted)}.vocabulary-student-target select{font-size:13px;color:var(--ink);min-width:0}.vocabulary-student-approve{min-height:44px;font-size:12px;white-space:nowrap;padding:10px 16px}.vocabulary-student-next{grid-column:1/-1;justify-self:start;min-height:40px;padding:9px 12px;border:1px solid var(--accent);border-radius:9px;background:var(--panel-blue);color:var(--ink);font-size:12px;line-height:1.5;text-align:left}.vocabulary-student-next:hover{background:var(--panel-soft)}.vocabulary-student-complete{grid-column:1/-1;font-size:12px;line-height:1.6;margin:0;color:var(--accent-ink)}.vocabulary-student.is-busy{background:var(--neutral-soft)}.vocabulary-manager button:disabled,.vocabulary-manager select:disabled{cursor:default;opacity:.55}
+@media(max-width:700px){.vocabulary-access{padding:16px}.vocabulary-access-summary{font-size:12px}.vocabulary-access-badge{font-size:9px}.vocabulary-account{padding:16px}.vocabulary-google{max-width:100%;font-size:13px}.vocabulary-manager-toolbar{gap:10px;align-items:stretch;flex-direction:column;margin-top:22px}.vocabulary-manager-search{max-width:none}.vocabulary-manager-reload{align-self:flex-end;min-height:34px;padding:4px 0}.vocabulary-manager-filters{gap:6px;margin-top:12px}.vocabulary-manager-filter{font-size:11px;padding:8px 11px}.vocabulary-student{padding:17px}.vocabulary-student-controls{grid-template-columns:1fr;gap:12px}.vocabulary-student-approve,.vocabulary-student-next{width:100%;white-space:normal}.vocabulary-student-target{gap:10px}.vocabulary-student-identity h3{font-size:15px}.vocabulary-manager-empty{padding:20px 16px}}
 
 /* Vector contours and flat fills from the supplied BBlingua logo. */
 .brand{display:block;width:120px;height:auto;max-width:100%;overflow:visible}
@@ -469,14 +469,14 @@ window.createAccountVocabularyAccess = function (config, scopes, {createClient =
     }});
     return client;
   }
-  function status() {return {...current, configured};}
+  function status() {return {...current, configured, pending: current.signedIn && !current.master && current.cutoff < 0};}
   function reset() {revision++;current = empty();}
   function accept(data, user, turn) {
     if (turn !== revision) throw fail('stale');
     if (!data || data.userId !== user.id || typeof data.master !== 'boolean' ||
-      !Number.isInteger(data.cutoff) || data.cutoff < -1 || data.cutoff >= scopes.length) throw fail('response');
+      !validCutoff(data.cutoff) || typeof data.persistent !== 'boolean') throw fail('response');
     current = {account: true, signedIn: true, userId: user.id, email: user.email || '',
-      master: data.master, cutoff: data.cutoff, persistent: true, scope: scopes[data.cutoff] || null};
+      master: data.master, cutoff: data.cutoff, persistent: data.persistent, scope: scopes[data.cutoff] || null};
     return status();
   }
   async function getUser() {
@@ -485,27 +485,88 @@ window.createAccountVocabularyAccess = function (config, scopes, {createClient =
       if (error.name === 'AuthSessionMissingError' || error.status === 401 || error.status === 403) return null;
       throw fail('network');
     }
-    return data.user;
+    return data?.user || null;
   }
   async function restore() {
     const turn = ++revision;current = empty();
-    const user = await getUser();
+    let user;
+    try {user = await getUser();} catch (error) {
+      if (turn !== revision) throw fail('stale');
+      throw error;
+    }
     if (turn !== revision) throw fail('stale');
     if (!user) return status();
-    const {data, error} = await connection().rpc('bblingua_vocabulary_access');
+    let result;
+    try {result = await connection().rpc('bblingua_vocabulary_access');} catch (_) {
+      if (turn !== revision) throw fail('stale');
+      throw fail('network');
+    }
+    if (turn !== revision) throw fail('stale');
+    if (!result || typeof result !== 'object') throw fail('response');
+    const {data, error} = result;
     if (error) throw fail(error.code === '42501' ? 'google-required' : 'network');
     return accept(data, user, turn);
   }
-  async function redeem(code) {
-    const turn = ++revision;
-    const user = await getUser();
-    if (turn !== revision) throw fail('stale');
-    if (!user) {current = empty();throw fail('sign-in-required');}
-    if (current.userId !== user.id) current = empty();
-    const {data, error} = await connection().rpc('bblingua_vocabulary_redeem', {p_code: String(code).trim().toUpperCase()});
-    if (error) throw fail(error.code === '42501' ? 'sign-in-required' : 'network');
-    if (data?.error) throw fail(['expired', 'not-yet-valid', 'rate-limited', 'invalid'].includes(data.error) ? data.error : 'response');
-    return accept(data, user, turn);
+  function validCutoff(value) {return Number.isInteger(value) && value >= -1 && value < scopes.length;}
+  function validUserId(value) {return typeof value === 'string' && /^[a-f\d]{8}-[a-f\d]{4}-[a-f\d]{4}-[a-f\d]{4}-[a-f\d]{12}$/i.test(value);}
+  function student(data) {
+    if (!data || !validUserId(data.userId) || !validCutoff(data.cutoff) ||
+      typeof data.name !== 'string' || data.name.length > 512 ||
+      typeof data.email !== 'string' || !data.email.trim() || data.email.length > 320 ||
+      !['requestedAt', 'updatedAt'].every(key => typeof data[key] === 'string' && /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/.test(data[key]) && Number.isFinite(Date.parse(data[key])))) throw fail('response');
+    return {userId: data.userId, name: data.name, email: data.email, cutoff: data.cutoff,
+      requestedAt: data.requestedAt, updatedAt: data.updatedAt};
+  }
+  function adminError(error) {
+    if (error.code === '42501') return fail('forbidden');
+    if (error.code === 'PT409') return fail('conflict');
+    if (error.code === 'PT404') return fail('not-found');
+    if (error.code === 'PT422') return fail(/\bcomplete\b/i.test(error.message || '') ? 'complete' : 'invalid');
+    return fail('network');
+  }
+  async function adminRequest(name, parameters) {
+    if (!current.signedIn) throw fail('sign-in-required');
+    if (!current.master) throw fail('forbidden');
+    const turn = revision, userId = current.userId;
+    let result;
+    try {result = await connection().rpc(name, parameters);} catch (_) {
+      if (turn !== revision || userId !== current.userId) throw fail('stale');
+      throw fail('network');
+    }
+    if (turn !== revision || userId !== current.userId || !current.signedIn || !current.master) throw fail('stale');
+    if (!result || typeof result !== 'object') throw fail('response');
+    if (result.error) throw adminError(result.error);
+    return result.data;
+  }
+  async function listStudents() {
+    const data = await adminRequest('bblingua_students_list');
+    if (!Array.isArray(data)) throw fail('response');
+    const seen = new Set();
+    return data.map(value => {
+      const record = student(value), id = record.userId.toLowerCase();
+      if (seen.has(id)) throw fail('response');
+      seen.add(id);return record;
+    });
+  }
+  function target(userId, cutoff, expectedCutoff) {
+    if (!validUserId(userId) || userId.toLowerCase() === String(current.userId).toLowerCase() ||
+      !validCutoff(cutoff) || cutoff < 0 || !validCutoff(expectedCutoff) || cutoff < expectedCutoff) throw fail('invalid');
+  }
+  async function setStudentProgress(userId, cutoff, expectedCutoff) {
+    target(userId, cutoff, expectedCutoff);
+    const result = student(await adminRequest('bblingua_student_set_progress', {
+      p_user_id: userId, p_cutoff: cutoff, p_expected_cutoff: expectedCutoff
+    }));
+    if (result.userId.toLowerCase() !== userId.toLowerCase() || result.cutoff !== cutoff) throw fail('response');
+    return result;
+  }
+  async function advanceStudent(userId, expectedCutoff) {
+    if (!validCutoff(expectedCutoff) || expectedCutoff < 0) throw fail('invalid');
+    if (expectedCutoff === scopes.length - 1) throw fail('complete');
+    target(userId, expectedCutoff + 1, expectedCutoff);
+    const result = student(await adminRequest('bblingua_student_advance', {p_user_id: userId, p_expected_cutoff: expectedCutoff}));
+    if (result.userId.toLowerCase() !== userId.toLowerCase() || result.cutoff !== expectedCutoff + 1) throw fail('response');
+    return result;
   }
   function has(book, unit) {
     const index = scopes.findIndex(s => s.book === book && s.unit === unit);
@@ -519,7 +580,7 @@ window.createAccountVocabularyAccess = function (config, scopes, {createClient =
     if (turn !== revision || current.userId !== user) throw fail('stale');
     if (error) throw fail('network');
     if (!data || !Array.isArray(data.cards)) throw fail('locked');
-    if (!data.cards.every(c => typeof c.id === 'string' && typeof c.korean === 'string' && typeof c.spanish === 'string')) throw fail('response');
+    if (!data.cards.every(c => c && typeof c.id === 'string' && typeof c.korean === 'string' && typeof c.spanish === 'string')) throw fail('response');
     return data.cards;
   }
   async function signIn() {
@@ -535,16 +596,21 @@ window.createAccountVocabularyAccess = function (config, scopes, {createClient =
   }
   function subscribe(callback) {
     if (!configured) return () => {};
+    let active = true;
     const {data} = connection().auth.onAuthStateChange(event => {
-      if (event === 'SIGNED_OUT') reset();
       if (['SIGNED_IN', 'SIGNED_OUT', 'USER_UPDATED'].includes(event)) {
+        reset();
         // Leave the auth callback before making further SDK requests.
-        setTimeout(callback, 0);
+        setTimeout(() => {if (active) callback();}, 0);
       }
     });
-    return () => data.subscription.unsubscribe();
+    return () => {
+      if (!active) return;
+      active = false;reset();data.subscription.unsubscribe();
+    };
   }
-  return {account: true, restore, redeem, status, has, loadUnit, signIn, signOut, subscribe};
+  return {account: true, restore, status, has, loadUnit, signIn, signOut, subscribe,
+    listStudents, setStudentProgress, advanceStudent};
 };
 </script>
 <script>'use strict';
@@ -600,20 +666,25 @@ window.createVocabularyFlashcards = function ({data, accessConfig, accountConfig
       const account = node('div', undefined, 'vocabulary-account');
       if (!current.signedIn) {
         account.append(node('p', 'Guarda tus unidades en tu cuenta', 'vocabulary-account-title'),
-          node('p', 'Entra con Google y usa el código de tu profesor. Tus unidades estarán disponibles en tus otros dispositivos.', 'vocabulary-code-help'));
+          node('p', 'Entra con Google para solicitar acceso a tu profesor. Una vez aprobado, conservarás tus unidades también en otros dispositivos.', 'vocabulary-account-help'));
         const login = button('Continuar con Google', 'practice-primary vocabulary-google', async () => {
+          const turn = generation;
           login.disabled = true;
           try {await access.signIn();}
-          catch (_) {login.disabled = false;accountMessage.textContent = 'No se pudo iniciar sesión. Inténtalo de nuevo.';}
+          catch (_) {
+            if (!host || turn !== generation) return;
+            login.disabled = false;accountMessage.textContent = 'No se pudo iniciar sesión. Inténtalo de nuevo.';
+          }
         });
         login.disabled = !current.configured;
-        const accountMessage = node('p', current.configured ? '' : 'La conexión con Google se está preparando. Pronunciación y las prácticas de letras siguen abiertas.', 'vocabulary-code-feedback');
+        const accountMessage = node('p', current.configured ? '' : 'La conexión con Google se está preparando. Pronunciación y las prácticas de letras siguen abiertas.', 'vocabulary-account-feedback');
         accountMessage.setAttribute('role', 'status');
         account.append(login, accountMessage);root.append(account);return;
       }
       account.append(node('span', current.email, 'vocabulary-account-email'));
-      account.append(button('Cerrar sesión', 'vocabulary-code-toggle', async () => {
+      account.append(button('Cerrar sesión', 'vocabulary-access-link', async () => {
         const turn = ++generation;state.notice = '';
+        clearStudentManager();
         try {await access.signOut();}
         catch (_) {state.notice = 'No se pudo cerrar la sesión por completo. Comprueba la conexión e inténtalo de nuevo.';}
         if (host && turn === generation) showBooks();
@@ -623,70 +694,211 @@ window.createVocabularyFlashcards = function ({data, accessConfig, accountConfig
     const panel = node('div', undefined, 'vocabulary-access');
     const line = node('div', undefined, 'vocabulary-access-line');
     const summary = current.master ? 'Acceso máster · todos los libros' : current.scope ?
-      'Abierto hasta ' + current.scope.book + ' · ' + current.scope.unitLabel : 'Abre tu vocabulario';
+      'Abierto hasta ' + current.scope.book + ' · ' + current.scope.unitLabel :
+      current.signedIn ? 'Aprobación pendiente' : 'Acceso mediante tu cuenta de Google';
     line.append(node('span', summary, 'vocabulary-access-summary'));
-    const form = node('form', undefined, 'vocabulary-code-form');
-    form.hidden = current.cutoff >= 0;
-    const toggle = button('Introducir código', 'vocabulary-code-toggle', () => {
-      form.hidden = !form.hidden;
-      toggle.setAttribute('aria-expanded', String(!form.hidden));
-      if (!form.hidden) input.focus();
-    });
-    toggle.setAttribute('aria-expanded', String(!form.hidden));
-    toggle.setAttribute('aria-controls', 'vocabulary-code-form');
-    form.id = 'vocabulary-code-form';
-    if (current.cutoff >= 0) line.append(toggle);
+    if (access.account && current.master) {
+      line.append(button('Gestionar alumnos', 'vocabulary-access-link', showStudents));
+    } else if (access.account && current.signedIn) {
+      line.append(button('Actualizar acceso', 'vocabulary-access-link', refreshAccess));
+    }
     panel.append(line);
-    const label = node('label', 'Código de tu profesor');label.htmlFor = 'vocabulary-code';
-    const input = node('input', undefined, 'vocabulary-code-input');
-    input.type = 'text';input.id = 'vocabulary-code';input.name = 'code';input.size = 6;input.maxLength = 6;input.required = true;
-    input.pattern = '[A-Za-z0-9]{6}';input.title = '6 letras y números';
-    input.autocomplete = 'off';input.spellcheck = false;input.setAttribute('autocapitalize', 'none');
-    input.placeholder = 'Código';
-    input.addEventListener('input', () => {
-      const upper = input.value.toUpperCase();
-      if (upper !== input.value) {const start = input.selectionStart, end = input.selectionEnd;input.value = upper;input.setSelectionRange(start, end);}
-    });
-    input.setAttribute('aria-describedby', 'vocabulary-code-help vocabulary-code-feedback');
-    const help = node('p', '6 letras y números. Abre tu unidad y las anteriores; el acceso queda guardado ' + (access.account ? 'en tu cuenta.' : 'en este navegador.'), 'vocabulary-code-help');
-    help.id = 'vocabulary-code-help';
-    const feedback = node('p', undefined, 'vocabulary-code-feedback');
-    feedback.id = 'vocabulary-code-feedback';feedback.setAttribute('role', 'status');feedback.setAttribute('aria-live', 'polite');
-    const submit = button('Desbloquear', 'practice-primary', () => {});submit.type = 'submit';
-    const entry = node('div', undefined, 'vocabulary-code-entry');entry.append(input, submit);
-    form.append(label, entry, help, feedback);
-    form.addEventListener('submit', async event => {
-      event.preventDefault();
-      const turn = generation;
-      submit.disabled = true;input.readOnly = true;feedback.textContent = 'Comprobando código…';
-      try {
-        const result = await access.redeem(input.value);
-        if (!host || turn !== generation) return;
-        const target = result.scope;
-        state.notice = result.master ? '¡Listo! Todos los libros están abiertos.' :
-          '¡Listo! Puedes repasar hasta ' + target.book + ' · ' + target.unitLabel + '.';
-        if (!result.persistent) state.notice += ' Este navegador no permite guardar el acceso. Tendrás que introducir el código de nuevo al cerrar la página.';
-        if (state.book) showUnits(); else showBooks();
-      } catch (error) {
-        if (!host || turn !== generation) return;
-        feedback.classList.add('error-message');
-        feedback.textContent = error.message === 'expired' ? 'Este código ha caducado. Pide a tu profesor uno nuevo para tu unidad actual.' :
-          error.message === 'not-yet-valid' ? 'Este código todavía no está activo. Comprueba la fecha con tu profesor.' :
-          error.message === 'rate-limited' ? 'Has probado varios códigos. Espera un minuto y vuelve a intentarlo.' :
-          error.message === 'sign-in-required' ? 'Entra con Google antes de introducir tu código.' :
-          error.message === 'network' ? 'No se pudo guardar el acceso. Comprueba la conexión e inténtalo de nuevo.' :
-          error.message === 'unsupported' ? 'Abre la página con HTTPS en una versión actual de Chrome o Safari para introducir el código.' :
-          'Código no válido. Comprueba que lo has copiado completo.';
-        input.readOnly = false;submit.disabled = false;input.focus();
-      }
-    });
-    panel.append(form);
+    if (access.account && current.signedIn && !current.master && current.cutoff < 0) {
+      panel.append(node('p', 'Tu solicitud está enviada. Tu profesor abrirá las unidades que te correspondan. Pulsa «Actualizar acceso» después de su aprobación.', 'vocabulary-account-help'));
+    } else if (!access.account && !current.master && current.cutoff < 0) {
+      panel.append(node('p', 'Abre la página publicada y entra con Google para solicitar acceso a tu profesor.', 'vocabulary-account-help'));
+    }
     if (state.notice) {
       const notice = node('p', state.notice, 'vocabulary-access-notice');notice.setAttribute('role', 'status');panel.append(notice);
     }
     root.append(panel);
   }
+  const studentManager = {students: [], filter: 'pending', query: '', busy: new Map(), uncertain: new Set(), messages: new Map(), targets: new Map(), denied: false, refresh: null};
+  function clearStudentManager() {
+    studentManager.students = [];
+    studentManager.busy.clear();studentManager.uncertain.clear();studentManager.messages.clear();studentManager.targets.clear();studentManager.refresh = null;
+    studentManager.query = '';studentManager.filter = 'pending';studentManager.denied = false;
+  }
+  const scopeText = cutoff => {
+    const scope = accessConfig.scopes[cutoff];
+    return scope ? scope.book + ' · ' + scope.unitLabel : 'Sin unidades abiertas';
+  };
+  const searchText = text => String(text || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('es');
+  function showStudents() {
+    if (!access.account || !access.status().master) {showBooks();return;}
+    const turn = ++generation;
+    state.book = state.unit = state.deck = null;
+    const root = shell('Libros', showBooks);
+    root.classList.add('vocabulary-manager');
+    heading(root, 'Gestionar alumnos', 'Aprueba solicitudes y abre la unidad que corresponda. También se abrirán los libros y las unidades anteriores.');
+    const toolbar = node('div', undefined, 'vocabulary-manager-toolbar');
+    const searchLabel = node('label', 'Buscar por nombre o correo', 'vocabulary-manager-search');
+    const search = node('input');
+    search.type = 'search';search.placeholder = 'Nombre o correo';search.autocomplete = 'off';search.value = studentManager.query;
+    searchLabel.append(search);
+    const reload = button('Actualizar lista', 'practice-text-button vocabulary-manager-reload', () => loadStudents());
+    toolbar.append(searchLabel, reload);
+    const filters = node('div', undefined, 'vocabulary-manager-filters');
+    filters.setAttribute('role', 'group');filters.setAttribute('aria-label', 'Filtrar alumnos');
+    const filterButtons = new Map();
+    for (const [key, title] of [['pending', 'Pendientes'], ['approved', 'Aprobados'], ['all', 'Todos']]) {
+      const item = button(title, 'vocabulary-manager-filter', () => {studentManager.filter = key;renderList();});
+      item.dataset.filter = key;filterButtons.set(key, item);filters.append(item);
+    }
+    const message = node('p', '', 'vocabulary-manager-feedback');
+    message.setAttribute('role', 'status');message.setAttribute('aria-live', 'polite');
+    const list = node('div', undefined, 'vocabulary-students');
+    root.append(toolbar, filters, message, list);
+    search.addEventListener('input', () => {studentManager.query = search.value;renderList();});
+    present(root);
+    let loading = false;
+    const active = () => host && turn === generation && access.status().master;
+    const counts = () => ({pending: studentManager.students.filter(s => s.cutoff < 0).length,
+      approved: studentManager.students.filter(s => s.cutoff >= 0).length, all: studentManager.students.length});
+    function renderList() {
+      if (!active()) return;
+      const totals = counts();
+      for (const [key, item] of filterButtons) {
+        const title = {pending: 'Pendientes', approved: 'Aprobados', all: 'Todos'}[key];
+        item.textContent = title + ' (' + totals[key] + ')';
+        item.setAttribute('aria-pressed', String(studentManager.filter === key));
+        item.classList.toggle('is-active', studentManager.filter === key);
+        item.disabled = loading;
+      }
+      reload.disabled = loading || studentManager.busy.size > 0;
+      list.replaceChildren();
+      if (loading) {list.append(node('p', 'Cargando alumnos…', 'vocabulary-manager-empty'));return;}
+      const query = searchText(studentManager.query.trim());
+      const shown = studentManager.students.filter(student =>
+        (studentManager.filter === 'all' || (studentManager.filter === 'pending' ? student.cutoff < 0 : student.cutoff >= 0)) &&
+        (!query || searchText(student.name + ' ' + student.email).includes(query)));
+      if (!shown.length) {
+        const empty = query ? 'No hay alumnos que coincidan con la búsqueda.' : studentManager.filter === 'pending' ?
+          'No hay solicitudes pendientes. Los alumnos aparecerán aquí cuando entren con Google por primera vez.' :
+          studentManager.filter === 'approved' ? 'Todavía no hay alumnos aprobados.' : 'Todavía no hay alumnos registrados.';
+        list.append(node('p', empty, 'vocabulary-manager-empty'));return;
+      }
+      for (const student of shown) list.append(studentRow(student));
+    }
+    function studentRow(student) {
+      const row = node('article', undefined, 'vocabulary-student');
+      row.dataset.studentId = student.userId;
+      const identity = node('div', undefined, 'vocabulary-student-identity');
+      identity.append(node('h3', student.name || 'Alumno'), node('p', student.email, 'vocabulary-student-email'));
+      const badge = node('span', student.cutoff < 0 ? 'Pendiente' : 'Aprobado', 'vocabulary-access-badge');
+      identity.append(badge);
+      const current = node('p', 'Acceso actual: ' + scopeText(student.cutoff), 'vocabulary-student-current');
+      row.append(identity, current);
+      const controls = node('div', undefined, 'vocabulary-student-controls');
+      const available = accessConfig.scopes.map((scope, index) => ({...scope, index})).filter(scope => scope.index > student.cutoff);
+      if (available.length) {
+        const choices = node('div', undefined, 'vocabulary-student-target');
+        const bookLabel = node('label', 'Libro');
+        const books = node('select');books.setAttribute('aria-label', 'Libro para ' + (student.name || student.email));
+        const target = available.find(scope => scope.index === studentManager.targets.get(student.userId)) || available[0];
+        studentManager.targets.set(student.userId, target.index);
+        for (const id of [...new Set(available.map(scope => scope.book))]) {
+          const option = node('option', id);option.value = id;books.append(option);
+          if (id === target.book) option.selected = true;
+        }
+        const unitLabel = node('label', 'Unidad');
+        const units = node('select');units.setAttribute('aria-label', 'Unidad para ' + (student.name || student.email));
+        function updateUnits() {
+          units.replaceChildren();
+          for (const scope of available.filter(scope => scope.book === books.value)) {
+            const option = node('option', scope.unitLabel);option.value = String(scope.index);units.append(option);
+            if (scope.index === studentManager.targets.get(student.userId)) option.selected = true;
+          }
+          studentManager.targets.set(student.userId, Number(units.value));
+        }
+        books.addEventListener('change', updateUnits);
+        units.addEventListener('change', () => studentManager.targets.set(student.userId, Number(units.value)));
+        updateUnits();
+        bookLabel.append(books);unitLabel.append(units);choices.append(bookLabel, unitLabel);
+        const approve = button(student.cutoff < 0 ? 'Aprobar y abrir' : 'Abrir hasta aquí', 'practice-primary vocabulary-student-approve', () => {
+          const cutoff = Number(units.value);
+          if (Number.isInteger(cutoff) && cutoff > student.cutoff && cutoff < accessConfig.scopes.length) mutate(student, 'set', cutoff);
+        });
+        controls.append(choices, approve);
+        if (student.cutoff >= 0) {
+          const destination = scopeText(student.cutoff + 1);
+          const next = button('Abrir siguiente unidad · ' + destination, 'vocabulary-student-next', () => mutate(student, 'advance'));
+          controls.append(next);
+        }
+      } else {
+        controls.append(node('p', 'Todos los libros están abiertos.', 'vocabulary-student-complete'));
+      }
+      const busy = studentManager.busy.has(student.userId);
+      const uncertain = studentManager.uncertain.has(student.userId);
+      row.classList.toggle('is-busy', busy);row.setAttribute('aria-busy', String(busy));
+      if (busy || uncertain || studentManager.denied) {
+        for (const control of controls.querySelectorAll('button, select')) control.disabled = true;
+      }
+      row.append(controls);
+      const detail = node('p', busy ? 'Guardando acceso…' : studentManager.messages.get(student.userId) || '', 'vocabulary-student-feedback');
+      detail.setAttribute('role', 'status');
+      if (uncertain) detail.classList.add('error-message');
+      row.append(detail);
+      if (uncertain && !studentManager.denied) {
+        const check = button('Actualizar lista para comprobar', 'vocabulary-access-link', () => loadStudents());
+        check.disabled = studentManager.busy.size > 0;row.append(check);
+      }
+      return row;
+    }
+    async function loadStudents() {
+      if (!active() || loading || studentManager.busy.size > 0) return;
+      loading = true;message.textContent = '';message.classList.remove('error-message');renderList();
+      try {
+        const students = await access.listStudents();
+        if (!active()) return;
+        studentManager.students = students;
+        studentManager.uncertain.clear();studentManager.messages.clear();studentManager.denied = false;
+      } catch (error) {
+        if (!active()) return;
+        if (error.message === 'forbidden') studentManager.denied = true;
+        message.classList.add('error-message');
+        message.textContent = error.message === 'forbidden' ? 'Tu cuenta no tiene permiso para gestionar alumnos. Vuelve a entrar para actualizar tu acceso.' :
+          error.message === 'stale' ? 'Tu sesión ha cambiado. Vuelve a entrar para actualizar tu acceso.' :
+          'No se pudo cargar la lista. Comprueba la conexión y pulsa «Actualizar lista».';
+      } finally {
+        loading = false;if (active()) renderList();
+      }
+    }
+    async function mutate(student, action, cutoff) {
+      if (!active() || loading || studentManager.denied || studentManager.busy.has(student.userId) || studentManager.uncertain.has(student.userId)) return;
+      const operation = {};
+      studentManager.busy.set(student.userId, operation);studentManager.messages.delete(student.userId);
+      message.textContent = '';message.classList.remove('error-message');renderList();
+      try {
+        const result = action === 'advance' ? await access.advanceStudent(student.userId, student.cutoff) :
+          await access.setStudentProgress(student.userId, cutoff, student.cutoff);
+        if (!active()) return;
+        studentManager.students = studentManager.students.map(item => item.userId === result.userId ? result : item);
+        studentManager.targets.delete(result.userId);
+        studentManager.messages.set(result.userId, 'Acceso guardado hasta ' + scopeText(result.cutoff) + '.');
+        message.textContent = 'Acceso actualizado para ' + (result.name || result.email) + ': ' + scopeText(result.cutoff) + '.';
+      } catch (error) {
+        if (!active()) return;
+        studentManager.uncertain.add(student.userId);
+        if (error.message === 'forbidden') studentManager.denied = true;
+        const text = error.message === 'conflict' ? 'El acceso cambió en otra ventana. Actualiza la lista antes de continuar.' :
+          error.message === 'forbidden' ? 'Tu cuenta ya no puede gestionar alumnos. Vuelve a entrar para actualizar tu acceso.' :
+          error.message === 'not-found' ? 'Este alumno ya no está disponible. Actualiza la lista.' :
+          error.message === 'complete' ? 'Este alumno ya tiene todos los libros abiertos. Actualiza la lista.' :
+          error.message === 'stale' ? 'Tu sesión ha cambiado. Actualiza la lista o vuelve a entrar.' :
+          'No se pudo confirmar el cambio. Actualiza la lista para comprobar el acceso antes de abrir otra unidad.';
+        studentManager.messages.set(student.userId, text);
+      } finally {
+        if (studentManager.busy.get(student.userId) === operation) studentManager.busy.delete(student.userId);
+        if (active()) renderList();else studentManager.refresh?.();
+      }
+    }
+    studentManager.refresh = loadStudents;
+    if (studentManager.busy.size) list.append(node('p', 'Esperando a que termine el cambio de acceso…', 'vocabulary-manager-empty'));
+    else loadStudents();
+  }
   function showBooks() {
+    studentManager.refresh = null;
     generation++;
     state.book = state.unit = state.deck = null;
     const root = shell('Tipos de práctica', onBack);
@@ -708,6 +920,7 @@ window.createVocabularyFlashcards = function ({data, accessConfig, accountConfig
     present(root);
   }
   function showUnits() {
+    studentManager.refresh = null;
     generation++;
     state.unit = state.deck = null;
     const root = shell('Libros', showBooks);
@@ -809,6 +1022,7 @@ window.createVocabularyFlashcards = function ({data, accessConfig, accountConfig
   async function refreshAccess() {
       const turn = ++generation;
       state.book = state.unit = state.deck = null;
+      clearStudentManager();
       const loading = shell('Tipos de práctica', onBack);heading(loading, 'Vocabulario', 'Cargando tu acceso…');present(loading);
       try {
         await access.restore();if (host && turn === generation) {state.notice = '';showBooks();}
@@ -826,7 +1040,7 @@ window.createVocabularyFlashcards = function ({data, accessConfig, accountConfig
       try {unsubscribe = access.subscribe?.(() => {if (host) refreshAccess();});} catch (_) {unsubscribe = null;}
       await refreshAccess();
     },
-    unmount() {generation++;unsubscribe?.();unsubscribe = null;host = null; state.book = state.unit = state.deck = null;}
+    unmount() {generation++;unsubscribe?.();unsubscribe = null;host = null;clearStudentManager();state.book = state.unit = state.deck = null;}
   };
 };
 </script>
