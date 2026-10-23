@@ -48,6 +48,8 @@ body.is-practicing{background:var(--paper);color:var(--ink);min-height:100dvh}
 .practice-mode-card.pronunciation{grid-column:1/-1;grid-template-columns:42px minmax(0,1fr);gap:5px 16px;background:var(--accent);border-color:var(--accent);color:var(--ink)}.practice-mode-card.pronunciation:hover{background:var(--accent-hover);border-color:var(--accent-hover)}.practice-mode-card.pronunciation .practice-mode-icon{grid-row:1/3;width:42px;height:42px;background:#FFFFFF33;color:var(--ink)}.practice-mode-card.pronunciation .practice-mode-description{grid-column:2;color:var(--ink)}
 @media(max-width:700px){.practice-mode-card.pronunciation{grid-template-columns:36px minmax(0,1fr);gap:5px 10px}.practice-mode-card.pronunciation .practice-mode-icon{width:36px;height:36px}}
 
+.practice-mode-card.vocabulary,.practice-mode-card.activities{grid-column:1/-1}
+
 .practice-mode-card.vocabulary{grid-column:1/-1;grid-template-columns:38px minmax(0,1fr) auto;gap:5px 12px;border-color:var(--gold);background:var(--panel-warm)}.practice-mode-card.vocabulary:hover{border-color:var(--action);background:var(--panel-selected)}.practice-mode-card.vocabulary .practice-mode-icon{grid-row:1/3}.practice-mode-card.vocabulary .practice-mode-title,.practice-mode-card.vocabulary .practice-mode-description{grid-column:2}.practice-mode-card.vocabulary .practice-mode-count{grid-column:3;grid-row:1/3;align-self:center;white-space:nowrap}
 .vocabulary-books{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:26px}.vocabulary-book{display:flex;flex-direction:column;align-items:flex-start;gap:14px;border:1px solid var(--line);border-radius:17px;background:var(--paper);color:var(--ink);text-align:left;padding:26px}.vocabulary-book:hover{border-color:var(--action);background:var(--panel-warm)}.vocabulary-book-level{display:grid;place-items:center;width:58px;height:66px;border-radius:6px 13px 13px 6px;background:var(--panel-warm-selected);color:var(--ink);border-left:4px solid var(--progress);font-size:23px;font-weight:700}.vocabulary-book-title{font-size:21px;font-weight:650}.vocabulary-book-count{font-size:12px;color:var(--muted);line-height:1.5}
 .vocabulary-units{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:24px}.vocabulary-unit{display:grid;grid-template-columns:1fr auto;gap:9px 12px;border:1px solid var(--line);border-radius:13px;background:var(--paper);color:var(--ink);padding:18px;text-align:left;min-width:0}.vocabulary-unit:hover{border-color:var(--action);background:var(--panel-warm)}.vocabulary-unit-label{font-size:15px;font-weight:650}.vocabulary-unit-count{font-size:11px;color:var(--muted);align-self:center;white-space:nowrap}.vocabulary-unit-topic{grid-column:1/-1;font-size:13px;color:var(--muted);line-height:1.65;overflow-wrap:anywhere}.vocabulary-session h2{font-size:22px;margin-bottom:7px}.vocabulary-topic{font-size:14px;color:var(--muted);line-height:1.6;margin:0 0 19px;overflow-wrap:anywhere}.vocabulary-counter{font-size:11px;color:var(--muted);margin:0 0 8px}.vocabulary-session .practice-progress{height:5px;margin-bottom:0}
@@ -104,36 +106,7 @@ body.is-practicing{background:var(--paper);color:var(--ink);min-height:100dvh}
 <label class="model-label"><span class="sr-only">Modelo de pronunciación</span><select id="model"><option value="Seul_actual">Seúl actual</option><option value="Hoja1">Tradicional</option></select></label></div>
 </div>
 <main id="main"></main>
-<footer><span id="audio-legend">Azul: audio</span><div><details class="credits"><summary>Fuentes y créditos</summary><div class="credit-content"><p>Vocabulario: <em>Sejong_1A_2B_Vocabulario_coreano_espanol.xlsx</em>, proporcionado por el usuario. Las tarjetas conservan las parejas coreano–español de las cuatro hojas 1A, 1B, 2A y 2B: 47 secciones y 6.136 entradas. Se mantienen las repeticiones entre unidades para el repaso. El archivo Excel no se publica.</p>
-<p>Imágenes de escritura: 24 recortes del documento <em>ejemplo.pdf</em> proporcionado por el usuario, de Twinkl, con la tipografía Cafe24Oneprettynight. Se conservan sus contornos y se cambia el color a gris. Las cinco consonantes dobles ㄲ, ㄸ, ㅃ, ㅆ y ㅉ usan los contornos completos de <a href="https://commons.wikimedia.org/wiki/File:Hangul_jamo_characters_in_Unicode.svg">Hangul jamo characters in Unicode</a>, de KSX1026-1, tipografía HCR Dotum, bajo <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Adaptación: extracción, cambio de tamaño uniforme y color gris; las cinco imágenes adaptadas mantienen esa licencia. El avance negro cambia el color de la misma imagen.</p>
-<p>Demostración de [a] de J. Esling, del <a href="https://www.internationalphoneticassociation.org/IPAcharts/IPA_charts_TI/IPA_charts_TI.html">gráfico interactivo de la International Phonetic Association</a>. <a href="https://www.internationalphoneticassociation.org/IPAcharts/common_files/sounds/JE/0061.mp3">Archivo original completo</a>, sin edición; referencia IPA seleccionada para ㅏ en Tradicional.</p>
-<p>Demostración de [ɐ] de J. House, del <a href="https://www.internationalphoneticassociation.org/IPAcharts/IPA_charts_TI/IPA_charts_TI.html">gráfico interactivo de la International Phonetic Association</a>. <a href="https://www.internationalphoneticassociation.org/IPAcharts/common_files/sounds/JH/0250.mp3">Archivo original completo</a>, sin edición; referencia IPA seleccionada para la tabla.</p>
-<p>Demostración de [ɨ] de J. House, del <a href="https://www.internationalphoneticassociation.org/IPAcharts/IPA_charts_TI/IPA_charts_TI.html">gráfico interactivo de la International Phonetic Association</a>. <a href="https://www.internationalphoneticassociation.org/IPAcharts/common_files/sounds/JH/0268.mp3">Archivo original completo</a>, sin edición; ejemplo IPA, no grabación coreana de 으. Selección para la tabla.</p>
-<p>Ejemplo de 얘 de <a href="https://text.asahipress.com/free/player/index.html?bookcode=255689">Asahi Press: One Step Korean, pista 1-18</a>, enlazado por <a href="https://omu-korean.org/l5.html">Osaka Metropolitan University</a>. Recorte de una lectura aislada, sin voz sintética. Derechos de Asahi Press; lectura aislada utilizada como ejemplo.</p>
-<p>Grabaciones de <a href="https://kleartextbook.com/b_beginning/a_audio-files/beginning-audio-lesson-1-5/">KLEAR Integrated Korean</a> y <a href="https://pds.darakwon.co.kr/download/FileDown_list.asp?p_id=12044&amp;pf_type=5">Darakwon Quick Hangeul</a>. Se conservan los derechos y la atribución de sus editores. Prioridad para ejemplos coreanos: KLEAR, grabaciones existentes, Darakwon.</p>
-<p>Grabaciones de <a href="https://github.com/sillsdev/IPA-Help-WebApp">SIL IPA Help</a> (SIL International, licencia MIT); <a href="https://www.howtostudykorean.com/unit0/">How to Study Korean</a> (sílabas y palabras; derechos de su editor); <a href="https://www.town.yazu.tottori.jp/soshiki/1/12935.html">Lee Jong-gyu / Yazu Town</a> (cuatro vocales; derechos de sus autores).</p><ul><li><a href="https://commons.wikimedia.org/wiki/File:Voiceless_palato-alveolar_affricate.ogg">Voiceless palato-alveolar affricate.ogg</a> — Peter Isotalo; <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>. MP3 ofrecido por Wikimedia Commons</li><li><a href="https://commons.wikimedia.org/wiki/File:Near-close_near-back_rounded_vowel.ogg">Near-close near-back rounded vowel.ogg</a> — Denelson83 (atribución indicada por Commons); <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>. Conversión a MP3 para compatibilidad; se conserva el contenido completo.</li><li><a href="https://commons.wikimedia.org/wiki/File:Palatal_approximant.ogg">Palatal approximant.ogg</a> — Peter Isotalo (Karmosin); <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>. Conversión a MP3 para compatibilidad; se conserva el contenido completo.</li><li><a href="https://commons.wikimedia.org/wiki/File:Voiced_alveolo-palatal_affricate.ogg">Voiced alveolo-palatal affricate.ogg</a> — Halibutt; <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>. MP3 ofrecido por Wikimedia Commons</li><li><a href="https://commons.wikimedia.org/wiki/File:%C9%A4%CC%9E_IPA_sound.opus">ɤ̞ IPA sound.opus</a> — Zion arts; <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. MP3 ofrecido por Wikimedia Commons</li><li><a href="https://commons.wikimedia.org/wiki/File:Voiced_velar_approximant.ogg">Voiced velar approximant.ogg</a> — Peter Isotalo; <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>. MP3 ofrecido por Wikimedia Commons</li><li><a href="https://commons.wikimedia.org/wiki/File:Voiced_dental_approximant.ogg">Voiced dental approximant.ogg</a> — Tino_no; <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. MP3 ofrecido por Wikimedia Commons</li><li><a href="https://commons.wikimedia.org/wiki/File:Mid_back_rounded_vowel.ogg">Mid back rounded vowel.ogg</a> — TFighterPilot; <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>. Conversión a MP3 para compatibilidad; se conserva el contenido completo.</li><li><a href="https://commons.wikimedia.org/wiki/File:Voiced_palatal_affricate.ogg">Voiced palatal affricate.ogg</a> — Adamsa123; <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. MP3 ofrecido por Wikimedia Commons</li><li><a href="https://commons.wikimedia.org/wiki/File:Aspirated_voiceless_bilabial_stop.ogg">Aspirated voiceless bilabial stop.ogg</a> — Joni (Joni~commonswiki); <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>. MP3 ofrecido por Wikimedia Commons</li><li><a href="https://commons.wikimedia.org/wiki/File:Voiceless_alveolo-palatal_affricate.ogg">Voiceless alveolo-palatal affricate.ogg</a> — Halibutt; <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>. MP3 ofrecido por Wikimedia Commons</li><li><a href="https://commons.wikimedia.org/wiki/File:Open_central_unrounded_vowel.ogg">Open central unrounded vowel.ogg</a> — Denelson83; <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>. Conversión a MP3 para compatibilidad; se conserva el contenido completo.</li><li><a href="https://commons.wikimedia.org/wiki/File:Ko-%EB%8B%AC.ogg">Ko-달.ogg</a> — Amanda1970; <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. MP3 ofrecido por Wikimedia Commons</li></ul><p>Las grabaciones de Commons se usan con la licencia indicada. Los recortes o conversiones conservan la atribución de sus originales. No hay voz sintética ni concatenación de sonidos. Las muestras coreanas son ejemplos de sílabas o palabras; no certifican mediciones de F0/VOT del Seúl de 2026.</p><details><summary>Licencia MIT de SIL</summary><pre>The MIT License (MIT)
-
-Copyright (c) 2006-2017 SIL International.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the &quot;Software&quot;), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-</pre></details>
-</div></details></div></footer>
+<footer><span id="audio-legend">Azul: audio</span></footer>
 </div>
 <noscript>Abre este documento en un navegador con JavaScript.</noscript>
 <audio id="sound" preload="none" hidden></audio>
@@ -862,12 +835,12 @@ window.createVocabularyTest = function ({cards, illustrations, node, onBack, isA
   const active = () => !!host && isActive();
   function shell(backLabel, backAction) {
     const section = node('section', undefined, 'practice vocabulary vocabulary-test');
-    section.setAttribute('aria-label', 'Test de vocabulario');
+    section.setAttribute('aria-label', 'Actividades');
     const navigation = node('div', undefined, 'practice-modes');
     const back = button('', 'practice-back', backAction);
     const arrow = node('span', '←');arrow.setAttribute('aria-hidden', 'true');
     back.append(arrow, node('span', backLabel));
-    navigation.append(back, node('span', 'Test de vocabulario', 'practice-eyebrow'));
+    navigation.append(back, node('span', 'Actividades', 'practice-eyebrow'));
     section.append(navigation);return section;
   }
   function heading(section, text, description) {
@@ -1084,6 +1057,7 @@ window.createVocabularyFlashcards = function ({data, accessConfig, accountConfig
     return item;
   };
   const needsSignIn = error => ['session-expired', 'sign-in-required', 'google-required', 'forbidden'].includes(error?.message);
+  const activityLabel = () => state.activity === 'test' ? 'Actividades' : 'Vocabulario';
   function showSignIn() {
     clearStudentManager();
     state.notice = 'Tu sesión ha terminado. Vuelve a entrar con Google; tu progreso guardado se conserva.';
@@ -1102,13 +1076,13 @@ window.createVocabularyFlashcards = function ({data, accessConfig, accountConfig
   }
   function shell(backLabel, action) {
     const root = node('section', undefined, 'practice vocabulary');
-    root.setAttribute('aria-label', 'Vocabulario');
+    root.setAttribute('aria-label', activityLabel());
     const row = node('div', undefined, 'practice-modes');
     const back = button('', 'practice-back', action);
     const arrow = node('span', '←');
     arrow.setAttribute('aria-hidden', 'true');
     back.append(arrow, node('span', backLabel));
-    row.append(back, node('span', 'Vocabulario', 'practice-eyebrow'));
+    row.append(back, node('span', activityLabel(), 'practice-eyebrow'));
     root.append(row);
     return root;
   }
@@ -1117,8 +1091,9 @@ window.createVocabularyFlashcards = function ({data, accessConfig, accountConfig
     if (access.account) {
       const account = node('div', undefined, 'vocabulary-account');
       if (!current.signedIn) {
-        account.append(node('p', 'Guarda tus unidades en tu cuenta', 'vocabulary-account-title'),
-          node('p', 'Entra con Google para solicitar acceso a tu profesor. Una vez aprobado, conservarás tus unidades también en otros dispositivos.', 'vocabulary-account-help'));
+        account.append(node('p', state.activity === 'test' ? 'Entra para abrir tus actividades' : 'Guarda tus unidades en tu cuenta', 'vocabulary-account-title'),
+          node('p', state.activity === 'test' ? 'Entra con Google para hacer las actividades de las unidades abiertas por tu profesor. Se utiliza el mismo acceso que en Vocabulario.' :
+            'Entra con Google para solicitar acceso a tu profesor. Una vez aprobado, conservarás tus unidades también en otros dispositivos.', 'vocabulary-account-help'));
         const login = button('Continuar con Google', 'practice-primary vocabulary-google', async () => {
           const turn = generation;
           login.disabled = true;
@@ -1160,7 +1135,8 @@ window.createVocabularyFlashcards = function ({data, accessConfig, accountConfig
     }
     panel.append(line);
     if (access.account && current.signedIn && !current.master && current.suspended) {
-      panel.append(node('p', 'Tu acceso al vocabulario está suspendido. Contacta con tu profesor para reactivarlo. Tu cuenta y tu progreso guardado se conservan.', 'vocabulary-account-help'));
+      panel.append(node('p', state.activity === 'test' ? 'Tu acceso a las actividades está suspendido. Contacta con tu profesor para reactivarlo. Tu cuenta y tu progreso guardado se conservan.' :
+        'Tu acceso al vocabulario está suspendido. Contacta con tu profesor para reactivarlo. Tu cuenta y tu progreso guardado se conservan.', 'vocabulary-account-help'));
     } else if (access.account && current.signedIn && !current.master && current.cutoff < 0) {
       panel.append(node('p', 'Tu solicitud está enviada. Tu profesor abrirá las unidades que te correspondan. Pulsa «Actualizar acceso» después de su aprobación.', 'vocabulary-account-help'));
     } else if (!access.account && !current.master && current.cutoff < 0) {
@@ -1408,9 +1384,8 @@ window.createVocabularyFlashcards = function ({data, accessConfig, accountConfig
     studentManager.refresh = null;
     generation++;view = 'books';
     state.book = state.unit = state.deck = null;
-    const root = shell('Tipos de práctica', onBack);
-    heading(root, 'Elige un libro', 'Repasa el vocabulario de cada unidad.');
-    activityTabs(root, showBooks);
+    const root = shell('Inicio', onBack);
+    heading(root, 'Elige un libro', state.activity === 'test' ? 'Practica con las actividades de cada unidad.' : 'Repasa el vocabulario de cada unidad.');
     accessPanel(root);
     const grid = node('div', undefined, 'vocabulary-books');
     for (const book of data.books) {
@@ -1420,7 +1395,7 @@ window.createVocabularyFlashcards = function ({data, accessConfig, accountConfig
       card.classList.toggle('is-locked', !opened);
       card.dataset.book = book.id;
       card.append(node('span', book.id, 'vocabulary-book-level'), node('span', book.id, 'vocabulary-book-title'),
-        node('span', book.units.length + ' secciones · ' + book.cardCount.toLocaleString('es-ES') + ' tarjetas', 'vocabulary-book-count'),
+        node('span', book.units.length + ' secciones · ' + book.cardCount.toLocaleString('es-ES') + (state.activity === 'test' ? ' palabras' : ' tarjetas'), 'vocabulary-book-count'),
         node('span', opened === 0 ? 'Bloqueado' : opened === book.units.length ? 'Libro abierto' : opened + ' de ' + book.units.length + ' secciones abiertas', 'vocabulary-access-badge'));
       grid.append(card);
     }
@@ -1433,8 +1408,7 @@ window.createVocabularyFlashcards = function ({data, accessConfig, accountConfig
     generation++;view = 'units';
     state.unit = state.deck = null;
     const root = shell('Libros', showBooks);
-    heading(root, state.book.id, state.activity === 'test' ? 'Elige una unidad para hacer un test.' : 'Elige una unidad.');
-    activityTabs(root, showUnits);
+    heading(root, state.book.id, state.activity === 'test' ? 'Elige una unidad para empezar las actividades.' : 'Elige una unidad.');
     accessPanel(root);
     const list = node('div', undefined, 'vocabulary-units');
     for (const unit of state.book.units) {
@@ -1451,32 +1425,20 @@ window.createVocabularyFlashcards = function ({data, accessConfig, accountConfig
     root.append(list);
     present(root);
   }
-  function activityTabs(root, render) {
-    const tabs = node('div', undefined, 'vocabulary-study-tabs');
-    tabs.setAttribute('role', 'group');tabs.setAttribute('aria-label', 'Actividad de vocabulario');
-    for (const [id, title] of [['cards', 'Tarjetas'], ['test', 'Test']]) {
-      const tab = button(title, 'vocabulary-study-tab', () => {
-        if (state.activity === id) return;
-        state.activity = id;render();
-      });
-      tab.setAttribute('aria-pressed', String(state.activity === id));
-      tabs.append(tab);
-    }
-    root.append(tabs);
-  }
   async function startUnit(unit) {
     stopTest();
     if (!access.has(state.book.id, unit.id)) {showUnits();return;}
     const turn = ++generation;view = 'loading-unit';
     let cards = unit.cards;
     if (access.account) {
-      const loading = shell('Unidades', showUnits);heading(loading, state.book.id + ' · ' + unit.label, 'Cargando el vocabulario…');present(loading);
+      const loading = shell('Unidades', showUnits);heading(loading, state.book.id + ' · ' + unit.label, state.activity === 'test' ? 'Cargando las actividades…' : 'Cargando el vocabulario…');present(loading);
       try {cards = await access.loadUnit(state.book.id, unit.id);}
       catch (error) {
         if (!host || turn !== generation) return;
         if (needsSignIn(error)) {showSignIn();return;}
         if (access.status().suspended || error.message === 'locked' || error.message === 'suspended') {showBooks();return;}
-        const failed = shell('Unidades', showUnits);heading(failed, unit.label, 'No se pudieron abrir las tarjetas. Comprueba la conexión e inténtalo de nuevo.');
+        const failed = shell('Unidades', showUnits);heading(failed, unit.label, state.activity === 'test' ? 'No se pudieron abrir las actividades. Comprueba la conexión e inténtalo de nuevo.' :
+          'No se pudieron abrir las tarjetas. Comprueba la conexión e inténtalo de nuevo.');
         failed.append(button('Reintentar', 'practice-primary', () => startUnit(unit)));present(failed);return;
       }
       if (!host || turn !== generation) return;
@@ -1578,14 +1540,14 @@ window.createVocabularyFlashcards = function ({data, accessConfig, accountConfig
       const turn = ++generation;view = 'loading-access';
       state.book = state.unit = state.deck = null;
       clearStudentManager();
-      const loading = shell('Tipos de práctica', onBack);heading(loading, 'Vocabulario', 'Cargando tu acceso…');present(loading);
+      const loading = shell('Inicio', onBack);heading(loading, activityLabel(), 'Cargando tu acceso…');present(loading);
       try {
         await access.restore();if (host && turn === generation) {state.notice = '';showBooks();}
       } catch (error) {
         if (!host || turn !== generation) return;
         if (needsSignIn(error)) {showSignIn();return;}
         if (error.message === 'configuration') {showBooks();return;}
-        const failed = shell('Tipos de práctica', onBack);heading(failed, 'Vocabulario', 'No se pudo cargar tu cuenta. Comprueba la conexión e inténtalo de nuevo.');
+        const failed = shell('Inicio', onBack);heading(failed, activityLabel(), 'No se pudo cargar tu cuenta. Comprueba la conexión e inténtalo de nuevo.');
         failed.append(button('Reintentar', 'practice-primary', refreshAccess));present(failed);
       }
   }
@@ -1594,8 +1556,8 @@ window.createVocabularyFlashcards = function ({data, accessConfig, accountConfig
     generation++;view = 'access-error';
     state.book = state.unit = state.deck = null;
     clearStudentManager();
-    const failed = shell('Tipos de práctica', onBack);
-    heading(failed, 'Vocabulario', 'No se pudo comprobar tu acceso. Comprueba la conexión y vuelve a intentarlo.');
+    const failed = shell('Inicio', onBack);
+    heading(failed, activityLabel(), 'No se pudo comprobar tu acceso. Comprueba la conexión y vuelve a intentarlo.');
     failed.append(button('Actualizar acceso', 'practice-primary', refreshAccess));present(failed);
   }
   async function syncPermissions() {
@@ -1640,8 +1602,9 @@ window.createVocabularyFlashcards = function ({data, accessConfig, accountConfig
     };
   }
   return {
-    async mount(container) {
+    async mount(container, {activity = 'cards'} = {}) {
       stopPermissionSync?.();stopPermissionSync = null;
+      state.activity = activity === 'test' ? 'test' : 'cards';
       host = container;
       unsubscribe?.();
       try {unsubscribe = access.subscribe?.(() => {if (host) refreshAccess();});} catch (_) {unsubscribe = null;}
@@ -1653,14 +1616,37 @@ window.createVocabularyFlashcards = function ({data, accessConfig, accountConfig
 };
 </script>
 <script>'use strict';
-window.createHangulPractice = function ({data, vocabularyData, vocabularyAccess, vocabularyIllustrations, accountConfig, node, sound, stop, onPronunciation}) {
+window.BBlinguaStudyNavigation = {
+  remember(view) {
+    if (view === null) {try {window.sessionStorage.removeItem('bblingua-study-return');} catch (_) {}return;}
+    if (!['vocabulary', 'activities'].includes(view)) return;
+    try {window.sessionStorage.setItem('bblingua-study-return', JSON.stringify({view, at: Date.now()}));} catch (_) {}
+  },
+  initial(enabled, href) {
+    if (!enabled) return null;
+    let url;
+    try {url = new URL(href);} catch (_) {return null;}
+    const requested = url.searchParams.get('view');
+    if (!['vocabulary', 'activities'].includes(requested)) return null;
+    if (requested === 'vocabulary' && url.searchParams.has('code')) {
+      try {
+        const saved = JSON.parse(window.sessionStorage.getItem('bblingua-study-return'));
+        window.sessionStorage.removeItem('bblingua-study-return');
+        const age = Date.now() - saved?.at;
+        if (['vocabulary', 'activities'].includes(saved?.view) && Number.isFinite(age) && age >= 0 && age < 30 * 60 * 1000) return saved.view;
+      } catch (_) {}
+    }
+    return requested;
+  }
+};
+window.createHangulPractice = function ({data, vocabularyData, vocabularyAccess, vocabularyIllustrations, accountConfig, node, sound, stop, onPronunciation, onStudyOpen}) {
   const core=window.HangulPracticeCore;
   core.setGlyphs(data.glyphs);
-  const modes=[['mixed','Mezcla'],['sound','Sonidos'],['trace','Trazos'],['assemble','Sílabas'],['listen','Escucha'],['vocabulary','Vocabulario']];
-  const descriptions={mixed:'Los cuatro tipos en una ronda.',sound:'Relaciona cada letra con su sonido.',trace:'Sigue los trazos para escribir hangul.',assemble:'Escucha y forma una sílaba.',listen:'Reconoce la sílaba que oyes.',vocabulary:'Tarjetas y tests por libro y unidad.'};
+  const modes=[['mixed','Mezcla'],['sound','Sonidos'],['trace','Trazos'],['assemble','Sílabas'],['listen','Escucha'],['vocabulary','Vocabulario'],['activities','Actividades']];
+  const descriptions={mixed:'Los cuatro tipos en una ronda.',sound:'Relaciona cada letra con su sonido.',trace:'Sigue los trazos para escribir hangul.',assemble:'Escucha y forma una sílaba.',listen:'Reconoce la sílaba que oyes.',vocabulary:'Tarjetas por libro y unidad.',activities:'Tests de vocabulario por libro y unidad.'};
   const names={sound:'Letra → sonido',trace:'Traza la letra',assemble:'Forma la sílaba',listen:'Sonido → letra'};
   const state={mode:'mixed',deck:null,index:0,results:[],answer:null,checked:false,ink:[],traceProgress:0,traceMistakes:0,slots:['',''],activeSlot:0};
-  let host, feedback, check, board, pointerId=null, dragStart=0;
+  let host, feedback, check, board, pointerId=null, dragStart=0, studyRequest=0;
   const vocabulary=window.createVocabularyFlashcards({data:vocabularyData,accessConfig:vocabularyAccess,accountConfig,illustrations:vocabularyIllustrations,node,onBack:showModes});
   const icon=() => {
     const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
@@ -1683,8 +1669,16 @@ window.createHangulPractice = function ({data, vocabularyData, vocabularyAccess,
   function start(mode=state.mode,deck) {
     stop();state.mode=mode;state.deck=deck || core.round(data.entries,mode,Math.random,data.syllables);state.index=0;state.results=[];clearAnswer();paint();host.querySelector('h2')?.focus({preventScroll:true});
   }
-  function showModes() {stop();vocabulary.unmount();state.deck=null;clearAnswer();paint();host.querySelector('.practice-mode-card')?.focus({preventScroll:true});}
-  function openVocabulary() {stop();state.deck=null;clearAnswer();vocabulary.mount(host);}
+  function showModes() {studyRequest++;stop();vocabulary.unmount();state.deck=null;clearAnswer();window.BBlinguaStudyNavigation.remember(null);onStudyOpen?.(null);paint();host.querySelector('.practice-mode-card')?.focus({preventScroll:true});}
+  async function openStudy(view) {
+    const turn=++studyRequest;
+    stop();vocabulary.unmount();state.deck=null;clearAnswer();
+    window.BBlinguaStudyNavigation.remember(view);
+    await vocabulary.mount(host,{activity:view==='activities'?'test':'cards'});
+    if(host && turn===studyRequest)onStudyOpen?.(view);
+  }
+  function openVocabulary() {return openStudy('vocabulary');}
+  function openActivities() {return openStudy('activities');}
   function modeIcon(mode) {
     const visual=node('span',undefined,'practice-mode-icon');visual.setAttribute('aria-hidden','true');
     if(mode==='sound')visual.append(node('span','ㄱ'));
@@ -1693,7 +1687,7 @@ window.createHangulPractice = function ({data, vocabularyData, vocabularyAccess,
     else {
       const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox','0 0 24 24');
       const path=document.createElementNS(svg.namespaceURI,'path');
-      path.setAttribute('d',mode==='mixed'?'M3 3h7v7H3z M14 3h7v7h-7z M3 14h7v7H3z M14 14h7v7h-7z':mode==='vocabulary'?'M7 7h14v14H7z M3 17V3h14 M10 11h8 M10 15h5':'M5 19l4-1L20 7l-3-3L6 15z M14 7l3 3 M5 21h14');
+      path.setAttribute('d',mode==='mixed'?'M3 3h7v7H3z M14 3h7v7h-7z M3 14h7v7H3z M14 14h7v7h-7z':mode==='vocabulary'?'M7 7h14v14H7z M3 17V3h14 M10 11h8 M10 15h5':mode==='activities'?'M8 5H5v16h14V5h-3 M9 3h6v4H9z M8 13l2 2 5-5':'M5 19l4-1L20 7l-3-3L6 15z M14 7l3 3 M5 21h14');
       path.setAttribute('fill','none');path.setAttribute('stroke','currentColor');path.setAttribute('stroke-width','1.6');path.setAttribute('stroke-linejoin','round');path.setAttribute('stroke-linecap','round');svg.append(path);visual.append(svg);
     }
     return visual;
@@ -1706,8 +1700,9 @@ window.createHangulPractice = function ({data, vocabularyData, vocabularyAccess,
     pronunciation.setAttribute('aria-describedby',pronunciationDescription.id);
     pronunciation.append(modeIcon('pronunciation'),node('span','Pronunciación','practice-mode-title'),pronunciationDescription);grid.append(pronunciation);
     for(const [mode,label] of modes) {
-      const count=mode==='vocabulary'?vocabularyData.books.length+' libros':(mode==='mixed'?16:12)+' retos';
-      const card=button('','practice-mode-card'+(mode==='mixed'?' mixed':mode==='vocabulary'?' vocabulary':''),()=>mode==='vocabulary'?openVocabulary():start(mode));card.dataset.mode=mode;
+      const study=mode==='vocabulary'||mode==='activities';
+      const count=study?vocabularyData.books.length+' libros':(mode==='mixed'?16:12)+' retos';
+      const card=button('','practice-mode-card'+(mode==='mixed'?' mixed':study?' '+mode:''),()=>study?openStudy(mode):start(mode));card.dataset.mode=mode;
       card.setAttribute('aria-label',label+' · '+count);
       const description=node('span',descriptions[mode],'practice-mode-description');description.id='practice-mode-description-'+mode;
       card.setAttribute('aria-describedby',description.id);
@@ -1915,7 +1910,7 @@ window.createHangulPractice = function ({data, vocabularyData, vocabularyAccess,
       else if(q.type==='listen')feedback.append(audioButton(q.target.audioId,'Escuchar de nuevo',true));
     }
   }
-  return {mount(container){host=container;state.deck=null;clearAnswer();paint();},openVocabulary,unmount(){vocabulary.unmount();pointerId=null;host=null;}};
+  return {mount(container){studyRequest++;host=container;state.deck=null;clearAnswer();paint();},openVocabulary,openActivities,unmount(){studyRequest++;vocabulary.unmount();pointerId=null;host=null;}};
 };
 </script>
 <script>'use strict';
@@ -1925,7 +1920,12 @@ window.createHangulPractice = function ({data, vocabularyData, vocabularyAccess,
   const letters = JSON.parse($('letter-data').textContent);
   const embedded = JSON.parse($('embedded-audio').textContent);
   const accountConfig = JSON.parse($('account-config').textContent);
-  let resumeVocabulary = accountConfig.enabled && new URL(location.href).searchParams.get('view') === 'vocabulary';
+  let resumeStudy = window.BBlinguaStudyNavigation.initial(accountConfig.enabled, location.href);
+  function setStudyView(view) {
+    const url = new URL(location.href);
+    if (view) url.searchParams.set('view', view); else url.searchParams.delete('view');
+    history.replaceState(null, '', url);
+  }
   const assets = new Map(mapping.assets.map(item => [item.id, item]));
   const state = { model: 'Seul_actual', view: 'home', section: 'consonantes', request: 0 };
   const audio = $('sound');
@@ -2089,7 +2089,7 @@ window.createHangulPractice = function ({data, vocabularyData, vocabularyAccess,
     $('pronunciation-controls').hidden=exercising;
     $('model').closest('label').hidden=context || exercising;
     document.querySelector('header .hint').textContent=exercising?'Escucha, sigue los trazos y forma sílabas.':'Pulsa una letra coreana para escuchar.';
-    if(exercising) {practice.mount($('main'));if(resumeVocabulary){resumeVocabulary=false;practice.openVocabulary();}return;}
+    if(exercising) {practice.mount($('main'));if(resumeStudy){const view=resumeStudy;resumeStudy=null;if(view==='activities')practice.openActivities();else practice.openVocabulary();}return;}
     const rows=context?contexts():state.section==='vocales'?vowels():state.section==='secuencias'?sequences():consonants();
     const scroll=node('div',undefined,'table-scroll');scroll.tabIndex=0;
     scroll.setAttribute('aria-label','Tabla de pronunciación; desplaza horizontalmente si es necesario');
@@ -2108,9 +2108,10 @@ window.createHangulPractice = function ({data, vocabularyData, vocabularyAccess,
   }
   const practice = window.createHangulPractice({
     data: JSON.parse($('practice-data').textContent), vocabularyData: JSON.parse($('vocabulary-data').textContent), vocabularyAccess: JSON.parse($('vocabulary-access-data').textContent), vocabularyIllustrations: JSON.parse($('vocabulary-illustrations-data').textContent), accountConfig, node, sound, stop,
-    onPronunciation() {state.view='pronunciacion';render();$('home-button').focus({preventScroll:true});}
+    onStudyOpen: setStudyView,
+    onPronunciation() {setStudyView(null);state.view='pronunciacion';render();$('home-button').focus({preventScroll:true});}
   });
-  $('home-button').addEventListener('click',()=>{state.view='home';render();$('main').querySelector('.practice-mode-card')?.focus({preventScroll:true});});
+  $('home-button').addEventListener('click',()=>{setStudyView(null);state.view='home';render();$('main').querySelector('.practice-mode-card')?.focus({preventScroll:true});});
   $('model').addEventListener('change',render);
   audio.addEventListener('ended',clearPlaying);audio.addEventListener('error',clearPlaying);
   document.addEventListener('keydown',event=>{if(event.key==='Escape')stop();});
