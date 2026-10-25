@@ -574,6 +574,47 @@ body.is-practicing{background:var(--paper);color:var(--ink);min-height:100dvh}
   .bottom-navigation .bottom-nav-label { font-size: 9px; }
 }
 </style>
+<!-- BBLINGUA_CLOUDFLARE_TRANSITION_BEGIN -->
+<script id="bblingua-cloudflare-transition">
+(async function redirectOldVisit(browserWindow, destination) {
+  try {
+    const current = new URL(browserWindow.location.href);
+    if (current.origin !== 'https://qdgvr.github.io' || ![
+      '/korean-spanish-pronunciation', '/korean-spanish-pronunciation/',
+      '/korean-spanish-pronunciation/index.html'
+    ].includes(current.pathname)) return;
+    const authKeys = ['code','error','error_code','error_description','error_uri','state',
+      'access_token','refresh_token','id_token','provider_token','provider_refresh_token',
+      'token','token_hash','token_type','expires_in','expires_at','auth_session_id'];
+    const callback = parameters => [...parameters.keys()].some(key => authKeys.includes(key.toLowerCase()));
+    if (callback(current.searchParams) || callback(new URLSearchParams(current.hash.slice(1)))) return;
+    // Only the four existing study routes may cross origins. All other query
+    // parameters and every fragment are discarded, never forwarded.
+    const next = new URL(destination);
+    const view = current.searchParams.get('view');
+    if (['letters','vocabulary','activities','account'].includes(view)) next.searchParams.set('view', view);
+    // A blocked or unreachable pages.dev host must leave the old app usable.
+    // Probe a tiny public file without credentials, referrers or URL parameters.
+    const controller = new browserWindow.AbortController();
+    const timeout = browserWindow.setTimeout(() => controller.abort(), 4000);
+    try {
+      const response = await browserWindow.fetch(new URL('source_notices/SIL_LICENSE.txt', destination).href, {
+        method:'HEAD', mode:'no-cors', credentials:'omit', cache:'no-store',
+        redirect:'error', referrerPolicy:'no-referrer', signal:controller.signal
+      });
+      if (response.type !== 'opaque' || controller.signal.aborted) return;
+      // Do not interrupt a route or login transition made during the probe.
+      if (browserWindow.location.href !== current.href) return;
+      browserWindow.location.replace(next.href);
+    } finally {
+      browserWindow.clearTimeout(timeout);
+    }
+  } catch (_) {
+    // An unexpected URL must not prevent the retained application from running.
+  }
+})(window,"https://bblingua.pages.dev/");
+</script>
+<!-- BBLINGUA_CLOUDFLARE_TRANSITION_END -->
 </head><body>
 <div class="page">
 <header><div class="header-row"><a id="brand-home" class="brand-home" href="./" aria-label="BBlingua · Inicio"><svg class="brand" xmlns="http://www.w3.org/2000/svg" viewBox="59 59 1566 1011" role="img" aria-label="BBlingua! Spanish School" focusable="false">

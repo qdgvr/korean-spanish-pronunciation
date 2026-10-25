@@ -4,7 +4,9 @@ Atlas de pronunciación en español para aprender coreano.
 
 La identidad visual utiliza los colores del material de BBlingua: cian, magenta, naranja, azul claro y gris sobre blanco. El logotipo de la cabecera está reconstruido con contornos SVG integrados en el HTML, con los cuatro colores de la referencia proporcionada; no carga una imagen externa.
 
-**[Abrir la página](https://qdgvr.github.io/korean-spanish-pronunciation/)**
+**[Abrir BBlingua](https://bblingua.pages.dev/)**
+
+La dirección principal está alojada en Cloudflare Pages. La dirección anterior de GitHub comprueba la conexión con la nueva página y redirige automáticamente cuando está disponible. Si la conexión falla, conserva la aplicación anterior. Los retornos de inicio de sesión que empezaron en GitHub se procesan allí, sin trasladar códigos de autenticación entre dominios. Las cuentas y el aprendizaje guardado utilizan la misma base de datos.
 
 Pulsa una letra coreana en azul para escuchar. Las 18 consonantes con audio reproducen ejemplos con ㅡ (그, 끄, 느, 드, 뜨, 르, 므, 브, 쁘, 스, 쓰, 즈, 쯔, 츠, 크, 트, 프, 흐). La tabla ofrece las vistas Seúl actual y Tradicional, combinaciones y ejemplos en contexto.
 
@@ -62,4 +64,6 @@ Se incluyen la [licencia MIT de SIL](source_notices/SIL_LICENSE.txt) y los [avis
 
 ## Publicación
 
-GitHub Pages publica la raíz de la rama `main`. Para actualizar la página, sustituye `index.html` por la versión completa revisada, sin el enlace al Excel, y sube el cambio a `main`.
+La publicación principal utiliza el proyecto `bblingua` de Cloudflare Pages mediante Direct Upload. Se prepara desde la versión pública revisada y se sube únicamente la carpeta de recursos públicos. Los archivos privados, el Excel original y las soluciones no forman parte de la publicación. Subir cambios a GitHub no actualiza por sí solo la copia de Cloudflare.
+
+GitHub Pages conserva en la raíz de `main` la aplicación de transición y sus atribuciones, con la redirección condicional a la nueva dirección.
