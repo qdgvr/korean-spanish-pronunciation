@@ -6,7 +6,7 @@ La identidad visual utiliza los colores del material de BBlingua: cian, magenta,
 
 **[Abrir BBlingua](https://bblingua.pages.dev/)**
 
-La dirección principal está alojada en Cloudflare Pages. La dirección anterior de GitHub comprueba la conexión con la nueva página y redirige automáticamente cuando está disponible. Si la conexión falla, conserva la aplicación anterior. Los retornos de inicio de sesión que empezaron en GitHub se procesan allí, sin trasladar códigos de autenticación entre dominios. Las cuentas y el aprendizaje guardado utilizan la misma base de datos.
+La dirección principal está alojada en Cloudflare Pages. Las visitas normales a la dirección anterior de GitHub se redirigen directamente a la nueva página. Los retornos de inicio de sesión que empezaron en GitHub se procesan allí, sin trasladar códigos de autenticación entre dominios. Las cuentas y el aprendizaje guardado utilizan la misma base de datos.
 
 Pulsa una letra coreana en azul para escuchar. Las 18 consonantes con audio reproducen ejemplos con ㅡ (그, 끄, 느, 드, 뜨, 르, 므, 브, 쁘, 스, 쓰, 즈, 쯔, 츠, 크, 트, 프, 흐). La tabla ofrece las vistas Seúl actual y Tradicional, combinaciones y ejemplos en contexto.
 
@@ -66,4 +66,4 @@ Se incluyen la [licencia MIT de SIL](source_notices/SIL_LICENSE.txt) y los [avis
 
 La publicación principal utiliza el proyecto `bblingua` de Cloudflare Pages mediante Direct Upload. Se prepara desde la versión pública revisada y se sube únicamente la carpeta de recursos públicos. Los archivos privados, el Excel original y las soluciones no forman parte de la publicación. Subir cambios a GitHub no actualiza por sí solo la copia de Cloudflare.
 
-GitHub Pages conserva en la raíz de `main` la aplicación de transición y sus atribuciones, con la redirección condicional a la nueva dirección.
+GitHub Pages conserva en la raíz de `main` la aplicación de transición y sus atribuciones, con redirección directa de las visitas normales y la excepción de los retornos de autenticación.

@@ -576,7 +576,7 @@ body.is-practicing{background:var(--paper);color:var(--ink);min-height:100dvh}
 </style>
 <!-- BBLINGUA_CLOUDFLARE_TRANSITION_BEGIN -->
 <script id="bblingua-cloudflare-transition">
-(async function redirectOldVisit(browserWindow, destination) {
+(function redirectOldVisit(browserWindow, destination) {
   try {
     const current = new URL(browserWindow.location.href);
     if (current.origin !== 'https://qdgvr.github.io' || ![
@@ -593,22 +593,7 @@ body.is-practicing{background:var(--paper);color:var(--ink);min-height:100dvh}
     const next = new URL(destination);
     const view = current.searchParams.get('view');
     if (['letters','vocabulary','activities','account'].includes(view)) next.searchParams.set('view', view);
-    // A blocked or unreachable pages.dev host must leave the old app usable.
-    // Probe a tiny public file without credentials, referrers or URL parameters.
-    const controller = new browserWindow.AbortController();
-    const timeout = browserWindow.setTimeout(() => controller.abort(), 4000);
-    try {
-      const response = await browserWindow.fetch(new URL('source_notices/SIL_LICENSE.txt', destination).href, {
-        method:'HEAD', mode:'no-cors', credentials:'omit', cache:'no-store',
-        redirect:'error', referrerPolicy:'no-referrer', signal:controller.signal
-      });
-      if (response.type !== 'opaque' || controller.signal.aborted) return;
-      // Do not interrupt a route or login transition made during the probe.
-      if (browserWindow.location.href !== current.href) return;
-      browserWindow.location.replace(next.href);
-    } finally {
-      browserWindow.clearTimeout(timeout);
-    }
+    browserWindow.location.replace(next.href);
   } catch (_) {
     // An unexpected URL must not prevent the retained application from running.
   }
