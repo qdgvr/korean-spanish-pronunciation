@@ -404,6 +404,7 @@ body.is-practicing{background:var(--paper);color:var(--ink);min-height:100dvh}
 .bottom-navigation .bottom-nav-item[aria-current="page"] { box-shadow: inset 0 0 0 2px currentColor; }
 .bottom-navigation .bottom-nav-item:focus-visible { outline: 3px solid var(--focus, #B71352); outline-offset: 2px; }
 .bottom-navigation .bottom-nav-item svg { display: block; width: 25px; height: 25px; flex: none; pointer-events: none; }
+.bottom-navigation .bottom-nav-letter-icon { display: grid; place-items: center; width: 25px; height: 25px; flex: none; font-size: 28px; font-weight: 600; line-height: 1; pointer-events: none; }
 .bottom-navigation .bottom-nav-label {
   display: block;
   max-width: 100%;
@@ -419,6 +420,7 @@ body.is-practicing{background:var(--paper);color:var(--ink);min-height:100dvh}
   .bottom-navigation-host .bottom-navigation { gap: 5px; padding-inline: max(8px, env(safe-area-inset-left, 0px)) max(8px, env(safe-area-inset-right, 0px)); }
   .bottom-navigation .bottom-nav-item { gap: 5px; padding-inline: 2px; border-radius: 10px; }
   .bottom-navigation .bottom-nav-item svg { width: 23px; height: 23px; }
+  .bottom-navigation .bottom-nav-letter-icon { width: 23px; height: 23px; font-size: 26px; }
   .bottom-navigation .bottom-nav-label { font-size: clamp(10px, 2.65vw, 11px); letter-spacing: -.025em; }
 }
 @media (max-width: 360px) {
@@ -3375,7 +3377,7 @@ window.createHangulPractice = function ({data, vocabularyData, vocabularyAccess,
     return visual;
   }
   function modeMenu(root) {
-    const letters=state.menu==='letters';if(!letters)onHome?.(root);
+    const letters=state.menu==='letters';if(!letters){onHome?.(root);return;}
     const grid=node('div',undefined,'practice-mode-grid '+(letters?'practice-letter-grid':'practice-home-grid'));
     if(letters) {
       const row=node('div',undefined,'practice-modes');
@@ -3868,7 +3870,6 @@ window.createBottomNavigation = function ({node, onNavigate}) {
   ];
   const paths = {
     home: 'M3 10.5 12 3l9 7.5V21h-6v-7H9v7H3Z',
-    letters: 'M5 5h14v14M5 12h14M8 19h11',
     vocabulary: 'M12 5c-3-2-6-2-9-1v15c3-1 6-1 9 1m0-15c3-2 6-2 9-1v15c-3-1-6-1-9 1Zm-6 3h3m-3 4h3m6-4h3m-3 4h3',
     activities: 'M8 5H5v16h14V5h-3M9 3h6v4H9ZM8 13l2 2 5-5',
     account: 'M20 21v-2a8 8 0 0 0-16 0v2ZM16 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z'
@@ -3877,6 +3878,10 @@ window.createBottomNavigation = function ({node, onNavigate}) {
   let host = null, navigation = null, document = null, active = 'home';
 
   function icon(key) {
+    if (key === 'letters') {
+      const glyph = node('span', 'ㄱ', 'bottom-nav-letter-icon');
+      glyph.setAttribute('aria-hidden', 'true');return glyph;
+    }
     const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.setAttribute('viewBox', '0 0 24 24');svg.setAttribute('aria-hidden', 'true');
     svg.setAttribute('focusable', 'false');
