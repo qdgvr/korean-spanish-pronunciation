@@ -83,12 +83,14 @@ body.is-practicing{background:var(--paper);color:var(--ink);min-height:100dvh}
 
 .brand-home{display:inline-flex;flex:none;align-items:center;line-height:0;border-radius:4px;text-decoration:none}.brand-home:focus-visible{outline:2px solid var(--action);outline-offset:5px}
 
-.account-header{position:relative;display:flex;align-items:center;justify-content:flex-end;flex:none;min-width:0}.account-header button{cursor:pointer}.account-header-login{min-height:43px;border:1px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink);padding:10px 15px;font-size:13px;font-weight:600;white-space:nowrap}.account-header-login:hover,.account-header-profile:hover{border-color:var(--action);background:var(--panel-soft)}.account-header button:disabled{cursor:default;opacity:.55}.account-header-profile{display:grid;place-items:center;width:44px;height:44px;padding:9px;border:1px solid var(--line);border-radius:50%;background:var(--paper);color:var(--ink)}.account-header-profile[aria-expanded=true]{border-color:var(--action);background:var(--panel-soft)}.account-header-profile svg{width:24px;height:24px;pointer-events:none}.account-header-panel{position:absolute;right:0;top:calc(100% + 12px);z-index:60;width:min(360px,calc(100vw - 32px));max-height:min(72svh,650px);overflow:auto;overscroll-behavior:contain;padding:21px;border:1px solid var(--line);border-radius:17px;background:var(--paper);color:var(--ink);box-shadow:0 12px 38px #00000020;text-align:left}.account-header-panel[hidden]{display:none}.account-header-panel-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:11px}.account-header-panel h2{font-size:19px;line-height:1.4;margin:0;font-weight:700;letter-spacing:-.02em}.account-header-close{display:grid;place-items:center;width:34px;height:34px;padding:0;border:0;border-radius:8px;background:transparent;color:var(--muted);font-size:25px;line-height:1}.account-header-close:hover{background:var(--neutral-soft);color:var(--ink)}.account-header-email{margin:0 0 9px;font-size:13px;line-height:1.6;color:var(--ink);overflow-wrap:anywhere}.account-header-state{display:inline-block;margin:0;font-size:11px;line-height:1.65;color:var(--accent-ink);background:var(--panel-soft);border-radius:8px;padding:6px 9px;max-width:100%;overflow-wrap:anywhere}.account-header-manage{display:block;width:100%;min-height:43px;padding:10px 13px;border:1px solid var(--line);border-radius:9px;background:var(--paper);color:var(--ink);font-size:12px;font-weight:600;text-align:left;margin-top:14px}.account-header-manage:hover{border-color:var(--action);background:var(--panel-warm)}.account-header-history-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:23px;padding-top:17px;border-top:1px solid var(--line)}.account-header-history-heading h3{font-size:13px;line-height:1.5;margin:0;font-weight:700}.account-header-reload,.account-header-retry{border:0;background:transparent;color:var(--muted);padding:6px 0;font-size:11px;text-decoration:underline;text-underline-offset:3px;min-height:32px}.account-header-reload:hover,.account-header-retry:hover{color:var(--action)}.account-header-history-note{font-size:12px;line-height:1.7;color:var(--muted);margin:10px 0 4px;overflow-wrap:anywhere}.account-header-history-list{list-style:none;padding:0;margin:3px 0 0}.account-header-history-item{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 13px;padding:15px 0;border-bottom:1px solid var(--neutral-strong);min-width:0}.account-header-history-description{display:flex;flex-direction:column;gap:4px;min-width:0}.account-header-activity-name{font-size:12px;font-weight:650;line-height:1.45}.account-header-activity-unit{font-size:11px;line-height:1.5;color:var(--muted);overflow-wrap:anywhere}.account-header-activity-count{font-size:11px;font-weight:600;line-height:1.5;white-space:nowrap;color:var(--ink)}.account-header-activity-date{grid-column:1/-1;font-size:10px;line-height:1.6;color:var(--muted)}.account-header-logout{width:100%;min-height:43px;border:0;border-radius:9px;background:var(--neutral-soft);color:var(--ink);font-size:12px;margin-top:18px;padding:11px 14px;text-align:center}.account-header-logout:hover{background:var(--neutral-strong)}.account-header-feedback{position:absolute;right:0;top:calc(100% + 10px);z-index:61;width:min(310px,calc(100vw - 32px));padding:13px 15px;border:1px solid var(--line);border-radius:11px;background:var(--paper);box-shadow:0 8px 24px #00000015;text-align:left;color:var(--error-ink)}.account-header-feedback p{font-size:12px;line-height:1.6;margin:0;overflow-wrap:anywhere}.account-header-error{color:var(--error-ink)}
-@media(max-width:700px){.account-header-login{font-size:12px;padding:9px 12px;min-height:41px}.account-header-profile{width:42px;height:42px}.account-header-panel{top:calc(100% + 10px);padding:18px;border-radius:15px;max-height:75svh}.account-header-panel h2{font-size:18px}.account-header-email{font-size:12px}.account-header-history-heading{margin-top:20px}.account-header-history-item{padding:13px 0}.account-header-close{width:35px;height:35px}}
+.account-header{position:relative;display:flex;align-items:center;justify-content:flex-end;flex:none;min-width:0}.account-header button{cursor:pointer}.account-header-login{min-height:43px;border:1px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink);padding:10px 15px;font-size:13px;font-weight:600;white-space:nowrap}.account-header-login:hover{border-color:var(--action);background:var(--panel-soft)}.account-header-profile:hover{color:var(--action)}.account-header button:disabled{cursor:default;opacity:.55}.account-header-profile{display:grid;place-items:center;width:44px;height:44px;min-width:44px;min-height:44px;padding:10px;border:0;border-radius:0;background:transparent;color:var(--ink)}.account-header-profile[aria-expanded=true]{color:var(--action)}.account-header-profile:focus-visible{outline:2px solid var(--action);outline-offset:2px;border-radius:6px}.account-header-profile svg{width:24px;height:24px;pointer-events:none}.account-header-panel{position:absolute;right:0;top:calc(100% + 12px);z-index:60;width:min(360px,calc(100vw - 32px));max-height:min(72svh,650px);overflow:auto;overscroll-behavior:contain;padding:21px;border:1px solid var(--line);border-radius:17px;background:var(--paper);color:var(--ink);box-shadow:0 12px 38px #00000020;text-align:left}.account-header-panel[hidden]{display:none}.account-header-panel-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:11px}.account-header-panel h2{font-size:19px;line-height:1.4;margin:0;font-weight:700;letter-spacing:-.02em}.account-header-close{display:grid;place-items:center;width:34px;height:34px;padding:0;border:0;border-radius:8px;background:transparent;color:var(--muted);font-size:25px;line-height:1}.account-header-close:hover{background:var(--neutral-soft);color:var(--ink)}.account-header-email{margin:0 0 9px;font-size:13px;line-height:1.6;color:var(--ink);overflow-wrap:anywhere}.account-header-state{display:inline-block;margin:0;font-size:11px;line-height:1.65;color:var(--accent-ink);background:var(--panel-soft);border-radius:8px;padding:6px 9px;max-width:100%;overflow-wrap:anywhere}.account-header-manage{display:block;width:100%;min-height:43px;padding:10px 13px;border:1px solid var(--line);border-radius:9px;background:var(--paper);color:var(--ink);font-size:12px;font-weight:600;text-align:left;margin-top:14px}.account-header-manage:hover{border-color:var(--action);background:var(--panel-warm)}.account-header-history-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:23px;padding-top:17px;border-top:1px solid var(--line)}.account-header-history-heading h3{font-size:13px;line-height:1.5;margin:0;font-weight:700}.account-header-reload,.account-header-retry{border:0;background:transparent;color:var(--muted);padding:6px 0;font-size:11px;text-decoration:underline;text-underline-offset:3px;min-height:32px}.account-header-reload:hover,.account-header-retry:hover{color:var(--action)}.account-header-history-note{font-size:12px;line-height:1.7;color:var(--muted);margin:10px 0 4px;overflow-wrap:anywhere}.account-header-history-list{list-style:none;padding:0;margin:3px 0 0}.account-header-history-item{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 13px;padding:15px 0;border-bottom:1px solid var(--neutral-strong);min-width:0}.account-header-history-description{display:flex;flex-direction:column;gap:4px;min-width:0}.account-header-activity-name{font-size:12px;font-weight:650;line-height:1.45}.account-header-activity-unit{font-size:11px;line-height:1.5;color:var(--muted);overflow-wrap:anywhere}.account-header-activity-count{font-size:11px;font-weight:600;line-height:1.5;white-space:nowrap;color:var(--ink)}.account-header-activity-date{grid-column:1/-1;font-size:10px;line-height:1.6;color:var(--muted)}.account-header-logout{width:100%;min-height:43px;border:0;border-radius:9px;background:var(--neutral-soft);color:var(--ink);font-size:12px;margin-top:18px;padding:11px 14px;text-align:center}.account-header-logout:hover{background:var(--neutral-strong)}.account-header-feedback{position:absolute;right:0;top:calc(100% + 10px);z-index:61;width:min(310px,calc(100vw - 32px));padding:13px 15px;border:1px solid var(--line);border-radius:11px;background:var(--paper);box-shadow:0 8px 24px #00000015;text-align:left;color:var(--error-ink)}.account-header-feedback p{font-size:12px;line-height:1.6;margin:0;overflow-wrap:anywhere}.account-header-error{color:var(--error-ink)}
+@media(max-width:700px){.account-header-login{font-size:12px;padding:9px 12px;min-height:41px}.account-header-profile{width:44px;height:44px}.account-header-panel{top:calc(100% + 10px);padding:18px;border-radius:15px;max-height:75svh}.account-header-panel h2{font-size:18px}.account-header-email{font-size:12px}.account-header-history-heading{margin-top:20px}.account-header-history-item{padding:13px 0}.account-header-close{width:35px;height:35px}}
 .account-header-panel .account-header-feedback{position:static;width:100%;box-shadow:none;margin-top:14px;background:var(--neutral-soft)}
 .account-header-attempts-open,.account-header-attempt-more{display:block;width:100%;padding:11px 12px;margin:12px 0;border:1px solid var(--line);border-radius:9px;background:var(--panel-soft);color:var(--ink);font-size:12px;font-weight:600;text-align:left}.account-header-attempt-back{border:0;background:transparent;color:var(--muted);padding:12px 0;font-size:12px}.account-header-attempt-list{list-style:none;padding:0;margin:0}.account-header-attempt-entry{display:flex;flex-direction:column;gap:6px;width:100%;padding:13px 0;border:0;border-bottom:1px solid var(--line);background:transparent;color:var(--ink);text-align:left;overflow-wrap:anywhere}.account-header-attempt-entry strong{font-size:12px;line-height:1.5}.account-header-attempt-entry span{font-size:11px;line-height:1.5;color:var(--muted)}.account-header-attempt-entry:hover strong,.account-header-attempt-back:hover{color:var(--action)}.account-header-attempt-title{font-size:14px;line-height:1.5;margin:12px 0 0}.account-header-wrong-answer{border:1px solid var(--line);border-radius:10px;padding:12px;margin-top:12px;overflow-wrap:anywhere}.account-header-wrong-answer strong{font-size:11px}.account-header-wrong-answer p{font-size:12px;line-height:1.65;margin:7px 0 0}.account-header-selected-answer{color:var(--error-ink)}.account-header-correct-answer{font-weight:600;color:var(--ink)}
 
 .account-header-writing-answer{border:1px solid var(--line);border-radius:10px;padding:12px;margin-top:12px;overflow-wrap:anywhere}.account-header-writing-answer strong{font-size:11px}.account-header-writing-answer p{font-size:12px;line-height:1.65;margin:7px 0 0}.account-header-question-prompt{white-space:pre-line}
+
+.account-header-panel-login{display:block;width:100%;min-height:44px;margin-top:17px;padding:11px 14px;border:1px solid var(--action);border-radius:9px;background:var(--action);color:var(--paper);font-size:12px;font-weight:600;text-align:center}.account-header-panel-login:hover{filter:brightness(.95)}
 
 .learning-dashboard {
   --dashboard-orange: #F69F29;
@@ -136,7 +138,20 @@ body.is-practicing{background:var(--paper);color:var(--ink);min-height:100dvh}
 }
 .learning-dashboard .dashboard-continue,
 .learning-dashboard .dashboard-review { min-height: 247px; }
-.learning-dashboard .dashboard-continue > :is(.dashboard-unit, .dashboard-theme, .dashboard-meta) { transform: translateY(12px); }
+.learning-dashboard .dashboard-continue > :is(.dashboard-unit, .dashboard-theme, .dashboard-meta),
+.learning-dashboard .dashboard-continue-content > :is(.dashboard-unit, .dashboard-theme, .dashboard-meta) { transform: translateY(12px); }
+.learning-dashboard .dashboard-continue-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-self: center;
+  align-items: stretch;
+  width: max-content;
+  max-width: 100%;
+  min-width: 0;
+  text-align: left;
+}
+.learning-dashboard .dashboard-continue-content > .dashboard-action { width: 100%; }
 .learning-dashboard .dashboard-word,
 .learning-dashboard .dashboard-calendar { min-height: 0; padding: 18px; }
 .learning-dashboard .dashboard-eyebrow {
@@ -331,6 +346,85 @@ body.is-practicing{background:var(--paper);color:var(--ink);min-height:100dvh}
 .unit-activities{width:100%;--activity-gap:22px}.unit-activities h2{font-size:clamp(22px,3.5vw,29px);line-height:1.4;max-width:760px}.unit-activities-source{display:grid;gap:18px;margin:26px 0;min-width:0}.unit-activities-source:empty{margin:10px 0}.unit-activities-stimulus{padding:23px 25px;background:var(--paper);border:1px solid var(--line);border-radius:14px;min-width:0;color:var(--ink);font-size:18px;line-height:1.9;word-break:keep-all;overflow-wrap:anywhere;user-select:text}.unit-activities-source p{margin:0;white-space:pre-wrap}.unit-activities-word-source .unit-activities-stimulus{border:0;background:transparent;text-align:center;padding:30px 20px;font-size:clamp(27px,4vw,37px);font-weight:600;line-height:1.6}.unit-activities-word-source:lang(es) .unit-activities-stimulus{font-size:clamp(24px,3.5vw,31px);word-break:normal}.unit-activities-source-title{font-weight:650;font-size:15px;margin-bottom:12px!important}.unit-activities-scene-line+.unit-activities-scene-line{margin-top:10px}.unit-activities-table-scroll{overflow-x:auto;max-width:100%}.unit-activities table{width:100%;border-collapse:collapse;line-height:1.7;font-size:16px;text-align:left}.unit-activities th,.unit-activities td{padding:12px 14px;border:1px solid var(--line);white-space:pre-wrap;vertical-align:top}.unit-activities th{font-weight:650;background:var(--panel-soft)}.unit-activities-tokens{display:flex;flex-wrap:wrap;gap:10px;padding:0;margin:0;list-style:none}.unit-activities-tokens li{padding:4px 13px;border:1px solid var(--line);border-radius:8px;background:var(--panel-warm)}.unit-activities-illustration{margin:0 auto}.unit-activities-form{margin:0}.unit-activities-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:0;border:0;min-width:0;margin:0 auto;max-width:660px}.unit-activities-legend{font-size:12px;color:var(--muted);line-height:1.6;padding:0 0 13px}.unit-activities-option{position:relative;display:grid;grid-template-columns:minmax(0,1fr);place-items:center;min-width:0;min-height:78px;padding:18px 40px;border:1px solid var(--line);border-radius:13px;background:var(--paper);color:var(--ink);cursor:pointer}.unit-activities-option:hover{border-color:var(--action);background:var(--panel-warm)}.unit-activities-option:focus-within{outline:2px solid var(--action);outline-offset:3px}.unit-activities-option input{position:absolute;inset-inline-start:14px;top:50%;transform:translateY(-50%);accent-color:var(--action);width:17px;height:17px;flex:0 0 17px;margin:0}.unit-activities-option span{width:100%;min-width:0;text-align:center;font-size:23px;font-weight:600;line-height:1.5;word-break:keep-all;overflow-wrap:anywhere}.unit-activities-option span:lang(es){font-size:16px;font-weight:500;word-break:normal}.unit-activities-option.is-selected{border-color:var(--action);box-shadow:inset 0 0 0 1px var(--action);background:var(--panel-selected)}.unit-activities-option.is-correct{border-color:var(--accent-ink);background:var(--panel-soft)}.unit-activities-option.is-incorrect{border-color:var(--error-ink);background:var(--error-panel)}.unit-activities-option:has(input:disabled){cursor:default}.unit-activities-fields{display:grid;gap:23px;margin-top:24px}.unit-activities-field{display:grid;gap:10px;min-width:0}.unit-activities-field label{font-size:18px;font-weight:500;line-height:1.8;white-space:pre-wrap;word-break:keep-all;overflow-wrap:anywhere}.unit-activities-field input,.unit-activities-field textarea{box-sizing:border-box;width:100%;min-width:0;border:1px solid var(--line);border-radius:11px;padding:14px 17px;background:var(--paper);color:var(--ink);font-family:inherit;font-size:18px;line-height:1.7;letter-spacing:normal;box-shadow:none}.unit-activities-field textarea{resize:vertical;min-height:115px}.unit-activities-field input:focus,.unit-activities-field textarea:focus{outline:2px solid var(--action);outline-offset:2px}.unit-activities-field input:disabled,.unit-activities-field textarea:disabled{opacity:1;color:var(--ink);background:var(--panel-soft);-webkit-text-fill-color:var(--ink)}.unit-activities-field-note{margin:12px 0 0;color:var(--muted);font-size:11px;line-height:1.7}.unit-activities-actions{display:flex;max-width:660px;margin:24px auto 0}.unit-activities-actions>.practice-primary{width:100%}.unit-activities-feedback{margin:25px 0 0;padding:22px 24px;border:1px solid var(--line);border-radius:13px;background:var(--panel-soft);font-size:15px;line-height:1.75;overflow-wrap:anywhere}.unit-activities-feedback h3{font-size:17px;line-height:1.5;margin:0 0 9px}.unit-activities-feedback p{margin:7px 0;white-space:pre-wrap}.unit-activities-feedback.is-correct h3{color:var(--accent-ink)}.unit-activities-feedback.is-incorrect{border-color:var(--error-ink);background:var(--error-panel)}.unit-activities-feedback.is-incorrect h3{color:var(--error-ink)}.unit-activities-feedback-note{color:var(--muted);font-size:12px;line-height:1.7}.unit-activities-comparison{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px;row-gap:8px;margin-top:19px;padding-top:17px;border-top:1px solid var(--line)}.unit-activities-comparison-label{grid-column:1/-1;font-weight:600;margin:0!important;font-size:16px}.unit-activities-comparison-response{min-width:0}.unit-activities-comparison-response p{font-size:17px;line-height:1.8;word-break:keep-all}.unit-activities-comparison-caption{font-size:11px;color:var(--muted);line-height:1.5}.unit-activities-notice{font-size:13px;line-height:1.7;color:var(--muted);margin:20px 0 15px}.unit-activities-notice.is-error{color:var(--error-ink)}.unit-activities-writing-summary{font-size:14px;line-height:1.7;margin:2px 0;color:var(--muted)}.unit-activities[aria-busy=true] .unit-activities-actions{opacity:.7}
 @media(max-width:700px){.unit-activities{--activity-gap:18px}.unit-activities h2{font-size:22px;line-height:1.45}.unit-activities-source{gap:14px;margin:22px 0}.unit-activities-stimulus{padding:18px 17px;font-size:17px;line-height:1.85}.unit-activities th,.unit-activities td{padding:9px 10px;font-size:14px}.unit-activities-options{gap:10px}.unit-activities-option{padding:15px 32px;min-height:76px}.unit-activities-option input{inset-inline-start:10px}.unit-activities-option span{font-size:22px}.unit-activities-option span:lang(es){font-size:14px}.unit-activities-fields{gap:20px;margin-top:20px}.unit-activities-field label{font-size:17px}.unit-activities-field input,.unit-activities-field textarea{font-size:17px;padding:12px 14px}.unit-activities-feedback{padding:18px 17px}.unit-activities-comparison{grid-template-columns:1fr;gap:10px}.unit-activities-comparison-response p{font-size:16px}.unit-activities-actions{margin-top:22px}}
 @media(max-width:380px){.unit-activities-option{padding:13px 28px}.unit-activities-option input{inset-inline-start:7px}.unit-activities-option span:lang(es){font-size:13px}.unit-activities-option span{font-size:20px}.unit-activities-stimulus{padding:16px 14px}}
+
+.has-bottom-navigation {
+  --bottom-navigation-control-height: 64px;
+  --bottom-navigation-frame-padding: 10px;
+  --bottom-navigation-space: calc(var(--bottom-navigation-control-height) + var(--bottom-navigation-frame-padding) + var(--bottom-navigation-frame-padding) + 19px);
+}
+.has-bottom-navigation .page,
+.has-bottom-navigation.is-practicing .page {
+  padding-bottom: calc(var(--bottom-navigation-space) + env(safe-area-inset-bottom, 0px));
+}
+.bottom-navigation-host {
+  position: fixed;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 50;
+  border-top: 1px solid #E5E5E5;
+  background: #FFFFFF;
+  box-shadow: 0 -4px 20px #00000008;
+}
+.bottom-navigation-host .bottom-navigation {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 7px;
+  width: 100%;
+  max-width: 980px;
+  margin-inline: auto;
+  padding: var(--bottom-navigation-frame-padding) max(12px, env(safe-area-inset-right, 0px)) calc(var(--bottom-navigation-frame-padding) + env(safe-area-inset-bottom, 0px)) max(12px, env(safe-area-inset-left, 0px));
+}
+.bottom-navigation .bottom-nav-item {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-width: 0;
+  min-height: var(--bottom-navigation-control-height);
+  margin: 0;
+  padding: 6px 3px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: #FFFFFF;
+  color: #000000;
+  font-family: inherit;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.bottom-navigation .bottom-nav-home,
+.bottom-navigation .bottom-nav-account { border-color: #ECECEC; background: #FFFFFF; color: #000000; }
+.bottom-navigation .bottom-nav-letters { background: #F69F29; color: #FFFFFF; }
+.bottom-navigation .bottom-nav-vocabulary { background: #00A8EC; color: #FFFFFF; }
+.bottom-navigation .bottom-nav-activities { background: #D10053; color: #FFFFFF; }
+.bottom-navigation .bottom-nav-item[aria-current="page"] { box-shadow: inset 0 0 0 2px currentColor; }
+.bottom-navigation .bottom-nav-item:focus-visible { outline: 3px solid var(--focus, #B71352); outline-offset: 2px; }
+.bottom-navigation .bottom-nav-item svg { display: block; width: 25px; height: 25px; flex: none; pointer-events: none; }
+.bottom-navigation .bottom-nav-label {
+  display: block;
+  max-width: 100%;
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.25;
+  letter-spacing: -.015em;
+  white-space: nowrap;
+}
+.has-bottom-navigation #error { bottom: calc(var(--bottom-navigation-space) + env(safe-area-inset-bottom, 0px)); }
+@media (max-width: 700px) {
+  .has-bottom-navigation { --bottom-navigation-control-height: 58px; --bottom-navigation-frame-padding: 8px; }
+  .bottom-navigation-host .bottom-navigation { gap: 5px; padding-inline: max(8px, env(safe-area-inset-left, 0px)) max(8px, env(safe-area-inset-right, 0px)); }
+  .bottom-navigation .bottom-nav-item { gap: 5px; padding-inline: 2px; border-radius: 10px; }
+  .bottom-navigation .bottom-nav-item svg { width: 23px; height: 23px; }
+  .bottom-navigation .bottom-nav-label { font-size: clamp(10px, 2.65vw, 11px); letter-spacing: -.025em; }
+}
+@media (max-width: 360px) {
+  .bottom-navigation-host .bottom-navigation { gap: 3px; padding-inline: max(6px, env(safe-area-inset-left, 0px)) max(6px, env(safe-area-inset-right, 0px)); }
+  .bottom-navigation .bottom-nav-label { font-size: 9px; }
+}
 </style>
 </head><body>
 <div class="page">
@@ -367,6 +461,7 @@ body.is-practicing{background:var(--paper);color:var(--ink);min-height:100dvh}
 <main id="main"></main>
 <footer><span id="audio-legend">Azul: audio</span></footer>
 </div>
+<div id="bottom-navigation"></div>
 <noscript>Abre este documento en un navegador con JavaScript.</noscript>
 <audio id="sound" preload="none" hidden></audio>
 <p id="status" class="sr-only" role="status" aria-live="polite"></p><div id="error" class="error" role="alert" hidden></div>
@@ -1221,7 +1316,7 @@ window.createAccountVocabularyAccess = function (config, scopes, {createClient =
 </script>
 <script>'use strict';
 
-window.createAccountHeader = function ({access, node, vocabularyData, onManageStudents, onAccountChange, onBeforeSignIn}) {
+window.createAccountHeader = function ({access, node, vocabularyData, onManageStudents, onAccountChange, onBeforeSignIn, onOpenChange}) {
   const activityNames = {'unit-activities':'Actividades','vocabulary-test': 'Actividades', 'vocabulary-cards': 'Vocabulario',
     'hangul-mixed': 'Mezcla', 'hangul-sound': 'Sonidos', 'hangul-trace': 'Trazos', 'hangul-assemble': 'Sílabas', 'hangul-listen': 'Escucha'};
   const units = new Map(), scopes = [];
@@ -1253,14 +1348,27 @@ window.createAccountHeader = function ({access, node, vocabularyData, onManageSt
   }
   function reconcileIdentity(current) {
     const next = current.signedIn ? current.userId : null;
-    if (next !== identity) {identity = next;open = false;invalidateHistory();}
-    if (!current.signedIn) {open = false;cachedHistory = null;}
+    if (next !== identity) {identity = next;setOpen(false);invalidateHistory();}
+    if (!current.signedIn) cachedHistory = null;
+  }
+  function setOpen(next) {
+    if (open === next) return;
+    open = next;
+    if (panel) panel.hidden = !open;
+    if (trigger?.getAttribute('aria-haspopup') === 'dialog') trigger.setAttribute('aria-expanded', String(open));
+    try {onOpenChange?.(open);} catch (_) {}
   }
   function closePanel(restoreFocus = false) {
-    open = false;attemptRequest++;attemptScreen=null;
+    setOpen(false);attemptRequest++;attemptScreen=null;
     if (panel) panel.hidden = true;
-    trigger?.setAttribute('aria-expanded', 'false');
     if (restoreFocus) trigger?.focus();
+  }
+  async function openPanel() {
+    if (!host || signingOut) return;
+    reconcileIdentity(displayStatus());
+    if (open) return;
+    setOpen(true);render();panel?.querySelector('h2')?.focus({preventScroll: true});
+    if (displayStatus().signedIn && !restoring && !uncertainStatus) await refresh();
   }
   function accountState(current) {
     if (current.master) return 'Acceso máster · todos los libros';
@@ -1395,7 +1503,7 @@ window.createAccountHeader = function ({access, node, vocabularyData, onManageSt
     } catch(error) {
       if(!live(turn)||operation!==attemptRequest||!open)return;
       const current=status();
-      if(needsSignIn(error)||!current.signedIn||current.userId!==userId){invalidateHistory();accountError='Tu sesión ha terminado. Vuelve a iniciar sesión.';open=false;render();notify(current);return;}
+      if(needsSignIn(error)||!current.signedIn||current.userId!==userId){invalidateHistory();accountError='Tu sesión ha terminado. Vuelve a iniciar sesión.';closePanel();render();notify(current);return;}
       attemptScreen={kind,error:error?.message==='locked'?'Esta unidad está bloqueada para tu cuenta.':
         'No se pudieron cargar tus intentos. Comprueba la conexión.',retry:error?.message==='locked'?null:()=>kind==='detail'?loadAttempt(screen.attemptId):loadAttempts()};
       renderHistory();
@@ -1424,6 +1532,7 @@ window.createAccountHeader = function ({access, node, vocabularyData, onManageSt
   function render() {
     if (!host) return;
     const current = displayStatus();reconcileIdentity(current);
+    panel = historyRegion = null;
     root = node('div', undefined, 'account-header');
     if (!current.signedIn) {
       trigger = button(signingIn ? 'Entrando…' : 'Iniciar sesión', 'account-header-login', signIn);
@@ -1432,42 +1541,49 @@ window.createAccountHeader = function ({access, node, vocabularyData, onManageSt
     } else {
       trigger = button('', 'account-header-profile', async () => {
         if (signingOut) return;
-        open = !open;panel.hidden = !open;trigger.setAttribute('aria-expanded', String(open));
-        if (open) {
-          panel.querySelector('h2')?.focus({preventScroll: true});
-          if (!restoring && !uncertainStatus) await refresh();
-        }
+        if (open) closePanel();else await openPanel();
       });
       trigger.append(personIcon());trigger.setAttribute('aria-label', 'Mi cuenta');
       trigger.setAttribute('aria-haspopup', 'dialog');trigger.setAttribute('aria-expanded', String(open));trigger.setAttribute('aria-controls', 'account-header-panel');
+      root.append(trigger);
+    }
+    if (current.signedIn || open) {
       panel = node('section', undefined, 'account-header-panel');panel.id = 'account-header-panel';panel.hidden = !open;
       panel.setAttribute('role', 'dialog');panel.setAttribute('aria-label', 'Mi cuenta');
       const top = node('div', undefined, 'account-header-panel-heading');
       const title = node('h2', 'Mi cuenta');title.tabIndex = -1;
       const close = button('×', 'account-header-close', () => closePanel(true));close.setAttribute('aria-label', 'Cerrar mi cuenta');
       top.append(title, close);
-      const email = node('p', current.email, 'account-header-email');
-      const state = node('p', uncertainStatus ? 'Conexión pendiente · acceso sin comprobar' : accountState(current), 'account-header-state');
-      panel.append(top, email, state);
-      if (current.master) {
-        const manage = button('Gestionar alumnos', 'account-header-manage', () => {
-          closePanel();if (!uncertainStatus && status().master) onManageStudents?.();
-        });
-        manage.disabled = restoring || signingOut || Boolean(uncertainStatus);panel.append(manage);
+      panel.append(top);
+      if (!current.signedIn) {
+        const login = button(signingIn ? 'Entrando…' : 'Continuar con Google', 'account-header-panel-login', signIn);
+        login.disabled = restoring || signingIn || current.configured === false;
+        panel.append(node('p', 'Inicia sesión para ver tus unidades y tu actividad.', 'account-header-history-note'), login);
+      } else {
+        const email = node('p', current.email, 'account-header-email');
+        const state = node('p', uncertainStatus ? 'Conexión pendiente · acceso sin comprobar' : accountState(current), 'account-header-state');
+        panel.append(email, state);
+        if (current.master) {
+          const manage = button('Gestionar alumnos', 'account-header-manage', () => {
+            closePanel();if (!uncertainStatus && status().master) onManageStudents?.();
+          });
+          manage.disabled = restoring || signingOut || Boolean(uncertainStatus);panel.append(manage);
+        }
+        const historyHeading = node('div', undefined, 'account-header-history-heading');
+        const reload = button('Actualizar', 'account-header-reload', () => uncertainStatus ? refresh() : attemptScreen ? loadAttempts() : loadHistory(true));reload.disabled = restoring || signingOut;
+        historyHeading.append(node('h3', 'Mi actividad'), reload);
+        historyRegion = node('div', undefined, 'account-header-history');historyRegion.setAttribute('aria-live', 'polite');
+        panel.append(historyHeading, historyRegion);
+        const logout = button(signingOut ? 'Cerrando sesión…' : 'Cerrar sesión', 'account-header-logout', signOut);logout.disabled = signingOut;
+        panel.append(logout);renderHistory();
       }
-      const historyHeading = node('div', undefined, 'account-header-history-heading');
-      const reload = button('Actualizar', 'account-header-reload', () => uncertainStatus ? refresh() : attemptScreen ? loadAttempts() : loadHistory(true));reload.disabled = restoring || signingOut;
-      historyHeading.append(node('h3', 'Mi actividad'), reload);
-      historyRegion = node('div', undefined, 'account-header-history');historyRegion.setAttribute('aria-live', 'polite');
-      panel.append(historyHeading, historyRegion);
-      const logout = button(signingOut ? 'Cerrando sesión…' : 'Cerrar sesión', 'account-header-logout', signOut);logout.disabled = signingOut;
-      panel.append(logout);root.append(trigger, panel);renderHistory();
+      root.append(panel);
     }
     if (accountError) {
       const feedback = node('div', undefined, 'account-header-feedback');feedback.setAttribute('role', 'status');
       feedback.append(node('p', accountError));
       if (!signingIn && !signingOut) feedback.append(button('Reintentar', 'account-header-retry', () => accountRetry()));
-      if (current.signedIn && panel) panel.append(feedback);else root.append(feedback);
+      if (panel) panel.append(feedback);else root.append(feedback);
     }
     host.replaceChildren(root);
   }
@@ -1501,7 +1617,7 @@ window.createAccountHeader = function ({access, node, vocabularyData, onManageSt
       cachedHistory = null;historyDirty = true;
       const after = status();
       if (needsSignIn(error) || !after.signedIn || after.userId !== userId) {
-        accountError = 'Tu sesión ha terminado. Vuelve a iniciar sesión.';open = false;render();notify(after);return;
+        accountError = 'Tu sesión ha terminado. Vuelve a iniciar sesión.';closePanel();render();notify(after);return;
       }
       historyError = 'No se pudo cargar tu actividad. Comprueba la conexión e inténtalo de nuevo.';
     } finally {
@@ -1533,7 +1649,7 @@ window.createAccountHeader = function ({access, node, vocabularyData, onManageSt
   }
   async function signOut() {
     if (!host || signingOut) return;
-    const turn = generation;authRequest++;uncertainStatus = null;signingOut = true;accountError = '';accountRetry = signOut;open = false;invalidateHistory();
+    const turn = generation;authRequest++;uncertainStatus = null;signingOut = true;accountError = '';accountRetry = signOut;closePanel();invalidateHistory();
     try {
       const pending = access.signOut();render();notify(status());await pending;
     } catch (_) {
@@ -1545,12 +1661,13 @@ window.createAccountHeader = function ({access, node, vocabularyData, onManageSt
   const outside = event => {if (open && root && !root.contains(event.target)) closePanel();};
   const escape = event => {if (open && event.key === 'Escape') {event.preventDefault?.();closePanel(true);}};
   function unmount() {
+    closePanel();
     generation++;authRequest++;invalidateHistory();
     unsubscribe?.();unsubscribe = null;
     doc?.removeEventListener('pointerdown', outside, true);doc?.removeEventListener('keydown', escape);
     if (host && root?.parentNode === host) host.replaceChildren();
     host = root = panel = historyRegion = trigger = doc = null;
-    open = restoring = signingIn = signingOut = false;identity = null;lastNotified = '';accountError = '';uncertainStatus = null;
+    restoring = signingIn = signingOut = false;identity = null;lastNotified = '';accountError = '';uncertainStatus = null;
   }
   return {
     async mount(container) {
@@ -1559,7 +1676,7 @@ window.createAccountHeader = function ({access, node, vocabularyData, onManageSt
       try {unsubscribe = access.subscribe?.(() => {if (host) {uncertainStatus = null;refresh();}});} catch (_) {unsubscribe = null;}
       render();await refresh();
     },
-    unmount, refresh,
+    unmount, refresh, open: openPanel, close: () => closePanel(), isOpen: () => open,
     activitySaved() {invalidateHistory();if (host && open) return loadHistory(true);return Promise.resolve();}
   };
 };
@@ -3647,13 +3764,15 @@ window.createLearningDashboard=function({access,vocabularyData,node,onContinue,o
       renderCalendar(calendar,model?.events||[]);
     }else{
       const {scope,attempt,reviewItems,wordOfDay}=model;
-      recent.append(node('p',scope.label,'dashboard-unit'),node('p',scope.themeEs,'dashboard-theme'));
+      const resume=node('div',undefined,'dashboard-continue-content');
+      resume.append(node('p',scope.label,'dashboard-unit'),node('p',scope.themeEs,'dashboard-theme'));
       if(attempt){
         const kind=['vocabulary-test','unit-activities'].includes(attempt.activity)?'Actividades':'Vocabulario';
         const date=new Intl.DateTimeFormat('es-ES',{day:'numeric',month:'short'}).format(new Date(attempt.completedAt||attempt.startedAt));
-        note(recent,kind+' · '+date+(attempt.status==='in-progress'?' · En curso':''));
-      }else note(recent,'Tu unidad actual está lista.');
-      recent.append(button('Continuar unidad →','dashboard-action',()=>onContinue(scope,['vocabulary-test','unit-activities'].includes(attempt?.activity)?'activities':'vocabulary')));
+        note(resume,kind+' · '+date+(attempt.status==='in-progress'?' · En curso':''));
+      }else note(resume,'Tu unidad actual está lista.');
+      resume.append(button('Continuar unidad →','dashboard-action',()=>onContinue(scope,['vocabulary-test','unit-activities'].includes(attempt?.activity)?'activities':'vocabulary')));
+      recent.append(resume);
       if(reviewItems===null){review.append(node('p','—','dashboard-value'));note(review,'No se pudo comprobar el repaso de esta unidad.');}
       else{
         review.append(node('p',String(reviewItems.length),'dashboard-value'),node('p',reviewItems.length===1?'palabra por repasar':'palabras por repasar','dashboard-label'));
@@ -3742,6 +3861,65 @@ window.createLearningDashboard=function({access,vocabularyData,node,onContinue,o
 };
 </script>
 <script>'use strict';
+window.createBottomNavigation = function ({node, onNavigate}) {
+  const destinations = [
+    ['home', 'Inicio'], ['letters', 'Letra'], ['vocabulary', 'Vocabulario'],
+    ['activities', 'Actividades'], ['account', 'Mi página']
+  ];
+  const paths = {
+    home: 'M3 10.5 12 3l9 7.5V21h-6v-7H9v7H3Z',
+    letters: 'M5 5h14v14M5 12h14M8 19h11',
+    vocabulary: 'M12 5c-3-2-6-2-9-1v15c3-1 6-1 9 1m0-15c3-2 6-2 9-1v15c-3-1-6-1-9 1Zm-6 3h3m-3 4h3m6-4h3m-3 4h3',
+    activities: 'M8 5H5v16h14V5h-3M9 3h6v4H9ZM8 13l2 2 5-5',
+    account: 'M20 21v-2a8 8 0 0 0-16 0v2ZM16 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z'
+  };
+  const buttons = new Map();
+  let host = null, navigation = null, document = null, active = 'home';
+
+  function icon(key) {
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('viewBox', '0 0 24 24');svg.setAttribute('aria-hidden', 'true');
+    svg.setAttribute('focusable', 'false');
+    const path = document.createElementNS(svg.namespaceURI, 'path');
+    path.setAttribute('d', paths[key]);path.setAttribute('fill', 'none');
+    path.setAttribute('stroke', 'currentColor');path.setAttribute('stroke-width', '1.7');
+    path.setAttribute('stroke-linecap', 'round');path.setAttribute('stroke-linejoin', 'round');
+    svg.append(path);return svg;
+  }
+  function setActive(key) {
+    active = destinations.some(([destination]) => destination === key) ? key : null;
+    for (const [destination, button] of buttons) {
+      if (destination === active) button.setAttribute('aria-current', 'page');
+      else button.removeAttribute('aria-current');
+    }
+  }
+  function unmount() {
+    if (host && navigation?.parentNode === host) host.replaceChildren();
+    host?.classList.remove('bottom-navigation-host');
+    document?.body?.classList.remove('has-bottom-navigation');
+    buttons.clear();host = navigation = document = null;
+  }
+  function mount(container) {
+    unmount();host = container;document = container.ownerDocument || window.document;
+    navigation = node('nav', undefined, 'bottom-navigation');
+    navigation.setAttribute('aria-label', 'Navegación principal');
+    const mountedHost = host, mountedNavigation = navigation;
+    for (const [key, label] of destinations) {
+      const button = node('button', undefined, 'bottom-nav-item bottom-nav-' + key);
+      button.type = 'button';button.setAttribute('data-destination', key);
+      button.append(icon(key), node('span', label, 'bottom-nav-label'));
+      button.addEventListener('click', () => {
+        if (host === mountedHost && navigation === mountedNavigation) onNavigate?.(key);
+      });
+      navigation.append(button);buttons.set(key, button);
+    }
+    host.classList.add('bottom-navigation-host');document.body?.classList.add('has-bottom-navigation');
+    host.replaceChildren(navigation);setActive(active);
+  }
+  return {mount, setActive, unmount};
+};
+</script>
+<script>'use strict';
 (() => {
   const $ = id => document.getElementById(id);
   const mapping = JSON.parse($('mapping-data').textContent);
@@ -3772,10 +3950,38 @@ window.createLearningDashboard=function({access,vocabularyData,node,onContinue,o
   const vocabularyAccess = JSON.parse($('vocabulary-access-data').textContent);
   const profileAccess = accountConfig.enabled ? window.createAccountVocabularyAccess(accountConfig, vocabularyAccess.scopes) : null;
   let accountHeader = null;
+  let currentArea = state.view === 'pronunciacion' ? 'letters' : resumeStudy || 'home';
+  const bottomNavigation = window.createBottomNavigation({node, onNavigate:navigateStudy});
+  function selectArea(area) {
+    currentArea = area;
+    bottomNavigation.setActive(accountHeader?.isOpen() ? 'account' : currentArea);
+  }
+  function navigateStudy(area, target = null, manageStudents = false) {
+    if (area === 'account') {
+      window.scrollTo({top:0,behavior:'auto'});
+      accountHeader?.open();
+      return;
+    }
+    accountHeader?.close();
+    resumeStudy = null;
+    window.BBlinguaStudyNavigation.remember(area === 'home' ? null : area);
+    setStudyView(area === 'home' ? null : area);
+    state.view = 'home';
+    render();
+    if (area !== 'home') {
+      dashboard.unmount();document.body.classList.remove('dashboard-home');
+      selectArea(area);
+      if (area === 'letters') practice.openLetters();
+      else if (manageStudents) practice.openStudentManager();
+      else if (area === 'activities') practice.openActivities(target);
+      else practice.openVocabulary(target);
+    }
+    window.scrollTo({top:0,behavior:'auto'});
+  }
   const dashboardAccess=accountConfig.enabled?window.createAccountVocabularyAccess(accountConfig,vocabularyAccess.scopes):null;
   const dashboard=window.createLearningDashboard({access:dashboardAccess,vocabularyData,node,
-    onContinue:(scope,view)=>view==='activities'?practice.openActivities(scope):practice.openVocabulary(scope),
-    onReview:scope=>practice.openActivities(scope),
+    onContinue:(scope,view)=>navigateStudy(view==='activities'?'activities':'vocabulary',scope),
+    onReview:scope=>navigateStudy('activities',scope),
     onSignIn:()=>$('account-header').querySelector('.account-header-login')?.click()
   });
   const activityRecorder = profileAccess ? window.createActivityRecorder({access:profileAccess,onSaved:()=>accountHeader?.activitySaved()}) : null;
@@ -3932,7 +4138,8 @@ window.createLearningDashboard=function({access,vocabularyData,node,onContinue,o
     $('pronunciation-controls').hidden=exercising;
     $('model').closest('label').hidden=context || exercising;
     document.querySelector('header .hint').textContent=exercising?'Escucha, sigue los trazos y forma sílabas.':'Pulsa una letra coreana para escuchar.';
-    if(exercising) {practice.mount($('main'));if(resumeStudy){const view=resumeStudy;resumeStudy=null;if(view==='letters')practice.openLetters();else if(view==='activities')practice.openActivities();else practice.openVocabulary();}return;}
+    if(exercising) {practice.mount($('main'));if(resumeStudy){const view=resumeStudy;resumeStudy=null;dashboard.unmount();document.body.classList.remove('dashboard-home');selectArea(view);if(view==='letters')practice.openLetters();else if(view==='activities')practice.openActivities();else practice.openVocabulary();}return;}
+    selectArea('letters');
     const rows=context?contexts():state.section==='vocales'?vowels():state.section==='secuencias'?sequences():consonants();
     const scroll=node('div',undefined,'table-scroll');scroll.tabIndex=0;
     scroll.setAttribute('aria-label','Tabla de pronunciación; desplaza horizontalmente si es necesario');
@@ -3952,28 +4159,29 @@ window.createLearningDashboard=function({access,vocabularyData,node,onContinue,o
   const practice = window.createHangulPractice({
     data: JSON.parse($('practice-data').textContent), vocabularyData, vocabularyAccess, vocabularyIllustrations: JSON.parse($('vocabulary-illustrations-data').textContent), accountConfig, node, sound, stop, activityRecorder,
     onRequireSignIn:()=>accountHeader?.refresh(),
-    onStudyOpen(view){setStudyView(view);if(view){dashboard.unmount();document.body.classList.remove('dashboard-home');}},
-    onHome(root){document.body.classList.add('dashboard-home');const host=node('div',undefined,'dashboard-mount');root.append(host);dashboard.mount(host);},
+    onStudyOpen(view){setStudyView(view);selectArea(view||'home');if(view){dashboard.unmount();document.body.classList.remove('dashboard-home');}},
+    onHome(root){selectArea('home');document.body.classList.add('dashboard-home');const host=node('div',undefined,'dashboard-mount');root.append(host);dashboard.mount(host);},
     onPronunciation() {setStudyView(null);state.view='pronunciacion';render();$('home-button').focus({preventScroll:true});}
   });
-  $('home-button').addEventListener('click',()=>{state.view='home';render();practice.openLetters();});
+  $('home-button').addEventListener('click',()=>navigateStudy('letters'));
   $('brand-home').addEventListener('click',event=>{
     if(event.button>0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;
-    event.preventDefault();resumeStudy=null;window.BBlinguaStudyNavigation.remember(null);
-    setStudyView(null);state.view='home';render();window.scrollTo({top:0,behavior:'auto'});
+    event.preventDefault();navigateStudy('home');
   });
   $('model').addEventListener('change',render);
   audio.addEventListener('ended',clearPlaying);audio.addEventListener('error',clearPlaying);
   document.addEventListener('keydown',event=>{if(event.key==='Escape')stop();});
+  bottomNavigation.mount($('bottom-navigation'));
   render();
   if (profileAccess) {
     accountHeader = window.createAccountHeader({access:profileAccess,node,vocabularyData,
+      onOpenChange(open){bottomNavigation.setActive(open?'account':currentArea);},
       onAccountChange(){dashboard.refresh();},
       onBeforeSignIn() {
         const study = new URL(location.href).searchParams.get('view');
         window.BBlinguaStudyNavigation.remember(study==='activities'?'activities':study==='vocabulary'?'vocabulary':study==='letters'?'letters':state.view==='pronunciacion'?'pronunciation':'home');
       },
-      onManageStudents() {state.view='home';render();practice.openStudentManager();}
+      onManageStudents() {navigateStudy('vocabulary',null,true);}
     });
     accountHeader.mount($('account-header')).then(()=>{if(topLevelAuthReturn && routeVersion===0)setStudyView(null);});
   } else $('account-header').hidden=true;
