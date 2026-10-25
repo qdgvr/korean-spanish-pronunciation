@@ -296,19 +296,28 @@ body.is-practicing{background:var(--paper);color:var(--ink);min-height:100dvh}
   .learning-dashboard .dashboard-heading { margin-bottom: 20px; }
   .learning-dashboard .dashboard-heading p { font-size: 13px; }
   .learning-dashboard .dashboard-top-grid,
-  .learning-dashboard .dashboard-bottom-grid { grid-template-columns: minmax(0, 1fr); gap: 13px; }
-  .learning-dashboard .dashboard-bottom-grid { margin-top: 13px; }
-  .learning-dashboard .dashboard-card { padding: 21px; border-radius: 17px; }
+  .learning-dashboard .dashboard-bottom-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .learning-dashboard .dashboard-bottom-grid { margin-top: 10px; }
+  .learning-dashboard .dashboard-card { padding: 14px; border-radius: 17px; }
   .learning-dashboard .dashboard-continue,
   .learning-dashboard .dashboard-review { min-height: 225px; }
   .learning-dashboard .dashboard-word,
-  .learning-dashboard .dashboard-calendar { min-height: 0; padding: 16px; }
+  .learning-dashboard .dashboard-calendar { min-height: 0; padding: 12px; }
   .learning-dashboard .dashboard-eyebrow { margin-bottom: 13px; }
-  .learning-dashboard .dashboard-unit { font-size: 25px; }
-  .learning-dashboard .dashboard-theme { font-size: 13px; }
-  .learning-dashboard .dashboard-value { font-size: 44px; }
-  .learning-dashboard .dashboard-word-ko { font-size: 38px; }
-  .learning-dashboard .dashboard-word-es { font-size: 20px; }
+  .learning-dashboard .dashboard-unit { font-size: 19px; overflow-wrap: anywhere; }
+  .learning-dashboard .dashboard-theme { font-size: 12px; }
+  .learning-dashboard .dashboard-meta { font-size: 11px; }
+  .learning-dashboard .dashboard-label { font-size: 13px; }
+  .learning-dashboard .dashboard-value { font-size: 38px; }
+  .learning-dashboard .dashboard-word-ko { font-size: 32px; }
+  .learning-dashboard .dashboard-word-es { font-size: 17px; }
+  .learning-dashboard button.dashboard-action { padding: 10px 8px; font-size: 11px; }
+  .learning-dashboard .dashboard-flip { padding: 8px; font-size: 11px; }
+  .learning-dashboard .dashboard-days,
+  .learning-dashboard .dashboard-weekdays { gap: 3px; }
+  .learning-dashboard .dashboard-weekdays > * { font-size: 8px; }
+  .learning-dashboard .dashboard-days { grid-auto-rows: 22px; }
+  .learning-dashboard .dashboard-day { height: 22px; max-height: 22px; font-size: 8px; border-radius: 5px; }
 }
 
 .dashboard-home .page { max-width: 980px; }
