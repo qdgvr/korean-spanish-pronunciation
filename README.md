@@ -38,6 +38,14 @@ Los ejercicios de escritura incluyen 29 letras y 78 trazos. ㄹ se traza en tres
 
 La página incluye 230 archivos de audio y las 29 imágenes de escritura dentro de `index.html`. Pronunciación y la práctica de hangul funcionan con esos recursos integrados, sin servicios de voz ni TTS. Vocabulario necesita conexión para iniciar sesión y obtener las tarjetas y unidades de la cuenta. No requiere instalación. El archivo Excel original no se publica.
 
+## Actividades por unidad
+
+Cada entrada inicia una ronda aleatoria de hasta 12 bloques de la unidad autorizada. El banco privado contiene 1.330 preguntas de vocabulario e ilustraciones, 92 ejercicios de completar con corrección automática y 73 bloques de escritura y diálogo con comparación de ejemplos. Las preguntas y las cuatro opciones se mezclan; los errores propios tienen prioridad y «Repetir fallos» utiliza solo objetivos pendientes del alumno.
+
+Las frases emplean la gramática de la unidad y de las anteriores, contrastada con el programa y el Markdown corregido del curso. Los ejemplos de escritura son orientativos; se guardan separados de la puntuación automática. Se retuvieron 14 candidatos por repetición o problemas de contexto. 1B Unidad 5 mantiene vocabulario y completar, sin un bloque de escritura de esta selección. Esta incorporación es una selección revisada del banco anterior, no su publicación completa ni un solucionario oficial.
+
+Las soluciones y los ejemplos permanecen en el servidor hasta entregar la respuesta propia. El historial muestra cada intento, sus errores, el contexto y las respuestas escritas. El progreso y los registros anteriores se conservan. Las API de historial previas siguen disponibles para las páginas que aún no se hayan actualizado.
+
 ## Fuentes y atribución
 
 Las atribuciones y enlaces originales se conservan en [Atribución de recursos](source_notices/ATTRIBUTION.html). El botón del pie de la página se ha retirado. Las grabaciones proceden de KLEAR Integrated Korean, Darakwon, How to Study Korean, Lee Jong-gyu / Yazu Town, Asahi Press, SIL International, el gráfico de la International Phonetic Association (J. Esling y J. House) y colaboradores de Wikimedia Commons.
