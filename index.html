@@ -1664,7 +1664,12 @@ window.createAccountVocabularyAccess = function (config, scopes, {createClient =
   function subscribe(callback) {
     if (!configured) return () => {};
     let active = true;
-    const {data} = connection().auth.onAuthStateChange(event => {
+    const {data} = connection().auth.onAuthStateChange((event, session) => {
+      // The SDK also confirms SIGNED_IN when a tab becomes visible again.
+      // It is not a new identity. The focus/visibility permission check and
+      // every protected RPC still validate the live server session/access.
+      // Preserve the current question, input node, draft and in-flight request.
+      if (event === 'SIGNED_IN' && current.signedIn && session?.user?.id === current.userId) return;
       if (['SIGNED_IN', 'SIGNED_OUT', 'USER_UPDATED'].includes(event)) {
         reset();
         // Leave the auth callback before making further SDK requests.
@@ -2623,7 +2628,7 @@ window.createUnitDialogueScene = function ({node, question, item, index}) {
     index < 0 || index >= blocks.length || question.items[index] !== item ||
     !/(?:^|\n)\s*(?:\d+[).]\s*)?[가나]\s*:/.test(item?.text || '') ||
     !blocks.every(block => block?.type === 'scene' && Array.isArray(block.lines) &&
-      /^\s*Ficha\s*\d+\s*[·:—-]/i.test(block.title || ''))) return null;
+      (!(block.title || '').trim() || /^\s*Ficha\s*\d+\s*[·:—-]/i.test(block.title || '')))) return null;
   const scene = blocks[index];
   const lines = scene.lines.map(value => typeof value === 'string' ? value : value?.text).filter(value => typeof value === 'string');
   const blank = /(?:^|\n)\s*(?:\d+[).]\s*)?([가나])\s*:\s*[_＿]{2,}/.exec(item.text);
